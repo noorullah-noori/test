@@ -40,7 +40,7 @@
         22
       </td>
       <td>info@example.com</td>
-      <td><div class="ui tiny button primary">View Details</div></td>
+      <td><div class="ui tiny button primary" onclick="view()">View Details</div></td>
     </tr>
     <tr>
       <td>
@@ -56,7 +56,7 @@
         15
       </td>
       <td>info@example.com</td>
-      <td><div class="ui tiny button primary">View Details</div></td>
+      <td><div class="ui tiny button primary" onclick="view()">View Details</div></td>
     </tr>
     <tr>
       <td>
@@ -72,7 +72,7 @@
         12
       </td>
       <td>info@example.com</td>
-      <td><div class="ui tiny button primary">View Details</div></td>
+      <td><div class="ui tiny button primary" onclick="view()">View Details</div></td>
     </tr>
     <tr>
       <td>
@@ -88,7 +88,7 @@
         11
       </td>
       <td>info@example.com</td>
-      <td><div class="ui tiny button primary">View Details</div></td>
+      <td><div class="ui tiny button primary" onclick="view()">View Details</div></td>
     </tr>
   </tbody>
 </table>
@@ -97,4 +97,27 @@
 
 	</div>
 	</section>
+
+
+
+    <div class="ui modal" style="overflow: hidden; height:42.5%; ">
+  <div class="actions">
+  <div class="ui left floated header">
+    Profile Picture
+  </div>
+    <div class="ui deny button red">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="img/about.png">
+    </div>
+    <div class="description">
+      <div class="ui header">We've auto-chosen a profile image for you.</div>
+      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+      <p>Is it okay to use this photo?</p>
+    </div>
+  </div>
+  </div>
 @include('include.footer')

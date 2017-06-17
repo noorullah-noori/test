@@ -1,6 +1,5 @@
 @include('include.header')
 	
-	
 	<section id="content">
 	
 	
@@ -9,6 +8,10 @@
 	    	<div class="row">
 	    	
 	    	@include('include.calendar_sidebar')
+	    	@include('include.filter')
+
+	 
+
 <div clas="row">
 	          <div class="ui large breadcrumb">
 	            <a class="section">Calendar</a>
@@ -26,5 +29,8 @@
 
 	</div>
 	</section>
-
+	
 @include('include.footer')
+<script lang="html/javascript">
+		$('#example1').calendar();
+	</script>

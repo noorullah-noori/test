@@ -85,8 +85,6 @@ The 19-year-old was held in Barking on suspicion of being concerned in the commi
 
 		</div>
 		</div>
-
-
-	</div>
+		@include('include.pagination')
 	</section>
 @include('include.footer')

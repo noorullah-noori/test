@@ -19,9 +19,9 @@
 		        <div class="eight wide column">
 		          <h3 class="ui header">Enterprise Ready</h3>
 		          <p>Build tools, performance logging, support for custom definitions, multiple-levels of theme inheritance—a developer's dream.</p>
-		          <a class="ui large right labeled primary icon button" href="/introduction/getting-started.html">
+		          <a class="ui large right labeled primary icon button" href="{{route('ogpa')}}">
 		            <i class="right  chevron icon  "></i>
-		            Get Started Now
+		            More About Us
 		          </a>
 		        </div>
 		      </div>

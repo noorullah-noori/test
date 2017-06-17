@@ -45,9 +45,7 @@
 
 <section id="content">
 	
-	<div class="container" style="padding-bottom:10px">
-
-      <div class="row">
+	<div class="container" style="padding-bottom:10px">  
       	
       	<div clas="row">
 	          <div class="ui large breadcrumb">
@@ -67,56 +65,46 @@
             </span>
           </div>
       </div>
-
-      <div class="sub-stories">
-      	<div style="padding-top:20px;color:black;font-size:16px;padding-bottom:15px;">
-      	<a href="{{route('story_details')}}" style="font-size:16px">Beneficial Ownership</a>
-      	<div style="padding-top:20px">
-      	<p>La apertura de los beneficiarios reales de Ucrania. Por qué importa y por qué tu país debería ser el siguiente</p>
-      	</div>
-      	</div>
-			<span style="display:block;line-height:2">5 June 2017</span>
-            <span >
-            	<a href="#">Manish Bapna</a>
-            </span>
+      </section>
+      <hr/>
+      <div class="container" style="margin-bottom: 10px;  ">
+        <div class="ui two cards">
+          <div class="card">
+            <div class="content">
+              <div class="header">Beneficial Ownership</div>
+              <div class="meta">Manish Bapna</div>
+              <div class="description">
+                <h1 class="ui header"><i class="icon left quote"></i></h1>
+                Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
+                <h1 class="ui right floated header"><i class="icon right quote"></i></h1>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="header">Beneficial Ownership</div>
+              <div class="meta">Manish Bapna</div>
+              <div class="description">
+                <h1 class="ui header"><i class="icon left quote"></i></h1>
+                Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
+                <h1 class="ui right floated header"><i class="icon right quote"></i></h1>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="header">Beneficial Ownership</div>
+              <div class="meta">Manish Bapna  </div>
+              <div class="description">
+                <h1 class="ui header"><i class="icon left quote"></i></h1>
+                Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
+                <h1 class="ui right floated header"><i class="icon right quote"></i></h1>
+              </div>
+            </div>
+          </div>
+</div>
       </div>
-     <div class="sub-stories">
-      	<div style="padding-top:20px;color:black;font-size:16px;padding-bottom:15px;">
-      	<a href="{{route('story_details')}}" style="font-size:16px">Beneficial Ownership</a>
-      	<div style="padding-top:20px">
-      	<p>La apertura de los beneficiarios reales de Ucrania. Por qué importa y por qué tu país debería ser el siguiente</p>
-      	</div>
-      	</div>
-			<span style="display:block;line-height:2">5 June 2017</span>
-            <span >
-            	<a href="#">Manish Bapna</a>
-            </span>
       </div>
-        <div class="sub-stories">
-      	<div style="padding-top:20px;color:black;font-size:16px;padding-bottom:15px;">
-      	<a href="{{route('story_details')}}" style="font-size:16px">Beneficial Ownership</a>
-      	<div style="padding-top:20px">
-      	<p>La apertura de los beneficiarios reales de Ucrania. Por qué importa y por qué tu país debería ser el siguiente</p>
-      	</div>
-      	</div>
-			<span style="display:block;line-height:2">5 June 2017</span>
-            <span >
-            	<a href="#">Manish Bapna</a>
-            </span>
-      </div>
-     <div class="sub-stories">
-      	<div style="padding-top:20px;color:black;font-size:16px;padding-bottom:15px;">
-      	<a href="{{route('story_details')}}" style="font-size:16px">Beneficial Ownership</a>
-      	<div style="padding-top:20px">
-      	<p>La apertura de los beneficiarios reales de Ucrania. Por qué importa y por qué tu país debería ser el siguiente</p>
-      	</div>
-      	</div>
-			<span style="display:block;line-height:2">5 June 2017</span>
-            <span >
-            	<a href="#">Manish Bapna</a>
-            </span>
-      </div>
-
 </div>
 </section>
 

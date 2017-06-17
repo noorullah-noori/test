@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/modal.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/icon.min.css')}}">
 <link rel="stylesheet" href="css/fullcalendar.min.css"/>
+<link rel="stylesheet" href="css/modal.min.css"/>
 
 
  
@@ -162,14 +163,14 @@
 </div>
 <div class="container">
     <div class="ui secondary menu" >
-    <div class="ui stackable right secondary  menu large" id="hybrid">
+    <div class="ui stackable right secondary   menu large" id="hybrid">
         <a href="{{route('home')}}" class="item">Home</a>
           <div class="ui dropdown item">
           About Us <i class="icon dropdown"></i>
           <div class="menu">
               <a href="{{route('ogp')}}" class="item">OGP Introduction</a>
               <a href="{{route('ogpa')}}" class="item">OGPA Introduction</a>
-              <a href="{{route('working_group')}}" class="item">Working Groups</a>
+              <a href="{{route('working_groups')}}" class="item">Working Groups</a>
               <a href="{{route('opportunities')}}" class="item">Carrier & Opportunities</a>
               <a href="{{route('news')}}" class="item">OGP News</a>
               <a href="{{route('themes1')}}" class="item">Themes</a>
