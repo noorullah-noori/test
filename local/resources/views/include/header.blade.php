@@ -8,7 +8,7 @@
 <meta name="author" content="http://webthemez.com/" />
 <!-- css -->
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/semantic.min.css')}}">
+
 <link href="{{asset('css/style.css')}}" rel="stylesheet" />
 <link href="{{asset('css/jquery.fancybox.css')}}" rel="stylesheet"> 
 <link href="{{asset('css/flexslider.css')}}" rel="stylesheet" /> 
@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/modal.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/icon.min.css')}}">
 <link rel="stylesheet" href="css/fullcalendar.min.css"/>
- 
+<link rel="stylesheet" type="text/css" href="{{asset('css/semantic.min.css')}}"> 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
