@@ -73,10 +73,22 @@
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+
 <script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/semantic.min.js')}}"></script> 
+<script src="{{asset('js/dropdown.js')}}"></script>
+<script>
+ $('.ui.dropdown')
+  .dropdown()
+;
+$('.menu .item')
+  .tab()
+;
+</script>
+
 <script src="{{asset('js/jQuery.scrollSpeed.js')}}"></script>
 <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<!--<script src="{{asset('js/bootstrap.min.js')}}"></script>-->
 <script src="{{asset('js/jquery.fancybox.pack.js')}}"></script>
 <script src="{{asset('js/jquery.fancybox-media.js')}}"></script>  
 <script src="{{asset('js/jquery.flexslider.js')}}"></script>
@@ -89,8 +101,8 @@
 <script src="js/custom.js"></script> 
 <script src="js/moment.min.js"></script>
 <script src="js/fullcalendar.min.js"></script>
-<!-- <script src="js/semantic.min.js"></script> 
-<script src="js/modal.js"></script>  -->
+<!--<script src="js/modal.js"></script>  -->
 <script type="text/javascript">jQuery.scrollSpeed(100, 800);</script>
+
 </body>
 </html>

@@ -3,9 +3,6 @@
 .ui.icon.image.afg {
 	height:150px;
 }
-.ui.inverted.blue.button {
-	margin-top:5px;
-}
 </style>
 	<section class="section-padding gray-bg">
 		<div class="ui alternate stripe vertical segment">
@@ -19,9 +16,9 @@
 		        <div class="eight wide column">
 		          <h3 class="ui header">Enterprise Ready</h3>
 		          <p>Build tools, performance logging, support for custom definitions, multiple-levels of theme inheritance—a developer's dream.</p>
-		          <a class="ui large right labeled primary icon button" href="/introduction/getting-started.html">
+		          <a class="ui large right labeled primary icon button" href="{{route('ogpa')}}">
 		            <i class="right  chevron icon  "></i>
-		            Get Started Now
+		            About Us
 		          </a>
 		        </div>
 		      </div>
@@ -79,87 +76,114 @@
 						
 						<div class="row">
 							<div class="col-md-4">
-								<div class="ui card">
-									<div class="content">
-										<div class="header">Jobs & Opportunities</div>
-									</div>
-									<div class="content">
-										<div class="ui feed">
-											<div class="event">
-												<div class="content">
-													<div class="summary ui button fluid inverted grey">
-														<a href="#">Web Designer</a>
-													</div>
-												</div>
-											</div>
-											<div class="event">
-												<div class="content">
-													<div class="summary ui button fluid inverted grey">
-													<a href="#">Manager</a>
-													</div>
-												</div>
-											</div>
-											<div class="extra content">
-												<button class="ui fluid button inverted blue">View All</button>
-											</div>	
+								<div class="block-heading-two">
+									<h3><span>Jobs & Opportunities</span></h3>
+								</div>		
+								<!-- Accordion starts -->
+								<div class="panel-group" id="accordion-alt3">
+								 <!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
+								  <div class="panel">	
+									<!-- Panel heading -->
+									 <div class="panel-heading">
+										<h4 class="panel-title">
+										  <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseOne-alt3">
+											<i class="fa fa-angle-right"></i> Web Designer
+										  </a>
+										</h4>
+									 </div>
+									 <div id="collapseOne-alt3" class="panel-collapse collapse">
+										<!-- Panel body -->
+										<div class="panel-body">
+										  Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
 										</div>
-
-									</div>
-
+									 </div>
+								  </div>
+								  <div class="panel">
+									 <div class="panel-heading">
+										<h4 class="panel-title">
+										  <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseTwo-alt3">
+											<i class="fa fa-angle-right"></i>Manager
+										  </a>
+										</h4>
+									 </div>
+									 <div id="collapseTwo-alt3" class="panel-collapse collapse">
+										<div class="panel-body">
+										  Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+										</div>
+									 </div>
+								  </div>
 								</div>
-
+								<!-- Accordion ends -->
 								
 							</div>
 
 							<div class="col-md-4">
-								<!-- -->
-								<div class="ui card">
-									<div class="content">
-										<div class="header">Latest News</div>
-									</div>
-									<div class="content">
-										<div class="ui feed">
-											<div class="event">
-												<div class="content">
-													<div class="summary ui button inverted grey fluid">
-														<a href="#">Heading 1</a>
-													</div>
-												</div>
-											</div>
-											<div class="event">
-												<div class="content">
-													<div class="summary ui button inverted grey fluid">
-													<a href="#">Heading 2</a>
-													</div>
-												</div>
-											</div>
-											<div class="event">
-												<div class="content">
-													<div class="summary ui button inverted grey fluid">
-													<a href="#">Heading 3</a>
-													</div>
-												</div>
-											</div>
-											<div class="event">
-												<div class="content">
-													<div class="summary ui button inverted grey fluid">
-													<a href="#">Heading 4</a>
-													</div>
-												</div>
-											</div>
-											<div class="extra content">
-												<button class="ui button fluid inverted blue">View All</button>
-											</div>	
+								<div class="block-heading-two">
+									<h3><span>Latest News</span></h3>
+								</div>		
+								<!-- Accordion starts -->
+								<div class="panel-group" id="accordion-alt3">
+								 <!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
+								  <div class="panel">	
+									<!-- Panel heading -->
+									 <div class="panel-heading">
+										<h4 class="panel-title">
+										  <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseOne-alt3">
+											<i class="fa fa-angle-right"></i> Accordion Heading Text Item # 1
+										  </a>
+										</h4>
+									 </div>
+									 <div id="collapseOne-alt3" class="panel-collapse collapse">
+										<!-- Panel body -->
+										<div class="panel-body">
+										  Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
 										</div>
-
-									</div>
-
+									 </div>
+								  </div>
+								  <div class="panel">
+									 <div class="panel-heading">
+										<h4 class="panel-title">
+										  <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseTwo-alt3">
+											<i class="fa fa-angle-right"></i> Accordion Heading Text Item # 2
+										  </a>
+										</h4>
+									 </div>
+									 <div id="collapseTwo-alt3" class="panel-collapse collapse">
+										<div class="panel-body">
+										  Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+										</div>
+									 </div>
+								  </div>
+								  <div class="panel">
+									 <div class="panel-heading">
+										<h4 class="panel-title">
+										  <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseThree-alt3">
+											<i class="fa fa-angle-right"></i> Accordion Heading Text Item # 3
+										  </a>
+										</h4>
+									 </div>
+									 <div id="collapseThree-alt3" class="panel-collapse collapse">
+										<div class="panel-body">
+										  Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+										</div>
+									 </div>
+								  </div>
+								  <div class="panel">
+									 <div class="panel-heading">
+										<h4 class="panel-title">
+										  <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseFour-alt3">
+											<i class="fa fa-angle-right"></i> Accordion Heading Text Item # 4
+										  </a>
+										</h4>
+									 </div>
+									 <div id="collapseFour-alt3" class="panel-collapse collapse">
+										<div class="panel-body">
+										  Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+										</div>
+									 </div>
+								  </div>
 								</div>
-
-
-								
-
-										
+								<!-- Accordion ends -->
 								
 							</div>
 							

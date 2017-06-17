@@ -10,11 +10,11 @@
 	
 	<div class="container">
 		  <div class="six column row centered" style="margin-left:10%;">
-		  	<a href="{{route('themes_details')}}" class="ui button massive green">Accountability</a>
-		  	<a href="{{route('themes_details')}}" class="ui button massive blue">Transparency</a>
-		  	<a href="{{route('themes_details')}}" class="ui button massive violet">Citizen Empowerment</a>
-		  	<a href="{{route('themes_details')}}" class="ui button massive pink">Anti Corruption</a>
-		  	<a href="{{route('themes_details')}}" class="ui button massive red">e-Governance</a>
+		  	<a href="{{route('themes_details')}}" class="ui button large green">Accountability</a>
+		  	<a href="{{route('themes_details')}}" class="ui button large blue">Transparency</a>
+		  	<a href="{{route('themes_details')}}" class="ui button large violet">Citizen Empowerment</a>
+		  	<a href="{{route('themes_details')}}" class="ui button large pink">Anti Corruption</a>
+		  	<a href="{{route('themes_details')}}" class="ui button large red">e-Governance</a>
 		  </div>
 		</div>
 	</div>

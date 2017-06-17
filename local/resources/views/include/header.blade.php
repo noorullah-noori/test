@@ -7,18 +7,19 @@
 <meta name="description" content="" />
 <meta name="author" content="http://webthemez.com/" />
 <!-- css -->
-
-
 <link href="{{asset('css/style.css')}}" rel="stylesheet" />
 <link href="{{asset('css/jquery.fancybox.css')}}" rel="stylesheet"> 
 <link href="{{asset('css/flexslider.css')}}" rel="stylesheet" /> 
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/semantic.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/flag.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/modal.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/icon.min.css')}}">
 <link rel="stylesheet" href="css/fullcalendar.min.css"/>
-<link rel="stylesheet" type="text/css" href="{{asset('css/semantic.min.css')}}"> 
+
+
+ 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -82,8 +83,9 @@
 	<header>
 		<div class="container-fluid" style="background-image:url({{asset('img/header-bg.png')}});height:100px">
 			<div class="col-md-11">
-				<img src="{{asset('img/ogpa.png')}}"style="height:98px;margin-left:6.4%;padding-top:3px">
+				<img src="{{asset('img/ogpa.png')}}" style="height:98px;margin-left:6.4%;padding-top:3px">
 				<img src="{{asset('img/header-center.png')}}" style="height:98px;margin-left:33%">
+                <img src="{{asset('img/ogp.png')}}" style="height:98px;margin-left:26%">
 			</div>
             </div>
         <div class="navbar navbar-default navbar-static-top">
@@ -153,19 +155,67 @@
             </div>
         </div>-->
         <!-- Semantic Menu Demo-->
-<div class="container-fluid">
-  <div class="ui stackable right secondary  menu massive">
-    <a class="item">Home</a>
-      <a class="item">About Us</a>
-      <a class="item">Themes</a>
-      <a class="item">Resources</a>
-      <a class="item">Participants</a>
-      <a class="item">Calendar</a>
-      <a class="item">Stories</a>
-      <a class="item">Contact Us</a>
 
-      </div>
+
+
+  
 </div>
+<div class="container">
+    <div class="ui secondary menu" >
+    <div class="ui stackable right secondary  menu large" id="hybrid">
+        <a href="{{route('home')}}" class="item">Home</a>
+          <div class="ui dropdown item">
+          About Us <i class="icon dropdown"></i>
+          <div class="menu">
+              <a href="{{route('ogp')}}" class="item">OGP Introduction</a>
+              <a href="{{route('ogpa')}}" class="item">OGPA Introduction</a>
+              <a href="{{route('working_group')}}" class="item">Working Groups</a>
+              <a href="{{route('opportunities')}}" class="item">Carrier & Opportunities</a>
+              <a href="{{route('news')}}" class="item">OGP News</a>
+              <a href="{{route('themes1')}}" class="item">Themes</a>
+
+          </div>
+          </div>
+          <a href="{{route('themes1')}}" class="item">Themes</a>
+          <div class="ui dropdown item">
+          Resources
+          <i class="icon dropdown"></i>
+          <div class="menu">
+            <a class="item" href="{{route('agendas')}}">Agendas</a>            
+            <a class="item" href="{{route('meetings')}}">Meeting Minutes</a>
+            <a class="item" href="{{route('assesment')}}">Self-Assesment Reports</a>
+            <a class="item" href="{{route('irm')}}">IRM Reports</a>
+            <a class="item" href="{{route('consultation')}}">Consultation Papers</a>
+            <a class="item" href="{{route('action_plan')}}">National Action Plans</a>                                          
+
+          </div>
+          </div>
+          
+          <div  class="ui dropdown item">
+          Participants
+          <i class="icon dropdown"></i>
+          <div class="menu">
+            <a class="item" href="{{route('global_participants')}}">Global Participants</a>
+            <a class="item" href="{{route('national_participants')}}">National Participants</a>
+          </div>
+          </div>
+          <div class="ui dropdown item">
+              Calendar
+              <i class="icon dropdown"></i>
+              <div class="menu">
+                <a class="item" href="{{route('seminars')}}">Seminars</a>
+                <a class="item" href="{{route('events')}}">Events</a>
+                <a class="item" href="{{route('sessions')}}">Sessions</a>
+
+              </div>
+
+          </div>
+            <a class="item" href="{{route('stories')}}">Success Stories</a>
+            <a class="item" href="{{route('contacts')}}">Contacts</a>
+
+    </div>    
+</div>
+
 </div>
 
 	</header>
