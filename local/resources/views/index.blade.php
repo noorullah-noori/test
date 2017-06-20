@@ -36,7 +36,7 @@
 	    	<div class="row">
 			<div class="col-md-12">
 				<div class="aligncenter"><h2 class="aligncenter">Open Government</h2>
-					Open government is the simple but powerful idea that governments and institutions work better for citizens when they are transparent, engaging and accountable.
+					<span style="font-size:18px;">Open government is the simple but powerful idea that governments and institutions work better for citizens when they are transparent, engaging and accountable.</span
 				</div>
 				<br/>
 			</div>
@@ -87,14 +87,14 @@
 										<div class="ui feed">
 											<div class="event">
 												<div class="content">
-													<div class="summary ui button fluid inverted grey">
+													<div class="summary">
 														<a href="#">Web Designer</a>
 													</div>
 												</div>
 											</div>
 											<div class="event">
 												<div class="content">
-													<div class="summary ui button fluid inverted grey">
+													<div class="summary">
 													<a href="#">Manager</a>
 													</div>
 												</div>
@@ -121,28 +121,28 @@
 										<div class="ui feed">
 											<div class="event">
 												<div class="content">
-													<div class="summary ui button inverted grey fluid">
+													<div class="summary">
 														<a href="#">Heading 1</a>
 													</div>
 												</div>
 											</div>
 											<div class="event">
 												<div class="content">
-													<div class="summary ui button inverted grey fluid">
+													<div class="summary">
 													<a href="#">Heading 2</a>
 													</div>
 												</div>
 											</div>
 											<div class="event">
 												<div class="content">
-													<div class="summary ui button inverted grey fluid">
+													<div class="summary">
 													<a href="#">Heading 3</a>
 													</div>
 												</div>
 											</div>
 											<div class="event">
 												<div class="content">
-													<div class="summary ui button inverted grey fluid">
+													<div class="summary">
 													<a href="#">Heading 4</a>
 													</div>
 												</div>

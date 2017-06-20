@@ -2,51 +2,78 @@
 	.ui.selection.dropdown {
 		margin-bottom: 4px;
 	}
-	.ui.top.right.pointing.dropdown > .menu {
+	.ui.floating.labeled.icon.dropdown.button.right.floated > .menu {
 		padding:5px;
 	}
 	.ui.dropdown .menu .menu {
 		left:110% !important;
 	}
 </style>
-<div class="ui labeled icon top right pointing right floated dropdown button">
+<div class="ui floating labeled icon dropdown button right floated">
 			  <i class="dropdown icon"></i>
 			  <span class="text">Filter Posts</span>
-			  <div class="menu">
-			  		<div class="field">
-			          <select class="ui pointing dropdown link item">
-			            <option value="">Year</option>
-			            <option value="1">2017</option>
-			            <option value="2">2017</option>
-			            <option value="3">2017</option>
-			            <option value="4">2017</option>
-			            <option value="5">2017</option>
-			            <option value="6">2017</option>
-			            <option value="7">2017</option>
-			            <option value="8">2017</option>
-			            <option value="9">2017</option>
-			            <option value="10">2017</option>
-			            <option value="11">2017</option>
-			            <option value="12">2017</option>
-			          </select>
-			        </div>
-			        <div class="field">
-			        	<select class="ui pointing dropdown link item">
-			            <option value="">Month</option>
-			            <option value="1">January</option>
-			            <option value="2">February</option>
-			            <option value="3">March</option>
-			            <option value="4">April</option>
-			            <option value="5">May</option>
-			            <option value="6">June</option>
-			            <option value="7">July</option>
-			            <option value="8">August</option>
-			            <option value="9">September</option>
-			            <option value="10">October</option>
-			            <option value="11">November</option>
-			            <option value="12">December</option>
-			          </select>
-			        </div>
+			  <div class="left menu">
+			   <!--<div class="left menu">
+				     <div class="item">
+				      <i class="dropdown icon"></i>
+				      <span class="text">Left</span>
+				      <div class="menu">
+				        <div class="item">
+				          <i class="dropdown icon"></i>
+				          <span class="text">Still Left</span>
+				          <div class="menu">
+				            <div class="item">1</div>
+				            <div class="item">2</div>
+				            <div class="item">3</div>
+				          </div>
+				        </div>
+				        <div class="item">2</div>
+				        <div class="item">3</div>
+				      </div>
+				    </div> -->
+				    <div class="item">
+				    	<i class="dropdown icon"></i>
+				    	<span class="text">Year</span>
+				    	<div class="menu">
+				    		<div class="item">2017</div>
+				    		<div class="item">2016</div>
+				    		<div class="item">2015</div>
+				    		<div class="item">2014</div>
+				    		<div class="item">2013</div>
+				    		<div class="item">2012</div>
+				    		<div class="item">2011</div>
+				    		<div class="item">2010</div>
+				    		<div class="item">2009</div>
+				    		<div class="item">2008</div>
+				    		<div class="item">2007</div>
+				    		<div class="item">2006</div>
+				    		<div class="item">2005</div>
+				    		<div class="item">2004</div>
+				    		<div class="item">2003</div>
+				    		<div class="item">2002</div>
+
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<i class="dropdown icon"></i>
+				    	<span class="text">Month</span>
+				    	<div class="menu">
+				    		<div class="item">January</div>
+				    		<div class="item">February</div>
+				    		<div class="item">March</div>
+				    		<div class="item">April</div>
+				    		<div class="item">May</div>
+				    		<div class="item">June</div>
+				    		<div class="item">July</div>
+				    		<div class="item">August</div>
+				    		<div class="item">September</div>
+				    		<div class="item">October</div>
+				    		<div class="item">November</div>
+				    		<div class="item">December</div>
+
+				    	</div>
+				    </div>
+
 			        <div class="ui button fluid green">Filter</div>
 			    <div class="divider"></div>
 			    <div class="header">

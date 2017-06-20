@@ -74,13 +74,21 @@
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
+<!-- <script src="{{asset('js/dropdown.js')}}"	></script> -->
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/semantic.min.js')}}"></script> 
-<script src="{{asset('js/dropdown.js')}}"></script>
+<!-- <script src="js/custom.js"></script>  -->
 <script>
- $('.ui.dropdown')
+$('.ui.dropdown').dropdown();
+$('.ui.dropdown').dropdown({transition: 'drop' }).dropdown({ on: 'hover' });
+
+//  $('.ui.dropdown')
+//   .dropdown()
+// ;
+$('select.dropdown')
   .dropdown()
 ;
+
 $('.menu .item')
   .tab()
 ;
@@ -115,7 +123,6 @@ $('.ui.modal')
 <script src="js/jquery.isotope.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/animate.js"></script>
-<script src="js/custom.js"></script> 
 <script src="js/moment.min.js"></script>
 <script src="js/fullcalendar.min.js"></script>
 <!--<script src="js/modal.js"></script>  -->

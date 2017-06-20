@@ -9,6 +9,7 @@
 	    	<div class="row">
 	    	
 	    	@include('include.resources_sidebar')
+	    	@include('include.filter')
 <div clas="row">
 	          <div class="ui large breadcrumb">
 	            <a class="section">Resources</a>

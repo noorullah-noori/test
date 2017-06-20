@@ -62,6 +62,9 @@
         section.section-padding.gray-bg {
             margin-top:5px;
         }
+        header .navbar {
+          min-height:40px;
+        }
 	</style>
 </head>
 <body>
@@ -162,8 +165,8 @@
   
 </div>
 <div class="container">
-    <div class="ui secondary menu" >
-    <div class="ui stackable right secondary   menu large" id="hybrid">
+    <!-- <div class="ui secondary menu" > -->
+    <div class="ui stackable right floated secondary menu large" id="hybrid">
         <a href="{{route('home')}}" class="item">Home</a>
           <div class="ui dropdown item">
           About Us <i class="icon dropdown"></i>
@@ -191,13 +194,14 @@
 
           </div>
           </div>
-          
+          <div class="field">
           <div  class="ui dropdown item">
           Participants
           <i class="icon dropdown"></i>
           <div class="menu">
             <a class="item" href="{{route('global_participants')}}">Global Participants</a>
             <a class="item" href="{{route('national_participants')}}">National Participants</a>
+          </div>
           </div>
           </div>
           <div class="ui dropdown item">
@@ -215,7 +219,7 @@
             <a class="item" href="{{route('contacts')}}">Contacts</a>
 
     </div>    
-</div>
+<!-- </div> -->
 
 </div>
 

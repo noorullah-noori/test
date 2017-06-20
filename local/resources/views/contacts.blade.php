@@ -1,14 +1,9 @@
 @include('include.header')
 
-<div class="container" style="margin-top:20px;">
+<div class="container" style="margin-top:20px; margin-bottom: 20px;">
 
 		<div class="col-md-6">
-
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<label>Contacts</label>
-				</div>
-			<div class="panel-body">
+		<h4 class="ui dividing header">Message Us!!!</h4>
 				<form class="ui form">
 					<div class="field">
 						<input type="text" placeholder="Name">
@@ -29,14 +24,10 @@
 					</div>
 
 				</form>
-
-			</div>
 		</div>
-
-	</div>
-	<div class="ui divider vertical"></div>
-	<div class="col-md-6">
-		<h1 class="ui header small">Contacts</h1>
+		<div class="ui vertical divider" style="height:20%; margin:10px;">OR</div>
+		<div class="col-md-5" style="margin-left:20px">
+		<h4 class="ui dividing header">Contact Us!!!</h4>
 		<p><i class="fa fa-address-card"></i>&nbsp; Administrative Office of The President</p>
 		<p><i class="fa fa-facebook text-primary"></i>&nbsp;&nbsp;&nbsp; /ogpa</p>
 		<p><i class="fa fa-twitter text-info"></i> @ogpa</p>

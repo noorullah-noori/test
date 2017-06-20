@@ -117,37 +117,21 @@ Route::get('sessions',function(){
 })->name('sessions');
 
 Route::get('test',function(){
+	return view('test');
+})->name('test');
+
+// Admin routes
+
+Route::get('admin',function(){
+	return view('admin.index');
+})->name('admin');
 
 
-	$events = [];
+Route::resource('admin/jobs','JobsController');
 
-$events[] = \Calendar::event(
-    'Event One', //event title
-    false, //full day event?
-    '2015-02-11T0800', //start time (you can also use Carbon instead of DateTime)
-    '2015-02-12T0800', //end time (you can also use Carbon instead of DateTime)
-	0 //optionally, you can specify an event ID
-);
+Route::delete('admin/jobs/{id?}','JobsController@destroy');
 
-$events[] = \Calendar::event(
-    "Valentine's Day", //event title
-    true, //full day event?
-    new \DateTime('2015-02-14'), //start time (you can also use Carbon instead of DateTime)
-    new \DateTime('2015-02-14'), //end time (you can also use Carbon instead of DateTime)
-	'stringEventId' //optionally, you can specify an event ID
-);
+Route::resource('admin/news','NewsController');
 
-$eloquentEvent = EventModel::first(); //EventModel implements MaddHatter\LaravelFullcalendar\Event
+Route::resource('admin/contacts','ContactsController');
 
-$calendar = \Calendar::addEvents($events) //add an array with addEvents
-    ->addEvent($eloquentEvent, [ //set custom color fo this event
-        'color' => '#800',
-    ])->setOptions([ //set fullcalendar options
-		'firstDay' => 1
-	])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
-        'viewRender' => 'function() {alert("Callbacks!");}'
-    ]); 
-
-return view('hello', compact('calendar'));
-
-});

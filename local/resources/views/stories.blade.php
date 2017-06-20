@@ -56,7 +56,7 @@
 	        </div>
         
           <div  class="main-image">
-            <a href="{{route('story_details')}}">
+            <a href="{{route('story_details')}}" class="ui header">
               <h2>Announcing New Members of the OGP Steering Committee</h2>
             </a>
             <span id="date">5 June 2017</span>
@@ -76,7 +76,6 @@
               <div class="description">
                 <h1 class="ui header"><i class="icon left quote"></i></h1>
                 Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
-                <h1 class="ui right floated header"><i class="icon right quote"></i></h1>
               </div>
             </div>
           </div>
@@ -87,7 +86,6 @@
               <div class="description">
                 <h1 class="ui header"><i class="icon left quote"></i></h1>
                 Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
-                <h1 class="ui right floated header"><i class="icon right quote"></i></h1>
               </div>
             </div>
           </div>
@@ -98,7 +96,6 @@
               <div class="description">
                 <h1 class="ui header"><i class="icon left quote"></i></h1>
                 Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
-                <h1 class="ui right floated header"><i class="icon right quote"></i></h1>
               </div>
             </div>
           </div>
