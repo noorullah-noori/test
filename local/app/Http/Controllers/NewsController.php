@@ -46,7 +46,7 @@ class NewsController extends Controller
         $max = News::max('id');
         $max +=1;
         $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move(public_path('news'), $imageName);
+        $request->image->move('news', $imageName);
         $news->image = $imageName;
         $news->save();
         return Redirect()->route('news.index');
@@ -89,6 +89,11 @@ class NewsController extends Controller
         $news->created_date = $request->input('date');
         $news->short_desc = $request->input('short_desc');
         $news->description = $request->input('description');
+
+        $max = $news->id;
+        $imageName = $max.'.'.$request->image->getClientOriginalExtension();
+        $request->image->move('news', $imageName);
+        $news->image = $imageName;
         $news->save();
         return Redirect()->route('news.index');
     }
@@ -101,6 +106,8 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $news = News::findOrFail($id);
+        $news->delete();
+        return Redirect()->route('news.index');
     }
 }

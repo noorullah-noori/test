@@ -9,4 +9,3 @@ class Contacts extends Model
     protected $table='contacts';
     public $timestamps=false;
 }
-}

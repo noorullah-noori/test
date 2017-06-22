@@ -13,7 +13,7 @@
 <section id="content">
 	
 	<div class="container" style="margin-bottom:20px;">
-		<div class="ui top attached tabular menu inverted">
+		<div class="ui top attached tabular menu inverted blue secondary">
 		  <a class="item active" data-tab="first">Accountability</a>
 		  <a class="item" data-tab="second">Transparency</a>
 		  <a class="item" data-tab="third">Citizen Empowerment</a>

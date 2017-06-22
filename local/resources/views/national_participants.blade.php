@@ -20,7 +20,8 @@
 		<div class="col-md-9">
 			<table class="ui very basic collapsing celled table large">
   <thead>
-    <tr><th>Member Name</th>
+    <tr>
+    <th>Member Name</th>
     <th>Member Since</th>
     <th>Email</th>
     <th>Details</th>

@@ -7,6 +7,8 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" >
+<link rel="stylesheet" href="{{asset('css/semantic.min.css')}}" >
+
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href="{{asset('admin-asset/css/style.css')}}" rel='stylesheet' type='text/css' />
@@ -244,30 +246,85 @@
 </header>
 <!--header end-->
 <!--sidebar start-->
-<aside>
-    <div id="sidebar" class="nav-collapse">
+<aside >
+    <div id="sidebar" class="nav-collapse" style="overflow-y:scroll;">
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index.html">
+                    <a class="active" href="{{route('admin')}}">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('jobs.index')}}">
-                        <i class="fa fa-user"></i>
+                        <i class="fa fa-suitcase"></i>
                         <span>Job Oppurtunities</span>
                     </a>
                 </li>
-
                 <li>
+                    <a href="{{route('news.index')}}">
+                        <i class="fa fa-newspaper-o"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                 <li>
+                    <a href="{{route('contacts.index')}}">
+                        <i class="fa fa-phone"></i>
+                        <span>Contacts</span>
+                    </a>
+                </li>
+                 <li>
+                    <a href="{{route('stories.index')}}">
+                        <i class="fa fa-quote-left"></i>
+                        <span>Stories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('messages.index')}}">
+                        <i class="fa fa-envelope"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('resources.index')}}">
+                        <i class="fa fa-database"></i>
+                        <span>Resources</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('agendas.index')}}">
+                        <i class="fa fa-book"></i>
+                        <span>Agendas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('meetings.index')}}">
+                        <i class="fa fa-users"></i>
+                        <span>Meetings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('national_participants.index')}}">
+                        <i class="fa fa-users"></i>
+                        <span>National Participants</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('events.index')}}">
+                        <i class="fa fa-users"></i>
+                        <span>Events & Seminars</span>
+                    </a>
+                </li>
+
+                <!-- <li>
                     <a href="login.html">
                         <i class="fa fa-user"></i>
                         <span>Login Page</span>
                     </a>
-                </li>
+                </li> -->
+                
             </ul>          
         </div>
         <!-- sidebar menu end-->

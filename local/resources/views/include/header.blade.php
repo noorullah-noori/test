@@ -160,9 +160,6 @@
         </div>-->
         <!-- Semantic Menu Demo-->
 
-
-
-  
 </div>
 <div class="container">
     <!-- <div class="ui secondary menu" > -->
@@ -174,7 +171,7 @@
               <a href="{{route('ogp')}}" class="item">OGP Introduction</a>
               <a href="{{route('ogpa')}}" class="item">OGPA Introduction</a>
               <a href="{{route('working_groups')}}" class="item">Working Groups</a>
-              <a href="{{route('opportunities')}}" class="item">Carrier & Opportunities</a>
+              <a href="{{route('opportunities')}}" class="item">Career & Opportunities</a>
               <a href="{{route('news')}}" class="item">OGP News</a>
               <a href="{{route('themes1')}}" class="item">Themes</a>
 
@@ -211,6 +208,7 @@
                 <a class="item" href="{{route('seminars')}}">Seminars</a>
                 <a class="item" href="{{route('events')}}">Events</a>
                 <a class="item" href="{{route('sessions')}}">Sessions</a>
+                <a class="item" href="{{route('forum_meetings')}}">Forum Meetings</a>
 
               </div>
 

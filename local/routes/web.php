@@ -116,6 +116,10 @@ Route::get('sessions',function(){
 	return view('sessions');
 })->name('sessions');
 
+Route::get('forum_meetings',function(){
+	return view('forum_meetings');
+})->name('forum_meetings');
+
 Route::get('test',function(){
 	return view('test');
 })->name('test');
@@ -134,4 +138,18 @@ Route::delete('admin/jobs/{id?}','JobsController@destroy');
 Route::resource('admin/news','NewsController');
 
 Route::resource('admin/contacts','ContactsController');
+
+Route::resource('admin/stories','StoriesController');
+
+Route::resource('admin/messages','MessagesController');
+
+Route::resource('admin/resources','ResourcesController');
+
+Route::resource('admin/agendas','AgendasController');
+
+Route::resource('admin/meetings','MeetingsController');
+
+Route::resource('admin/national_participants','NationalParticipantsController');
+
+Route::resource('admin/events','EventsController');
 

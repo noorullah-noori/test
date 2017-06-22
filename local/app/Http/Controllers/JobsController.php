@@ -92,6 +92,8 @@ class JobsController extends Controller
      */
     public function destroy($id)
     {
-        print_r("her");
+        $jobs = JOB::findOrFail($id);
+        $jobs->delete();
+        return Redirect()->route('jobs.index');
     }
 }

@@ -17,8 +17,7 @@
 		      </h1>
 		      <div class="ui stackable center aligned vertically padded grid">
 		        <div class="eight wide column">
-		          <h3 class="ui header">Enterprise Ready</h3>
-		          <p>Build tools, performance logging, support for custom definitions, multiple-levels of theme inheritance—a developer's dream.</p>
+		          <h3 class="ui header">Making government work better for people through transparency, participation and accountability</h3>
 		          <a class="ui large right labeled primary icon button" href="{{route('ogpa')}}">
 		            <i class="right  chevron icon  "></i>
 		            More About Us

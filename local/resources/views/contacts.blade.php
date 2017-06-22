@@ -4,25 +4,26 @@
 
 		<div class="col-md-6">
 		<h4 class="ui dividing header">Message Us!!!</h4>
-				<form class="ui form">
+				<form class="ui form cmxform"  id="messageForm" method="post" action="{{route('messages.store')}}" novalidate="novalidate">
 					<div class="field">
-						<input type="text" placeholder="Name">
+						<input type="text" id="name" name="name" placeholder="Name">
 					</div>
 					<div class="field">
-						<input type="text" placeholder="Email">
+						<input type="text" id="email" name="email" placeholder="Email">
 					</div>
 					<div class="field">
-						<input type="text" placeholder="Subject">
+						<input type="text" id="subject" name="subject" placeholder="Subject">
 					</div>
 					<div class="field">
-						<textarea placeholder="Message">
+						<textarea id="message"  name="message" placeholder="Message">
 
 						</textarea>
 					</div>
+
 					<div class="field">
 						<button class="btn btn-primary btn-block">Submit</button>
 					</div>
-
+					{{csrf_field()}}
 				</form>
 		</div>
 		<div class="ui vertical divider" style="height:20%; margin:10px;">OR</div>
