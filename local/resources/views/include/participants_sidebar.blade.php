@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div class="col-md-3" style="float:<?php echo $dir; ?>">
 	<div class="panel-group" id="accordion-alt3" style="margin-top:25px;">
 		<div class="panel">
 			<!-- Panel heading -->
@@ -32,13 +32,13 @@
 				<div class="panel-body">
 					<ul style="list-style-type:none;">
 						<li>
-							<a href="#" style="color:#373534">Government Reformeres</a>
+							<a href="{{route('national_participants')}}" style="color:#373534">Government Reformeres</a>
 						</li>
 						<li>
-							<a href="#" style="color:#373534">CSO's</a>
+							<a href="{{route('national_participants')}}" style="color:#373534">Civil Society Organizations</a>
 						</li>
 						<li>
-							<a href="#" style="color:#373534">Private Sector Reformers</a>
+							<a href="{{route('national_participants')}}" style="color:#373534">Private Sector Reformers</a>
 						</li>
 					</ul>
 				</div>

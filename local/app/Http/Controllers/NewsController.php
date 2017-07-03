@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
-
+use File;
 class NewsController extends Controller
 {
     /**
@@ -43,10 +43,19 @@ class NewsController extends Controller
         $news->short_desc = $request->input('short_desc');
         $news->description = $request->input('description');
 
+        $imageName = '';
+        if($request->image == null){
+            $imageName = 'default.png';
+        }
+        else{
+        
         $max = News::max('id');
         $max +=1;
         $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('news', $imageName);
+        $request->image->move('news_img', $imageName);
+        
+        }
+        
         $news->image = $imageName;
         $news->save();
         return Redirect()->route('news.index');
@@ -91,8 +100,15 @@ class NewsController extends Controller
         $news->description = $request->input('description');
 
         $max = $news->id;
-        $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('news', $imageName);
+        $imageName = '';
+        if($request->image ==null){
+            $imageName = $news->image;
+        }
+        else{
+             $imageName = $max.'.'.$request->image->getClientOriginalExtension();
+             $request->image->move('news', $imageName);
+        }
+        
         $news->image = $imageName;
         $news->save();
         return Redirect()->route('news.index');
@@ -107,6 +123,7 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $news = News::findOrFail($id);
+        File::delete('../news/'.public_path().''.$news->image);
         $news->delete();
         return Redirect()->route('news.index');
     }

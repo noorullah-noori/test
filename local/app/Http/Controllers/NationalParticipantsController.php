@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use File;
 use App\NationalParticipants;
 use Illuminate\Support\Facades\Input;
 class NationalParticipantsController extends Controller
@@ -44,11 +44,18 @@ class NationalParticipantsController extends Controller
         $national_participants->email = $request->input('email');
         $national_participants->details = $request->input('details');
 
-        $max = NationalParticipants::max('id');
-        $max += 1;
 
-        $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('n_participants',$imageName);
+        $imageName = '';
+        if($request->image == null){
+            $imageName = 'default.png';
+        }
+        else{
+              $max = NationalParticipants::max('id');
+              $max += 1;
+              $imageName = $max.'.'.$request->image->getClientOriginalExtension();
+              $request->image->move('n_participants',$imageName);
+        }
+
         $national_participants->image = $imageName;
         $national_participants->save();
         return Redirect()->route('national_participants.index');
@@ -95,9 +102,15 @@ class NationalParticipantsController extends Controller
         $national_participants->details = $request->input('details');
 
         $max = $national_participants->id;
+        $imageName = '';
+        if($request->image ==null){
+            $imageName = $national_participants->image;
+        }
+        else{
+             $imageName = $max.'.'.$request->image->getClientOriginalExtension();
+             $request->image->move('n_participants',$imageName);
+        }
 
-        $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('n_participants',$imageName);
         $national_participants->image = $imageName;
         $national_participants->save();
         return Redirect()->route('national_participants.index');
@@ -112,6 +125,7 @@ class NationalParticipantsController extends Controller
     public function destroy($id)
     {
         $national_participants = NationalParticipants::findOrFail($id);
+        File::delete('../n_participants/'.public_path().''.$national_participants->image);
         $national_participants->delete();
         return Redirect()->route('national_participants.index');
     }

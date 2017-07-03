@@ -32,7 +32,7 @@
       <td>{{$value->date}}</td>
       <td>{{$value->meeting_title}}</td>
       <td style="width:40%;">{{$value->agenda}}</td>
-      <td>{{$value->agenda}}</td>
+      <td>{{$value->type}}</td>
       <td>
         <form action="{{route('meetings.destroy',$value->id)}}" method="POST">
             {{ method_field('DELETE') }}

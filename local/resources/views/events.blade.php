@@ -1,33 +1,57 @@
-@include('include.header')
-	
-	
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
+  
+  <?php $dir = 'right'; ?>
+  @if($lang=='en')
+  <?php $dir = 'left'; ?>
+  @endif	
+  
+
 	<section id="content">
 	
 	
 	<div class="container">
 
-	    	<div class="row">
-	    	
+    	<div class="row">
+    	
 	    	@include('include.calendar_sidebar')
 	    	@include('include.filter')
-<div clas="row">
-	          <div class="ui large breadcrumb">
+	    	<div class="ui large breadcrumb">
 	            <a class="section">Calendar</a>
 	              <span class="divider">/</span>
-	            <a class="section">Events</a>
-	          </div>
+	            <a class="section">Seminars</a>
 	        </div>
-	    	
-		<div class="col-md-9" style="margin-top:2%;padding-left:2%;font-size:18px;">
-			
-			
 
-
-		</div>
-		</div>
-
-
+        	<div class="col-md-9">
+        	<table class="ui very basic collapsing celled table large">
+		        <thead>
+		          <tr>
+		          <th>No.</th>
+		          <th>Image</th>
+		          <th>Event Title</th>
+		          <th>Event Description</th>
+		        </tr>
+		        </thead>
+		        <tbody><?php $i=0; ?>
+		          @foreach($events as $value)
+		          <tr>
+		          <td><?php echo ++$i; ?></td>
+		          <td><img style="width:100px;"src="{{asset('events&seminars/'.$value->image)}}"/></td>
+		            <td>{{$value->title}}</td>
+		            <td>{{$value->description}}</td>
+		          </tr>
+		          @endforeach
+		          
+		        </tbody>
+		      </table>
+        			
+			</div>
+        </div>
 	</div>
 	</section>
-
-@include('include.footer')
+	
+    <?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")
+<script lang="html/javascript">
+		$('#example1').calendar();
+	</script>

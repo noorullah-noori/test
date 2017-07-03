@@ -25,11 +25,17 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                            <label for="description" class="control-label col-lg-3">Description</label>
-                                            <div class="col-lg-6">
-                                                <textarea class="form-control " id="description" name="description">{{$job->description}}</textarea>
-                                            </div>
+                                        <label for="description" class="control-label col-lg-3">Description</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="description" name="description">{{$job->description}}</textarea>
                                         </div>
+                                    </div>  
+                                    <div class="form-group ">
+                                        <label for="responsibilities" class="control-label col-lg-3">Responsibilites</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="responsibilities" name="responsibilities">{{$job->responsibilities}}</textarea>
+                                        </div>
+                                    </div>
 
                                         <div class="form-group">
                                             <div class="col-lg-offset-3 col-lg-6">

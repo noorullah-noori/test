@@ -29,6 +29,12 @@
                                             <textarea class="form-control " id="description" name="description"></textarea>
                                         </div>
                                     </div>
+                                    <div class="form-group ">
+                                        <label for="responsibilities" class="control-label col-lg-3">Responsibilites</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="responsibilities" name="responsibilities"></textarea>
+                                        </div>
+                                    </div>
                                     {{csrf_field()}}
 
                                     <div class="form-group">

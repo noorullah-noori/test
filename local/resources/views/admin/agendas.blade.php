@@ -16,6 +16,7 @@
     <tr>
       <th>No.</th>
       <th>Time</th>
+      <th>Date</th>
       <th>Agenda</th>
       <th>Options</th>
     </tr>
@@ -26,6 +27,7 @@
     <tr>
       <th><?php echo $i++; ?></th>
       <td>{{$value->time}}</td>
+      <td>{{$value->date}}</td>
       <td style="width:45%;">{{$value->agenda}}</td>
       <td>
         <form action="{{route('agendas.destroy',$value->id)}}" method="POST">

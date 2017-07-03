@@ -10,6 +10,7 @@
 <link href="{{asset('css/style.css')}}" rel="stylesheet" />
 <link href="{{asset('css/jquery.fancybox.css')}}" rel="stylesheet"> 
 <link href="{{asset('css/flexslider.css')}}" rel="stylesheet" /> 
+<link rel="stylesheet" href="css/modal.min.css"/>
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/semantic.min.css')}}">
@@ -17,7 +18,6 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/modal.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/icon.min.css')}}">
 <link rel="stylesheet" href="css/fullcalendar.min.css"/>
-<link rel="stylesheet" href="css/modal.min.css"/>
 
 
  
@@ -49,7 +49,7 @@
 		  margin: 0;
 		}
 		.footer{
-		  height:100%;
+		  height:auto;
           width:100%;
 		}
 		.panel a {
@@ -65,20 +65,27 @@
         header .navbar {
           min-height:40px;
         }
+        .footer {
+          min-height: 55%;
+        }
+
+        
 	</style>
 </head>
-<body>
+<body class="body">
 <div id="wrapper" class="home-page">
 <div class="topbar">
   <div class="container">
     <div class="row">
-      <div class="col-md-12"> 	  
-        <p class="pull-left hidden-xs"><span>
-        	<a href="" style="padding-right:10px;font-weight:bold;font-size:14px;color:white">English</a>
-        	<a href="" style="padding-right:10px;font-weight:bold;font-size:14px;color:white">دری</a>
-        	<a href="" style="padding-right:10px;font-weight:bold;font-size:14px;color:white">پښتو</a>
-        </span></p>
+      <div class="col-md-12"> 	
+      <div class="col-md-6">
+    <span class="col-md-1" style="margin-left:-7%"><a  style="color:white;font-weight:bold;font-size:15px" href="javascript:void(0)" class="languageSwitcher" id="en" >English</a></span>
+    <span class="col-md-1"  style="margin-left:3%"><a  style="color:white;font-weight:bold;font-size:15px" href="javascript:void(0)" class="languageSwitcher" id="dr" >دری</a></span>
+    <span class="col-md-1"  style="margin-left:-2%"><a  style="color:white;font-weight:bold;font-size:15px" href="javascript:void(0)" class="languageSwitcher" id="pa" >پشتو</a></span>
+  </div>
+  <div class="col-md-6">
         <p class="pull-right"><i class="fa fa-phone"></i>Tel No. (+001) 123-456-789</p>
+        </div>
       </div>
     </div>
   </div>
@@ -87,84 +94,25 @@
 	<header>
 		<div class="container-fluid" style="background-image:url({{asset('img/header-bg.png')}});height:100px">
 			<div class="col-md-11">
-				<img src="{{asset('img/ogpa.png')}}" style="height:98px;margin-left:6.4%;padding-top:3px">
+				<img src="{{asset('img/ogpa.png')}}" style="height:98px;margin-left:5.4%;padding-top:3px">
 				<img src="{{asset('img/header-center.png')}}" style="height:98px;margin-left:33%">
                 <img src="{{asset('img/ogp.png')}}" style="height:98px;margin-left:26%">
 			</div>
             </div>
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
-                <!-- <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img style="width:85px;height:42px" src="{{asset('img/ogpa.png')}}" alt="logo"/></a>
-                </div> -->
+       
 
 
 
 
 
-<!-- Semantic Menu Demo-->
-
-
-<!-- Old Menu 
-
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="{{route('home')}}">Home</a></li> 
-						 <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{route('ogp')}}">OGP Introduction</a></li>
-                            <li><a href="{{route('ogpa')}}">OGPA Introduction</a></li>
-                            <li><a href="{{route('working_group')}}">Working Groups</a></li> 
-                            <li><a href="{{route('carriers')}}">Carrier & Opportunities</a></li>
-                            <li><a href="{{route('news')}}">OGP News</a></li>
-                        </ul>
-                    </li> 
-						<li><a href="{{route('themes1')}}">Themes</a></li>
-						<li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Resources<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{route('agendas')}}">Agendas</a></li>
-                            <li><a href="{{route('meetings')}}">Meeting Minutes</a></li>
-                            <li><a href="{{route('assesment')}}">Self-Assesment Reports</a></li> 
-                            <li><a href="{{route('irm')}}">IRM Reports</a></li>
-                            <li><a href="{{route('consultation')}}">Consultation Papers</a></li>
-                            <li><a href="{{route('action_plan')}}">National Action Plans</a></li>
-                        </ul>
-                    </li>
-                        <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Participants<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{route('global_participants')}}">Global Participants</a></li>
-                            <li><a href="{{route('national_participants')}}">National Participants</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Calendar<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{route('seminars')}}">Seminars</a></li>
-                            <li><a href="{{route('events')}}">Events</a></li>
-                            <li><a href="{{route('sessions')}}">Sessions</a></li> 
-                        </ul>
-                    </li>
-                        <li><a href="{{route('stories')}}">Success Stories</a></li>
-                        <li><a href="{{route('contacts')}}">Contacts</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>-->
-        <!-- Semantic Menu Demo-->
 
 </div>
 <div class="container">
     <!-- <div class="ui secondary menu" > -->
-    <div class="ui stackable right floated secondary menu large" id="hybrid">
-        <a href="{{route('home')}}" class="item">Home</a>
+    <div class="ui stackable secondary menu large" id="hybrid">
+        <a href="{{route('home')}}" class="right item">{{ trans('home.home')}}</a>
           <div class="ui dropdown item">
           About Us <i class="icon dropdown"></i>
           <div class="menu">
@@ -172,8 +120,7 @@
               <a href="{{route('ogpa')}}" class="item">OGPA Introduction</a>
               <a href="{{route('working_groups')}}" class="item">Working Groups</a>
               <a href="{{route('opportunities')}}" class="item">Career & Opportunities</a>
-              <a href="{{route('news')}}" class="item">OGP News</a>
-              <a href="{{route('themes1')}}" class="item">Themes</a>
+              <a href="{{route('news')}}" class="item">OGPA News</a>
 
           </div>
           </div>
@@ -184,7 +131,7 @@
           <div class="menu">
             <a class="item" href="{{route('agendas')}}">Agendas</a>            
             <a class="item" href="{{route('meetings')}}">Meeting Minutes</a>
-            <a class="item" href="{{route('assesment')}}">Self-Assesment Reports</a>
+            <a class="item" href="{{route('assessment')}}">Self-Assessment Reports</a>
             <a class="item" href="{{route('irm')}}">IRM Reports</a>
             <a class="item" href="{{route('consultation')}}">Consultation Papers</a>
             <a class="item" href="{{route('action_plan')}}">National Action Plans</a>                                          
@@ -220,10 +167,14 @@
 <!-- </div> -->
 
 </div>
+<script>
 
+</script>
 	</header>
+</div>
     <style>
     .ui.large.breadcrumb {
         margin-bottom:10px;
     }
+
     </style>    

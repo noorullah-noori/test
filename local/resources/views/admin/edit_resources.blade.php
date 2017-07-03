@@ -18,8 +18,8 @@
                             Edit Resources
                         </header>
                         <div class="panel-body">
-                        <div class="form cmxform form-horizontal ">
-                            {!! Form::model($resources, ['route' => array('resources.update',$resources->id)]) !!}
+                        <div class="form cmxform form-horizontal">
+                            {!! Form::model($resources, ['route' => array('resources.update',$resources->id),'files'=>true]) !!}
                             <input name="_method" type="hidden" value="PATCH">
                                 <div class="form-group ">
                                         <label for="title" class="control-label col-lg-3">Title</label>
@@ -48,10 +48,10 @@
                                         <div class="col-lg-6">
                                             <div class="ui label teal" style="margin-bottom:2px;">{{$resources->type}}</div>
                                             <select class="form-control" id="type" name="type">
-                                            <option value="self_assessent_reports">Self-Assessment Reports</option>
-                                            <option value="irm_reports">IRM Reports</option>
-                                            <option value="consultation_reports">Consultation Papers</option>
-                                            <option value="national_action_plans">National Action Plans</option>
+                                            <option value="sar">Self-Assessment Reports</option>
+                                            <option value="irm">IRM Reports</option>
+                                            <option value="cp">Consultation Papers</option>
+                                            <option value="nap">National Action Plans</option>
                                         </select>
                                         </div>
                                     </div>

@@ -40,6 +40,18 @@ class JobsController extends Controller
         $job->title = $request->input('title');
         $job->expiry_date = $request->input('expiry_date');
         $job->description = $request->input('description');
+        
+        // $resps="<p>";
+        // $resps .= $request->input('responsibilities');
+        // $i=0;
+        // while($resps[$i]!=null) {
+        //     if($resps[$i]===';') {
+        //         $resps[$i].="</p>"
+        //     }
+        // }
+        // $resps .="</p>"
+
+        $job->responsibilities = $request->input('responsibilities');
         $job->save();
         return Redirect()->route('jobs.index');
     }
@@ -80,6 +92,7 @@ class JobsController extends Controller
         $job->title = $request->input('title');
         $job->expiry_date = $request->input('expiry_date');
         $job->description = $request->input('description');
+        $job->responsibilities = $request->input('responsibilities');
         $job->save();
         return Redirect()->route('jobs.index');
     }

@@ -1,4 +1,11 @@
-@include('include.header')
+<?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
+  
+  <?php $dir = 'right'; ?>
+  @if($lang=='en')
+  <?php $dir = 'left'; ?>
+  @endif
+
 <style type="text/css">
 		
 		.main-image{
@@ -59,53 +66,31 @@
             <a href="{{route('story_details')}}" class="ui header">
               <h2>Announcing New Members of the OGP Steering Committee</h2>
             </a>
-            <span id="date">5 June 2017</span>
-            <span id="author">
-            	<a href="#">Manish Bapna</a>
-            </span>
+            <span id="date" style="float:<?php echo ($lang!='en')?'left':'right'; ?>;text-align:right;">5 June 2017<br>Manish Bapna</span>
           </div>
       </div>
       </section>
       <hr/>
       <div class="container" style="margin-bottom: 10px;  ">
         <div class="ui two cards">
+          @foreach($stories as $value)
           <div class="card">
             <div class="content">
-              <div class="header">Beneficial Ownership</div>
-              <div class="meta">Manish Bapna</div>
+              <a href="{{url('story_details/'.$value->id)}}" class="header">{{$value->title}}</a>
+              <div class="meta">{{$value->author}}</div>
               <div class="description">
                 <h1 class="ui header"><i class="icon left quote"></i></h1>
-                Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
+                {{$value->description}}
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="content">
-              <div class="header">Beneficial Ownership</div>
-              <div class="meta">Manish Bapna</div>
-              <div class="description">
-                <h1 class="ui header"><i class="icon left quote"></i></h1>
-                Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
-              </div>
-            </div>
+          @endforeach
+         
           </div>
-          <div class="card">
-            <div class="content">
-              <div class="header">Beneficial Ownership</div>
-              <div class="meta">Manish Bapna  </div>
-              <div class="description">
-                <h1 class="ui header"><i class="icon left quote"></i></h1>
-                Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
-              </div>
-            </div>
-          </div>
-</div>
-      </div>
+        </div>
       </div>
 </div>
 </section>
 
-
-
-
-@include('include.footer')
+<?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")

@@ -1,4 +1,5 @@
-@include('include.header')
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
 <style type="text/css">
 .panel-footer {
 	padding-top:2px;
@@ -78,4 +79,5 @@
 		
 	</div>
 </section>
-@include('include.footer')
+<?php $footer = "include.$lang"."_footer"; ?>
+@include("$footer")

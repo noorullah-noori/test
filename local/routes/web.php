@@ -10,10 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\EventModel;
+use App\JOB;
+use App\News;
+use App\Agendas;
+use App\Meetings;
+use App\Resources;
+use App\NationalParticipants;
+use App\Stories;
+
+Route::group(['middleware' => ['change_lang']],function(){
 
 Route::get('/', function () {
-    return view('index');
+	$job = JOB::take(5)->get();
+    $news = News::take(5)->get();
+    return view('index')->with(array('news'=>$news,'job'=>$job));
 })->name('home');
 
 
@@ -38,18 +48,23 @@ Route::get('carriers',function(){
 })->name('carriers');
 
 Route::get('news',function(){
-	return view('news');
+	$news = News::paginate(5);
+	return view('news')->with('news',$news);
 })->name('news');
-Route::get('news_details',function(){
-	return view('news_details');
+
+Route::get('news_details/{id?}',function($id){
+	$news_details = News::findOrFail($id);
+	return view('news_details')->with('news_details',$news_details);
 })->name('news_details');
 
 Route::get('opportunities',function(){
-	return view('opportunities');
+	$opportunities = JOB::all();
+	return view('opportunities')->with('opportunities',$opportunities);
 })->name('opportunities');
 
-Route::get('job_details',function(){
-	return view('job_details');
+Route::get('job_details/{id?}',function($id){
+	$job = JOB::findOrFail($id);
+	return view('job_details')->with('job',$job);
 })->name('job_details');
 
 Route::get('themes1',function(){
@@ -65,7 +80,8 @@ Route::get('global_participants',function(){
 })->name('global_participants');
 
 Route::get('national_participants',function(){
-	return view('national_participants');
+	$national_participants = NationalParticipants::all();
+	return view('national_participants')->with('national_participants',$national_participants);
 })->name('national_participants');
 
 Route::get('working_groups',function(){
@@ -73,47 +89,65 @@ Route::get('working_groups',function(){
 })->name('working_groups');
 
 Route::get('agendas',function(){
-	return view('agendas');
+	$agendas = Agendas::all();
+	return view('agendas')->with('agendas',$agendas);
 })->name('agendas');
 
 Route::get('meetings',function(){
-	return view('meetings');
+	$meetings = Meetings::all();
+	return view('meetings')->with('meetings',$meetings);
 })->name('meetings');
 
+Route::get('view_meetings/{id?}',function($id){
+	$view_meetings = Meetings::findOrFail($id);
+	return $view_meetings;
+});
+
 Route::get('consultation',function(){
-	return view('consultation');
+	$consultation=DB::table('resources')->where('type','cp')->get();
+	return view('consultation')->with('consultation',$consultation);
 })->name('consultation');
 
 Route::get('irm',function(){
-	return view('irm');
+	$irm=DB::table('resources')->where('type','irm')->get();
+	return view('irm')->with('irm',$irm);
 })->name('irm');
 
 Route::get('action_plan',function(){
-	return view('action_plan');
+	$action_plan=DB::table('resources')->where('type','nap')->get();
+	return view('action_plan')->with('action_plan',$action_plan);
 })->name('action_plan');
 
-Route::get('assesment',function(){
-	return view('assesment');
-})->name('assesment');
+
+
+Route::get('assessment',function(){
+	$assessment = DB::table('resources')->where('type','sar')->get();//Resources::where('type','=','irm');
+	return view('assessment')->with('assessment',$assessment);
+})->name('assessment');
 
 Route::get('stories',function(){
-	return view('stories');
+	$stories=Stories::all();
+	return view('stories')->with('stories',$stories);
 })->name('stories');
 
-Route::get('story_details',function(){
-	return view('story_details');
+Route::get('story_details/{id?}',function($id){
+	$story_details = Stories::findOrFail($id);
+	return view('story_details')->with('story_details',$story_details);
 })->name('story_details');
 
 Route::get('seminars',function(){
-	return view('seminars');
+	$seminars = DB::table('events')->where('type','seminar')->get();
+	return view('seminars')->with('seminars',$seminars);
 })->name('seminars');
 
 Route::get('events',function(){
-	return view('events');
+	$events = DB::table('events')->where('type','event')->get();
+	return view('events')->with('events',$events);
 })->name('events');
 
 Route::get('sessions',function(){
-	return view('sessions');
+	$sessions = DB::table('meetings')->where('type','session')->get();
+	return view('sessions')->with('sessions',$sessions);
 })->name('sessions');
 
 Route::get('forum_meetings',function(){
@@ -129,7 +163,6 @@ Route::get('test',function(){
 Route::get('admin',function(){
 	return view('admin.index');
 })->name('admin');
-
 
 Route::resource('admin/jobs','JobsController');
 
@@ -153,3 +186,23 @@ Route::resource('admin/national_participants','NationalParticipantsController');
 
 Route::resource('admin/events','EventsController');
 
+
+Route::post('/language-chooser','LanguageController@changeLanguage');
+
+Route::get('language',[
+	'before' => 'csrf',
+	'as'	 => 'language-chooser',
+	'uses'	 => 'LanguageController@changeLanguage',
+	 
+	 ]);
+
+});
+
+Route::get('get_participant/{id?}',function($id){
+    $participant = NationalParticipants::findOrFail($id);
+    return $participant;
+});
+Route::get('get_agendas/{id?}',function($id){
+    $agendas = Agendas::findOrFail($id);
+    return $agendas;
+});

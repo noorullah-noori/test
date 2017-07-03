@@ -13,18 +13,21 @@
 			<div class="col-md-9" style="margin-top:2%">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<label>Manager</label>
+						<label>{{$job->title}}</label>
 					</div>
 					<div class="panel-body">
 						<h1 class="ui header small">
-							About Afghanistan SUPPORT-II Project
+							About OGPA
 						</h1>
 						<p>SUPPORT directly assists USAID/Afghanistanâ€™s Program and Projects Development Office (PPDO) with information management services and provides the PPDO and USAID/Afghanistan with a number of key services, including information management and reporting products and performance monitoring plans and related activities. SUPPORT is seeking well qualified Afghan candidates for a newly established field monitoring unit which will provide periodic reviews of specific activities on behalf of USAID/Afghanistan.</p>
 						<h1 class="ui header small">
 							Job Summary
 						</h1>
-							<p>SUPPORT-II is tasked with the final performance evaluation of the Technical Assistance to the Ministry of Public Works (MoPW) activity of USAID’s Road Sector Sustainability Project 2 (RSSP 2). The objective of Technical Assistance to the MoPW is improve the management, financing, and efficiency of the road sector by enabling the Government of Afghanistan to establish three new institutions: a Road Authority, a Road Fund, a Transportation Institute. The purpose of this evaluation is to assess the strengths and weaknesses of the contractor and MoPW in implementing the TA-MoPW program and document lessons learned to improve the effectiveness of future RSSP 2 activities. 
-</p>
+						<p>{{$job->description}}</p>
+						<h1 class="ui header small">
+							Responsibilities
+						</h1>
+						<p>{{$job->responsibilities}}</p>
 
 					</div>
 					<div class="panel-footer">

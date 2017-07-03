@@ -9,7 +9,8 @@
 		left:110% !important;
 	}
 </style>
-<div class="ui floating labeled icon dropdown button right floated">
+<?php $f =  ($dir=='left')?"right":"left" ?>
+<div class="ui floating labeled icon dropdown button <?php echo $f; ?> floated">
 			  <i class="dropdown icon"></i>
 			  <span class="text">Filter Posts</span>
 			  <div class="left menu">

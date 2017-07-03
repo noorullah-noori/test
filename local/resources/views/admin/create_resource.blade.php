@@ -47,13 +47,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="date" class="control-label col-lg-3">Type</label>
+                                        <label for="type" class="control-label col-lg-3">Type</label>
                                         <div class="col-lg-6">
                                             <select class="form-control" id="type" name="type">
-                                                <option value="Self-Assessment Reports">Self-Assessment Reports</option>
-                                                <option value="IRM Reports">IRM Reports</option>
-                                                <option value="Consultation Papers">Consultation Papers</option>
-                                                <option value="National Action Plans">National Action Plans</option>
+                                                <option value="sar">Self-Assessment Reports</option>
+                                                <option value="irm">IRM Reports</option>
+                                                <option value="cp">Consultation Papers</option>
+                                                <option value="nap">National Action Plans</option>
                                             </select>
                                         </div>
                                         

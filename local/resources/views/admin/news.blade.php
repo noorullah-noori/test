@@ -3,7 +3,7 @@
 <!--main content start-->
 <section id="main-content">
 <section class="wrapper">
-    <div class="table-responsive ui stacked segment" style="b">
+    <div class="table-responsive ui stacked segment" style="overflow-y=scroll;">
         <div class="row">
           <h2 class="ui block header">News</h2>
           
@@ -26,11 +26,11 @@
     <?php $i=1; ?>
     @foreach($news as $value)
     <tr>
-      <th><img style="width:120px;" src="{{asset('news/'.$value->image)}}"></th>
-      <td>{{$value->title}}</td>
-      <td>{{$value->created_date}}</td>
-      <td>{{$value->short_desc}}</td>
-      <td>{{$value->description}}</td>
+      <th style="width:10%;"><img style="width:120px;" src="{{asset('news_img/'.$value->image)}}"></th>
+      <td style="width:10%;">{{$value->title}}</td>
+      <td style="width:10%;">{{$value->created_date}}</td>
+      <td style="width:24%;">{{$value->short_desc}}</td>
+      <td style="width:23%;">{{$value->description}}</td>
       <td>
         <form action="{{route('news.destroy',$value->id)}}" method="POST">
             {{ method_field('DELETE') }}

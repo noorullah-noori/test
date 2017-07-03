@@ -1,4 +1,11 @@
-@include('include.header')
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
+  
+  <?php $dir = 'right'; ?>
+  @if($lang=='en')
+  <?php $dir = 'left'; ?>
+  @endif
+
 	
 	
 	<section id="content">
@@ -9,7 +16,6 @@
 	    	<div class="row">
 	    	
 	    	@include('include.participants_sidebar')
-
         <div clas="row">
           <div class="ui large breadcrumb">
             <a class="section">Participants</a>
@@ -19,8 +25,8 @@
         </div>
         
 
-        <div class="col-md-6">
-          <table class="ui selectable sortable compact celled striped definition table">
+        <div class="col-md-9">
+          <table class="ui selectable sortable compact <?php echo $dir; ?> aligned celled striped definition table" >
       <thead>
         <tr>
         <th class="one wide"></th>
@@ -453,4 +459,5 @@
 
         </div>
 	</section>
-@include('include.footer')
+<?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")

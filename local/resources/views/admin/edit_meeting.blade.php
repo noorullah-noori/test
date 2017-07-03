@@ -42,7 +42,7 @@
                                             <div class="ui label teal" style="margin-bottom:2px;">{{$meetings->type}}</div>
                                             <select class="form-control" id="type" name="type">
                                                 <option value="meeting_minutes">Meeting Minutes</option>
-                                                <option value="Sessions">session</option>
+                                                <option value="session">session</option>
                                             </select>
                                         </div>
                                     </div>

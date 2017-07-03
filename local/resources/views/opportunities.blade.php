@@ -1,4 +1,11 @@
-@include('include.header')
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header") 
+
+    <?php $direction='left'; ?>
+      @if($lang!='en')
+        <?php $direction='right'; ?>
+      @endif
+
 	
 	
 	<section id="content">
@@ -11,6 +18,8 @@
 
 	    	
 		<div class="col-md-9" style="margin-top:2%">
+			<div class="col-md-12" style="margin-left:-10px;">
+				<h3>Jobs & Opportunities</h3>
 			<table class="ui table small">
 				<thead>
 					<tr>
@@ -20,24 +29,19 @@
 					</tr>
 				</thead>
 				<tbody>
+				<?php $i=0; ?>
+					@foreach($opportunities as $value)
 					<tr>
-						<td>1</td>
-						<td><a href="{{route('job_details')}}">Manager</a></td>
-						<td>01/01/2018</td>
+						<th><?php echo ++$i; ?></th>
+						<td><a href="{{url('job_details/'.$value->id)}}">{{$value->title}}</a></td>
+						<td>{{$value->expiry_date}}</td>
 					</tr>
-					<tr>
-						<td>2</td>
-						<td><a href="{{route('job_details')}}">Manager</a></td>
-						<td>01/01/2018</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td><a href="{{route('job_details')}}">Manager</a></td>
-						<td>01/01/2018</td>
-					</tr>
+					@endforeach
 
 				</tbody>
 			</table>
+
+			</div>
 
 
 		</div>
@@ -46,4 +50,6 @@
 
 	</div>
 	</section>
-@include('include.footer')
+
+<?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")

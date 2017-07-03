@@ -1,11 +1,11 @@
-<div class="col-md-3">
+<div class="col-md-3" style="float:<?php echo $dir; ?>;">
 
 	<div class="panel-group" id="accordion-alt3" style="margin-top:25px;">
 
 	
 		<div class="panel">
 			<!-- Panel heading -->
-			<a  href="{{route('ogp')}}">
+			<a  href="{{route('agendas')}}">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					
@@ -44,11 +44,11 @@
 		</a>
 		<div class="panel">	
 			<!-- Panel heading -->
-			<a href="{{route('assesment')}}">
+			<a href="{{route('assessment')}}">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					
-						Self-Assesment Reports
+						Self-Assessment Reports
 					
 				</h4>
 			</div>

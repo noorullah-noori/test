@@ -70,8 +70,29 @@
 
 <!-- <script src="{{asset('js/dropdown.js')}}"	></script> -->
 <script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/semantic.min.js')}}"></script> 
-<!-- <script src="js/custom.js"></script>  -->
+
+
+<script src="{{asset('js/jQuery.scrollSpeed.js')}}"></script>
+<script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
+<script src="{{asset('js/jquery.fancybox.pack.js')}}"></script>
+<script src="{{asset('js/jquery.fancybox-media.js')}}"></script>  
+<script src="{{asset('js/jquery.flexslider.js')}}"></script>
+<script src="{{asset('js/animate.js')}}"></script>
+<!-- Vendor Scripts -->
+
+<script src="js/modernizr.custom.js"></script>
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/fullcalendar.min.js"></script>
+<!--<script src="js/modal.js"></script>  -->
+<script type="text/javascript">jQuery.scrollSpeed(100, 800);</script>
+ 
+
+
 <script>
 $('.ui.dropdown').dropdown();
 $('.ui.dropdown').dropdown({transition: 'drop' }).dropdown({ on: 'hover' });
@@ -79,20 +100,11 @@ $('.ui.dropdown').dropdown({transition: 'drop' }).dropdown({ on: 'hover' });
 //  $('.ui.dropdown')
 //   .dropdown()
 // ;
-$('select.dropdown')
-  .dropdown()
-;
 
 $('.menu .item')
   .tab()
 ;
-function view() {
-$('.ui.modal')
-  .modal('show')
-;
-}
-</script>
-<script>
+
 	
 	$(document).ready(function() {
     $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
@@ -104,23 +116,34 @@ $('.ui.modal')
         $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
     });
 });
+
+
+ $('.languageSwitcher').click(function () {
+		
+		var locale = $(this).prop('id')
+		var _token  = $("input[name=_token]").val();
+
+		$.ajax({
+			url:"{{url('language')}}",
+			type:"get",
+			data:{locale:locale,_token:_token},
+			datatype:"json",
+			success: function(data){
+	
+				window.location.reload(true);
+			},
+			error: function(data){
+
+			},
+			beforeSend: function(data){
+
+			},
+
+
+
+		});
+});
 </script>
-<script src="{{asset('js/jQuery.scrollSpeed.js')}}"></script>
-<script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-<!--<script src="{{asset('js/bootstrap.min.js')}}"></script>-->
-<script src="{{asset('js/jquery.fancybox.pack.js')}}"></script>
-<script src="{{asset('js/jquery.fancybox-media.js')}}"></script>  
-<script src="{{asset('js/jquery.flexslider.js')}}"></script>
-<script src="{{asset('js/animate.js')}}"></script>
-<!-- Vendor Scripts -->
-<script src="js/modernizr.custom.js"></script>
-<script src="js/jquery.isotope.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/fullcalendar.min.js"></script>
-<!--<script src="js/modal.js"></script>  -->
-<script type="text/javascript">jQuery.scrollSpeed(100, 800);</script>
 
 </body>
 </html>

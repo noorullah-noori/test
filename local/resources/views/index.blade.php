@@ -1,4 +1,5 @@
-@include('include.header')
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
 <style>
 .ui.icon.image.afg {
 	height:150px;
@@ -13,14 +14,18 @@
 		    <div class="fourteen wide column">
 		      <h1 class="ui icon header">
 		      	<img class="ui icon image afg" src="img/afg.png">
-		        Open Government Partnership Afghanistan
+		        {{trans('home.ogpa_full')}}
 		      </h1>
 		      <div class="ui stackable center aligned vertically padded grid">
 		        <div class="eight wide column">
-		          <h3 class="ui header">Making government work better for people through transparency, participation and accountability</h3>
-		          <a class="ui large right labeled primary icon button" href="{{route('ogpa')}}">
-		            <i class="right  chevron icon  "></i>
-		            More About Us
+		        <?php $dir = 'left'; ?>
+		        	@if($lang=='en')
+		        	<?php $dir = 'right'; ?>
+		        	@endif
+		          <h3 class="ui header test" style="font-family:Yekan;">{{trans('home.top_segment_details')}}</h3>
+		          <a class="ui large <?php echo $dir; ?> labeled primary icon button" href="{{route('ogpa')}}">
+		            <i class="<?php echo $dir ?>  chevron icon  "></i>
+		            {{trans('home.more')}}
 		          </a>
 		        </div>
 		      </div>
@@ -34,41 +39,41 @@
 	<div class="container">
 	    	<div class="row">
 			<div class="col-md-12">
-				<div class="aligncenter"><h2 class="aligncenter">Open Government</h2>
-					<span style="font-size:18px;">Open government is the simple but powerful idea that governments and institutions work better for citizens when they are transparent, engaging and accountable.</span
+				<div class="aligncenter"><h2 class="aligncenter">{{trans('home.open_gov')}}</h2>
+					<span style="font-size:18px;">{{trans('home.open_gov_short')}}</span
 				</div>
 				<br/>
 			</div>
 		</div>
 		<div class="ui stripe community vertical segment">
-  <div class="ui three column center aligned divided very relaxed stackable grid container">
+  <div class="ui three column center aligned very relaxed stackable grid container">
     <div class="row">
       <div class="column">
         <h2 class="ui icon header">
           <b class="ui icon image fa fa-search" ></b>
-          Transparency
+          {{trans('home.transparency')}}
         </h2>
-        <p>Semantic is <b>designed completely with em</b> making responsive sizing a breeze. Design <em>variations</em> built into elements allow you to make the choice how content adjusts for tablet and mobile.</p>
+        <p>{{trans('home.transparency_short')}}</p>
       </div>
-      <div class="column">
+      <div class="column" style="border-right:1px solid #ddd;border-left:1px solid #ddd;">
         <h2 class="ui icon header">
           <b class="ui icon image fa fa-user" ></b>
-          Participation
+          {{trans('home.participation')}}
         </h2>
-        <p>Semantic has integrations with <b>React, Angular, Meteor, Ember</b> and many other frameworks to help organize your UI layer alongside your application logic.</p>
+        <p>{{trans('home.participation_short')}}</p>
       </div>
       <div class="column">
         <h2 class="ui icon header">
           <b class="ui icon image fa fa-book" ></b>
-          Accountability
+          {{trans('home.accountability')}}
         </h2>
-        <p>Semantic has integrations with <b>React, Angular, Meteor, Ember</b> and many other frameworks to help organize your UI layer alongside your application logic.</p>
+        <p>{{trans('home.accountability_short')}}</p>
       </div>
     </div>
   </div>
 </div>
 	</div>
-	</section>
+	
 	<hr/>
 	  
 	
@@ -77,94 +82,97 @@
 				<div class="container">
 						
 						<div class="row">
-							<div class="col-md-4">
+						<?php $direction='right'; ?>
+							@if($lang=='en')
+							<?php $direction='left'; ?>
+							@endif
+							<div class="col-md-8" style="float:<?php echo $direction; ?>">
+								<div class="ui two stackable cards">
 								<div class="ui card">
 									<div class="content">
-										<div class="header">Jobs & Opportunities</div>
+										<div class="header">{{trans('home.jobs&opportunities')}}</div>
 									</div>
 									<div class="content">
 										<div class="ui feed">
+											<?php $count=0; ?>
+											@foreach($job as $value)
 											<div class="event">
 												<div class="content">
-													<div class="summary">
-														<a href="#">Web Designer</a>
+													<div class="summary" style="text-align: <?php echo $direction; ?>">
+														<a  href="{{url('job_details/'.$value->id)}}">{{$value->title}}</a>
 													</div>
 												</div>
 											</div>
-											<div class="event">
-												<div class="content">
-													<div class="summary">
-													<a href="#">Manager</a>
+											<?php $count++; ?>
+												
+											@endforeach
+											@if($count<4)
+												@for($i=$count;$i<=4;$i++)
+													<div class="event">
+													<div class="content">
+														<div class="summary" style="text-align: <?php echo $direction; ?>">
+														&nbsp;
+														</div>
 													</div>
 												</div>
-											</div>
+												@endfor
+											@endif
 											<div class="extra content">
-												<button class="ui fluid button inverted blue">View All</button>
+												<a href="{{route('opportunities')}}" class="ui fluid button inverted blue">View All</a>
 											</div>	
 										</div>
 
 									</div>
 
 								</div>
+								<div class="ui card">
+									<div class="content">
+										<div class="header">{{trans('home.latest_news')}}</div>
+									</div>
+									<div class="content">
+										<div class="ui feed">
+											<?php $count=0; ?>
+											@foreach($news as $value)
+											<div class="event">
+												<div class="content">
+													<div class="summary" style="text-align: <?php echo $direction; ?>">
+														<a href="{{url('news_details/'.$value->id)}}">{{$value->title}}</a>
+													</div>
+												</div>
+											</div>
+											<?php $count++; ?>
+											@endforeach
+											@if($count<4)
+												@for($i=$count;$i<=4;$i++)
+													<div class="event">
+													<div class="content">
+														<div class="summary" style="text-align: <?php echo $direction; ?>">
+														&nbsp;
+														</div>
+													</div>
+												</div>
+												@endfor
+											@endif
+											<div class="extra content">
+												<a href="{{route('news')}}" class="ui button fluid inverted blue">View All</a>
+											</div>	
+										</div>
+
+									</div>
+
+								</div>
+								</div>
 
 								
 							</div>
 
-							<div class="col-md-4">
+						
 								<!-- -->
-								<div class="ui card">
-									<div class="content">
-										<div class="header">Latest News</div>
-									</div>
-									<div class="content">
-										<div class="ui feed">
-											<div class="event">
-												<div class="content">
-													<div class="summary">
-														<a href="#">Heading 1</a>
-													</div>
-												</div>
-											</div>
-											<div class="event">
-												<div class="content">
-													<div class="summary">
-													<a href="#">Heading 2</a>
-													</div>
-												</div>
-											</div>
-											<div class="event">
-												<div class="content">
-													<div class="summary">
-													<a href="#">Heading 3</a>
-													</div>
-												</div>
-											</div>
-											<div class="event">
-												<div class="content">
-													<div class="summary">
-													<a href="#">Heading 4</a>
-													</div>
-												</div>
-											</div>
-											<div class="extra content">
-												<button class="ui button fluid inverted blue">View All</button>
-											</div>	
-										</div>
-
-									</div>
-
-								</div>
-
-
 								
 
-										
-								
-							</div>
-							
 							<div class="col-md-4">
 								<div class="block-heading-two">
-									<h3><span>Secretariat Word</span></h3>
+									<h3><span>{{trans('home.secretariat_word')}}</span></h3>
 								</div>	
 								     <div class="testimonials">
 										<div class="active item">
@@ -189,4 +197,7 @@
 					  </div>
 						
 					</div>
-@include('include.footer')
+					</section>
+  <!--Change script based on language  -->
+    <?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")

@@ -1,4 +1,10 @@
-@include('include.header')
+<?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
+  
+  <?php $dir = 'right'; ?>
+  @if($lang=='en')
+  <?php $dir = 'left'; ?>
+  @endif
 	
 	
 	<section id="content">
@@ -27,4 +33,6 @@
 	</div>
 	</section>
 
-@include('include.footer')
+
+<?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")

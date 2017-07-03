@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use File;
 use App\Events;
 class EventsController extends Controller
 {
@@ -43,20 +43,20 @@ class EventsController extends Controller
         $events->title = $request->input('title');
         $events->description = $request->input('description');
         $events->type = $request->input('type');
-        /*
-        $max = News::max('id');
-        $max +=1;
-        $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('news', $imageName);
-        $news->image = $imageName;
-        $news->save();
-        return Redirect()->route('news.index');
-
-        */
+        
+        $imageName = '';
+        if($request->image == null){
+            $imageName = 'default.png';
+        }
+        else{
+        
         $max=Events::max('id');
         $max += 1;
         $imageName=$max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('events',$imageName);
+        $request->image->move('events&seminars',$imageName);
+            
+        }
+        
         $events->image = $imageName;
         $events->save();
         return Redirect()->route('events.index');
@@ -96,14 +96,23 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $events=Events::findOrFail($id);
         $events->title = $request->input('title');
         $events->description = $request->input('description');
         $events->type = $request->input('type');
         
         $max=$events->id;
-        $imageName=$max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('events&seminars',$imageName);
+        $imageName = '';
+        if($request->image ==null){
+            $imageName = $events->image;
+        }
+        else{
+            File::delete('../events&seminars/'.public_path().''.$events->image);
+            $imageName=$max.'.'.$request->image->getClientOriginalExtension();
+            $request->image->move('events&seminars',$imageName);
+        }
+
         $events->image = $imageName;
         $events->save();
         return Redirect()->route('events.index');
@@ -118,6 +127,7 @@ class EventsController extends Controller
     public function destroy($id)
     {
         $events = Events::findOrFail($id);
+        File::delete('../events&seminars/'.public_path().''.$events->image);
         $events->delete();
         return Redirect()->route('events.index');
     }

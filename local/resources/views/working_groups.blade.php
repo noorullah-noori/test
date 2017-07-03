@@ -1,4 +1,10 @@
-@include('include.header')
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header") 
+
+    <?php $direction='left'; ?>
+      @if($lang!='en')
+        <?php $direction='right'; ?>
+      @endif
 <style type="text/css">
 	.ui.button {
 		line-height: 3em;
@@ -55,13 +61,13 @@ div.bhoechie-tab-menu div.list-group>a.active .fa{
 div.bhoechie-tab-menu div.list-group>a.active:after{
   content: '';
   position: absolute;
-  left: 100%;
+  <?php echo $direction;?>: 100%;
   top: 50%;
   margin-top: -13px;
-  border-left: 0;
+  border-<?php echo $direction;?>: 0;
   border-bottom: 13px solid transparent;
   border-top: 13px solid transparent;
-  border-left: 10px solid #5A55A3;
+  border-<?php echo $direction;?>: 10px solid #5A55A3;
 }
 
 div.bhoechie-tab-content{
@@ -79,10 +85,16 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 
 <section id="content">	
 	<div class="container">
-		@include('include.sidebar')
-		<div class="row" style="margin-top:3px">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bhoechie-tab-container">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bhoechie-tab-menu">
+
+		<div class="row">
+      
+      @include('include.sidebar')
+    
+    <div class="col-md-9">
+        <div class="col-md-12" id="ogpa" style="padding-left: 5px;padding-bottom:20px;margin-top: 25px;">
+        <h3>Working Groups</h3>
+        <div style="margin-left:0px; margin-top:0px;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bhoechie-tab-menu" style="float: <?php echo $direction; ?>">
               <div class="list-group">
                 <a href="#" class="list-group-item active text-center">
                   Access to Information
@@ -107,7 +119,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bhoechie-tab">
                 <!-- flight section -->
                 <div class="bhoechie-tab-content active">
-                    <center>	
+                    <center>  
                       <h2 style="margin-top: 0;color:#55518a">Access To Information</h2>
                       <p>The IRM identifies certain ambitious and transformative commitments and designates them as "Starred Commitments."  In order to receive a star, a commitment must meet the following criteria:
 It must be specific enough that a judgment can be made about its potential impact. Starred commitments will have "medium" or "high" specificity</p>
@@ -115,7 +127,7 @@ It must be specific enough that a judgment can be made about its potential impac
                 </div>
                 <!-- train section -->
                 <div class="bhoechie-tab-content">
-                    <center>	
+                    <center>  
                       <h2 style="margin-top: 0;color:#55518a">Fiscal Openness</h2>
                       <p>The IRM identifies certain ambitious and transformative commitments and designates them as "Starred Commitments." </p>
                     </center>
@@ -148,6 +160,9 @@ It must be specific enough that a judgment can be made about its potential impac
                 </div>
             </div>
         </div>
+
+        </div>
+    </div>
   </div>	
 		  <div class="six column row centered" style="margin-left:10%;margin-top:2.2%">
 		  <!-- -->
@@ -156,7 +171,6 @@ It must be specific enough that a judgment can be made about its potential impac
 		  <!-- -->
 		  </div>
 		</div>
-	</div>
 </section>
 
 
@@ -183,6 +197,5 @@ Finally, the commitment must see significant progress during the action plan imp
   </div>
 </div>
 
-
-
-@include('include.footer')
+<?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")

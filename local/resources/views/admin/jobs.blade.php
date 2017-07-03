@@ -17,6 +17,7 @@
       <th>Job Title</th>
       <th>Expiry Date</th>
       <th>Description</th>
+      <th>Responsibilities</th>
       <th>Options</th>
     </tr>
   </thead>
@@ -25,9 +26,10 @@
     @foreach($jobs as $job)
     <tr>
       <th><?php echo $i++; ?></th>
-      <td>{{$job->title}}</td>
-      <td>{{$job->expiry_date}}</td>
-      <td>{{$job->description}}</td>
+      <td style="width:10%;">{{$job->title}}</td>
+      <td style="width:10%;">{{$job->expiry_date}}</td>
+      <td style="width:29%;">{{$job->description}}</td>
+      <td style="width:29%;">{{$job->responsibilities}}</td>
       <td>
       <form action="{{ route('jobs.destroy', $job->id) }}" method="POST">
           {{ method_field('DELETE') }}

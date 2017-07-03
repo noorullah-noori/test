@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div class="col-md-3" style="float:<?php echo $dir; ?>">
 
 	<div class="panel-group" id="accordion-alt3" style="margin-top:25px;">
 
@@ -48,6 +48,24 @@
 				<h4 class="panel-title">
 					
 						Sessions
+					
+				</h4>
+			</div>
+			</a>
+			<div id="four" class="panel-collapse collapse">
+				<!-- Panel body -->
+				<div class="panel-body">
+
+				</div>
+			</div>
+		</div>
+		<div class="panel">	
+			<!-- Panel heading -->
+			<a href="{{route('forum_meetings')}}">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					
+						Forum Meetings
 					
 				</h4>
 			</div>

@@ -41,7 +41,7 @@
                                         <div class="col-lg-6">
                                             <select class="form-control" id="type" name="type">
                                                 <option value="meeting_minutes">Meeting Minutes</option>
-                                                <option value="Sessions">Session</option>
+                                                <option value="session">Session</option>
                                             </select>
                                         </div>
                                         

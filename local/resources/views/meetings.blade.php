@@ -1,5 +1,12 @@
-@include('include.header')
-	
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
+  
+  <?php $dir = 'right'; ?>
+  @if($lang=='en')
+  <?php $dir = 'left'; ?>
+  @endif
+
+
 	
 	<section id="content">
 	
@@ -24,30 +31,24 @@
 					<tr>
 						<th>No.</th>
 						<th>Time</th>
+						<th>Date</th>
 						<th>Meeting</th>
 						<th>Agenda</th>
+						<th>Details</th>
 					</tr>
 				</thead>
 				<tbody>
+					<?php $i=0; ?>
+					@foreach($meetings as $value)
 					<tr>
-						<td>1</td>
-						<td>12:00PM 12/01/2018</td>
-						<td>OGPA Planning Meeting</td>
-						<td><a data-toggle="modal" data-target="#myModal" class="ui button">View Details</a></td>
+						<td><?php echo ++$i; ?></td>
+						<td>{{$value->time}}</td>
+						<td>{{$value->date}}</td>
+						<td>{{$value->meeting_title}}</td>
+						<td>{{$value->agenda}}</td>
+						<td><div class="ui tiny button" onclick="view_details({{$value->agenda}})">View Details</div></td>
 					</tr>
-					<tr>
-						<td>2</td>
-						<td>12:00PM 12/01/2018</td>
-						<td>OGPA Planning Meeting</td>
-						<td><a data-toggle="modal" data-target="#myModal" class="ui button">View Details</a></td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>12:00PM 12/01/2018</td>
-						<td>OGPA Planning Meeting</td>
-						<td><a data-toggle="modal" data-target="#myModal" class="ui button">View Details</a></td>
-					</tr>
-
+					@endforeach
 				</tbody>
 			</table>
 
@@ -60,36 +61,63 @@
 	</section>
 
 	<!-- Modal -->
-<div id="myModal" class="modal fade inverted" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content" >
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Accountability</h4>
+	<div class="ui modal" id="modal" style="overflow: hidden; height:42.5%; ">
+      <div class="actions">
+      <div class="ui left floated header">
+        Agenda
       </div>
-      <div class="modal-body">
-		<table class="ui selectable table">
+        <div class="ui deny button red">
+          <i class="fa fa-times"></i>
+        </div>
+      </div>
+      <div class="image content">
+        <table class="ui selectable table">
         	<thead>
         		<tr>
         			<th>No.</th>
         			<th>Time</th>
+        			<th>Date</th>
         			<th>Agenda</th>
         		</tr>
         	</thead>
         	<tbody>
         		<tr>
         			<td>1</td>
-        			<td>13:00 03/07/2018</td>
-					<td>Definition tables are designed to display on a single background color. You can adjust this by changing @definitionPageBackground, or specifying a background color on the first cell</td>
+        			<td id="time"></td>
+        			<td id="date"></td>
+					<td id="details"></td>
         		</tr>
         	</tbody>
 
         </table>
+        </div>
       </div>
-    </div>
+      </div>
 
-  </div>
-</div>
-@include('include.footer')
+      <script type="text/javascript">
+
+      function view_details(id){
+       $.ajax({
+        url:"{{url('get_agendas')}}"+'/'+id,
+        success:function(output){
+          $("#time").empty();
+          $("#details").empty();
+          $("#date").empty();
+          $("#time").append(output['time']);
+          $("#details").append(output['agenda']);
+          $("#date").append(output['date']);
+            $("#modal").modal('show');
+        },
+        error:function(output){
+            alertify.error('msg');
+        }
+
+    });
+     }
+
+
+      </script>
+      
+<!--Change script based on language  -->
+<?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")

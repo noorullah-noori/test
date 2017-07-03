@@ -21,7 +21,8 @@
                                     <div class="form-group ">
                                         <label for="description" class="control-label col-lg-3">Description</label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" value="{{$stories->description}}" id="description" name="description" type="text">
+                                            <textarea rows="10" class=" form-control" id="description" name="description">{{$stories->description}}
+                                            </textarea>
                                         </div>
                                     </div>
                                     <div class="form-group ">

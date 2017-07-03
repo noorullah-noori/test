@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use File;
 use App\Resources;
 use Illuminate\Support\Facades\Input;
 class ResourcesController extends Controller
@@ -40,10 +40,19 @@ class ResourcesController extends Controller
         $resources = new Resources();
         $resources->title = $request->input('title');
         $resources->description = $request->input('description');
+        $resources->type=$request->input('type');
 
-        $max = $resources->id;
-        $pdfName = $max.'.'.Input::file('pdf')->getClientOriginalExtension();
-        Input::file('pdf')->move('reports',$pdfName);
+        $pdfName = '';
+        if($request->file('pdf') == null){
+            $pdfName = 'default.pdf';
+        }
+        else{
+            $max = Resources::max('id');
+        $max+=1;
+        $pdfName = $max.'.'.$request->file('pdf')->getClientOriginalExtension();
+        $request->file('pdf')->move('reports',$pdfName);
+        }
+        
         $resources->pdf = $pdfName;
         $resources->save();
         return Redirect()->route('resources.index');
@@ -95,10 +104,30 @@ class ResourcesController extends Controller
         $resources=Resources::findOrFail($id);
         $resources->title = $request->input('title');
         $resources->description = $request->input('description');
-        $resources->pdf = $request->input('pdf');
         $resources->type = $request->input('type');
+        $max=$resources->id;
+
+        
+         $pdfName = '';
+        if($request->file('pdf') ==null){
+            $pdfName = $resources->pdf;
+        }
+        else{
+            $pdfName = $max.'.'.$request->file('pdf')->getClientOriginalExtension();
+            $request->file('pdf')->move('reports',$pdfName);
+        }
+        
+        $resources->pdf = $pdfName;
         $resources->save();
         return Redirect()->route('resources.index');
+        /*
+        *$max = $news->id;
+        $imageName = $max.'.'.$request->image->getClientOriginalExtension();
+        $request->image->move('news', $imageName);
+        $news->image = $imageName;
+        $news->save();
+        return Redirect()->route('news.index');
+        */
     }
 
     /**
@@ -110,6 +139,7 @@ class ResourcesController extends Controller
     public function destroy($id)
     {
         $resources = Resources::findOrFail($id);
+        File::delete('../reports/'.public_path().''.$resources->pdf);
         $resources->delete();
         return Redirect()->route('resources.index');
         //

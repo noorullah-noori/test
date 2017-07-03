@@ -27,8 +27,8 @@
     @foreach($resources as $value)
     <tr>
       <th><?php echo $i++; ?></th>
-      <td>{{$value->title}}</td>
-      <td>{{$value->description}}</td>
+      <td style="width:150px;">{{$value->title}}</td>
+      <td style="width:450px;">{{$value->description}}</td>
       <td><a href="{{asset('reports/'.$value->pdf)}}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
       <td>{{$value->type}}</td>
       <td>

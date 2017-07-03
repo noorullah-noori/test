@@ -1,4 +1,11 @@
-@include('include.header')
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
+	
+	<?php $dir = 'right'; ?>
+	@if($lang=='en')
+	<?php $dir = 'left'; ?>
+	@endif
+
 	
 	
 	<section id="content">
@@ -18,30 +25,25 @@
 	        </div>
 	    	
 		<div class="col-md-9" style="margin-top:2%">
-			<table class="ui very basic collapsing celled table">
+			<table class="ui very basic collapsing celled table" style="text-align: right;">
 				<thead>
 					<tr>
 						<th>No.</th>
 						<th>Time</th>
+						<th>Date</th>
 						<th>Agenda</th>
 					</tr>
 				</thead>
 				<tbody>
+					<?php $i=0; ?>
+					@foreach($agendas as $value)
 					<tr>
-						<td>1</td>
-						<td>12:00PM 12/01/2018</td>
-						<td>Definition tables are designed to display on a single background color. You can adjust this by changing @definitionPageBackground, or specifying a background color on the first cell</td>
+						<td><?php echo ++$i; ?></td>
+						<td>{{$value->time}}</td>
+						<td style="width:12%;">{{$value->date}}</td>
+						<td>{{$value->agenda}}</td>
 					</tr>
-					<tr>
-						<td>2</td>
-						<td>12:00PM 12/01/2018</td>
-						<td>Definition tables are designed to display on a single background color. You can adjust this by changing @definitionPageBackground, or specifying a background color on the first cell</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>12:00PM 12/01/2018</td>
-						<td>Definition tables are designed to display on a single background color. You can adjust this by changing @definitionPageBackground, or specifying a background color on the first cell</td>
-					</tr>
+					@endforeach
 
 				</tbody>
 			</table>
@@ -53,4 +55,6 @@
 
 	</div>
 	</section>
-@include('include.footer')
+
+<?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")
