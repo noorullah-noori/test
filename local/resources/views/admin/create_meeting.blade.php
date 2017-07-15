@@ -14,13 +14,19 @@
                                 <div class="form-group ">
                                     <label for="time" class="control-label col-lg-3">Time</label>
                                     <div class="col-lg-6">
-                                        <input type="time"  name="time">
+                                        <input type="time" class="form-control" name="time">
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label for="date" class="control-label col-lg-3">Date</label>
                                     <div class="col-lg-6">
-                                        <input type="date"  name="date">
+                                        <input type="date" class="form-control" name="date">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="date_dr" class="control-label col-lg-3">Date Dari</label>
+                                    <div class="col-lg-6">
+                                        <input type="date" class="form-control" name="date_dr">
                                     </div>
                                 </div>
                                 <div class="form-group ">
@@ -29,11 +35,27 @@
                                         <input type="text" class="form-control" name="meeting_title">
                                     </div>
                                 </div>
+                                  <div class="form-group ">
+                                    <label for="meeting_title_dr" class="control-label col-lg-3">Meeting Title Dari</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="meeting_title_dr">
+                                    </div>
+                                </div>
+                                  <div class="form-group ">
+                                    <label for="meeting_title_pa" class="control-label col-lg-3">Meeting Title Pashto</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="meeting_title_pa">
+                                    </div>
+                                </div>
 
                                 <div class="form-group ">
                                     <label for="agenda" class="control-label col-lg-3">Agenda</label>
                                     <div class="col-lg-6">
-                                        <textarea class="form-control" name="agenda"></textarea>
+                                        <select class="form-control" id="agenda" name="agenda">
+                                            @foreach($agendas as $agenda)
+                                                <option value='{{$agenda->id}}'>{{$agenda->agenda_en}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group ">

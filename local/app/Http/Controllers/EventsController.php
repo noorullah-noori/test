@@ -40,8 +40,16 @@ class EventsController extends Controller
     public function store(Request $request)
     {
         $events = new Events();
-        $events->title = $request->input('title');
-        $events->description = $request->input('description');
+        $events->title_en = $request->input('title');
+        $events->date_en = $request->input('date');
+        $events->description_en = $request->input('description');
+        
+        $events->title_dr = $request->input('title_dr');
+        $events->description_dr = $request->input('description_dr');
+        $events->date_dr = $request->input('date_dr');
+        $events->date_pa = $request->input('date_dr');
+        $events->title_pa = $request->input('title_pa');
+        $events->description_pa = $request->input('description_pa');
         $events->type = $request->input('type');
         
         $imageName = '';
@@ -98,8 +106,17 @@ class EventsController extends Controller
     {
 
         $events=Events::findOrFail($id);
-        $events->title = $request->input('title');
-        $events->description = $request->input('description');
+         $events->title_en = $request->input('title');
+        $events->date_en = $request->input('date');
+        $events->description_en = $request->input('description');
+        
+        $events->title_dr = $request->input('title_dr');
+        $events->description_dr = $request->input('description_dr');
+        $events->date_dr = $request->input('date_dr');
+        $events->date_pa = $request->input('date_dr');
+        $events->title_pa = $request->input('title_pa');
+        $events->description_pa = $request->input('description_pa');
+        
         $events->type = $request->input('type');
         
         $max=$events->id;

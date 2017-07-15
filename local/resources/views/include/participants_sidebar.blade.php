@@ -35,10 +35,10 @@
 							<a href="{{route('national_participants')}}" style="color:#373534">Government Reformeres</a>
 						</li>
 						<li>
-							<a href="{{route('national_participants')}}" style="color:#373534">Civil Society Organizations</a>
+							<a href="{{route('cso')}}" style="color:#373534">Civil Society Organizations</a>
 						</li>
 						<li>
-							<a href="{{route('national_participants')}}" style="color:#373534">Private Sector Reformers</a>
+							<a href="{{route('priv')}}" style="color:#373534">Private Sector Reformers</a>
 						</li>
 					</ul>
 				</div>

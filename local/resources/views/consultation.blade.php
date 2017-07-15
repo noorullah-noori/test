@@ -6,6 +6,13 @@
   <?php $dir = 'left'; ?>
   @endif
 
+<?php 
+$pdf = "pdf_".$lang;
+$title = "title_".$lang;
+$description = "description_".$lang;
+$reports = "reports_".$lang;
+
+ ?>
 <style type="text/css">
 .desc{
 	margin-left: 10.3%;
@@ -37,16 +44,16 @@
 			@foreach($consultation as $value)
 			<div class="row" >
 				<div class="col-md-2" style="float:<?php echo $dir; ?>">
-					<a href="{{asset('reports/'.$value->pdf)}}" target="_blank"><img src="{{asset('img/pdf.png')}}" style="width:60px;"></a>
+					<a href="{{asset($reports.'/'.$value->pdf)}}" target="_blank"><img src="{{asset('img/pdf.png')}}" style="width:60px;"></a>
 				</div>
 				<div class="col-md-10">
-					<a href="{{asset('reports/'.$value->pdf)}}" target="_blank">
-						<span style="margin-left:2%">{{$value->title}}</span>
+					<a href="{{asset($reports.'/'.$value->$pdf)}}" target="_blank">
+						<span style="margin-left:2%">{{$value->$title}}</span>
 					</a>
 				</div>
 				
 				<div class="desc">
-					<p>{{$value->description}}</p>
+					<p>{{$value->$description}}</p>
 				</div>
 			</div>
 			<hr style="width:80%; margin-top: -15px;margin-right:130px;">
@@ -55,6 +62,17 @@
 
 		</div>
 		</div>
+
+				    <!-- pagination  start-->
+
+
+    <div class="container">
+      <div class="col-md-4 col-md-offset-5 col-xs-5 col-xs-offset-5">
+      {{$consultation->links()}}
+      </div>  
+    </div>
+
+<!-- pagination end -->
 
 
 	</div>

@@ -1,4 +1,4 @@
-<div class="col-md-3" style="float:<?php echo $dir; ?>;">
+<div class="col-md-3 col-xs-3" style="float:<?php echo $dir; ?>;">
 
 	<div class="panel-group" id="accordion-alt3" style="margin-top:25px;">
 

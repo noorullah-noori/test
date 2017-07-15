@@ -24,15 +24,33 @@
                                 <div class="form-group ">
                                         <label for="name" class="control-label col-lg-3">Name</label>
                                         <div class="col-lg-6">
-                                            <input class="form-control" id="name" name="name" value="{{$national_participants->name}}" type="text">
+                                            <input class="form-control" id="name" name="name" value="{{$national_participants->name_en}}" type="text">
                                         </div>
                                     </div>
+                                 <div class="form-group ">
+                                    <label for="name_dr" class="control-label col-lg-3">Name Dari</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" value="{{$national_participants->name_dr}}" class="form-control" name="name_dr">
+                                    </div>
+                                </div>
+                                 <div class="form-group ">
+                                    <label for="name_pa" class="control-label col-lg-3">Name Pashto</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" value="{{$national_participants->name_pa}}" name="name_pa">
+                                    </div>
+                                </div>
                                     <div class="form-group ">
                                         <label for="member_since" class="control-label col-lg-3">Member Since</label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" value="{{$national_participants->member_since}}" id="member_since" name="member_since" type="date">
+                                            <input class=" form-control" value="{{$national_participants->member_since_en}}" id="member_since" name="member_since" type="date">
                                         </div>
                                     </div>
+                                 <div class="form-group ">
+                                    <label for="member_since_dr" class="control-label col-lg-3">Member Since Dari</label>
+                                    <div class="col-lg-6">
+                                        <input type="date" value="{{$national_participants->member_since_dr}}" class="form-control"  name="member_since_dr">
+                                    </div>
+                                </div>
                                     <div class="form-group ">
                                         <label for="email" class="control-label col-lg-3">Email</label>
                                         <div class="col-lg-6">
@@ -42,10 +60,32 @@
                                     <div class="form-group ">
                                         <label for="member_since" class="control-label col-lg-3">Details </label>
                                         <div class="col-lg-6">
-                                            <textarea name="details" class="form-control">{{$national_participants->details}}</textarea>
+                                            <textarea name="details" class="form-control">{{$national_participants->details_en}}</textarea>
                                         </div>
                                     </div>
+                                     <div class="form-group ">
+                                    <label for="details_dr" class="control-label col-lg-3">Details Dari</label>
+                                    <div class="col-lg-6">
+                                        <textarea class="form-control" name="details_dr">{{$national_participants->details_dr}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="details_pa" class="control-label col-lg-3">Details Pashto</label>
+                                    <div class="col-lg-6">
+                                        <textarea class="form-control" name="details_pa">{{$national_participants->details_pa}}</textarea>
+                                    </div>
+                                </div>
 
+                                <div class="form-group ">
+                                    <label for="type" class="control-label col-lg-3">Category</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" name="type" id="type">
+                                            <option value="gov">Government Reformers</option>
+                                            <option value="cso">CSOs</option>
+                                            <option value="priv">Private Sector Reformers</option>
+                                        </select>
+                                    </div>
+                                </div>
                                     <div class="form-group">
                                         <input type="file" name="image" value="{{$national_participants->image}}" class="file">
                                         <div class="input-group col-md-6 col-md-offset-3 col-xs-12" style="padding-left:15px; padding-right:14px;">

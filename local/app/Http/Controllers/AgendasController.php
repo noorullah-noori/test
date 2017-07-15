@@ -40,8 +40,15 @@ class AgendasController extends Controller
     {
         $agendas = new Agendas();
         $agendas->time = $request->input('time');
-        $agendas->date = $request->input('date');
-        $agendas->agenda = $request->input('agenda');
+        $agendas->date_en = $request->input('date');
+        $agendas->agenda_en = $request->input('agenda');
+
+        $agendas->date_dr = $request->input('date_dr');
+        $agendas->date_pa = $request->input('date_dr');
+        $agendas->agenda_dr = $request->input('agenda_dr');
+
+        $agendas->agenda_pa = $request->input('agenda_pa');
+
         $agendas->save();
         return Redirect()->route('agendas.index');
     }
@@ -79,9 +86,15 @@ class AgendasController extends Controller
     public function update(Request $request, $id)
     {
         $agendas=Agendas::findOrFail($id);
-        $agendas->time = $request->input('time');
-        $agendas->date = $request->input('date');
-        $agendas->agenda = $request->input('agenda');
+         $agendas->time = $request->input('time');
+        $agendas->date_en = $request->input('date');
+        $agendas->agenda_en = $request->input('agenda');
+
+        $agendas->date_dr = $request->input('date_dr');
+        $agendas->agenda_dr = $request->input('agenda_dr');
+
+        $agendas->agenda_pa = $request->input('agenda_pa');
+        $agendas->date_pa = $request->input('date_dr');
         $agendas->save();
         return Redirect()->route('agendas.index');
 

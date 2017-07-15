@@ -6,6 +6,14 @@
   <?php $dir = 'left'; ?>
   @endif
 
+<?php 
+
+$title = "title_".$lang;
+$author = "author_".$lang;
+$description = "description_".$lang;
+
+ ?>
+
 <style type="text/css">
 		
 		.main-image{
@@ -63,10 +71,11 @@
 	        </div>
         
           <div  class="main-image">
-            <a href="{{route('story_details')}}" class="ui header">
-              <h2>Announcing New Members of the OGP Steering Committee</h2>
+            <a href="{{url('story_details/'.$story->id)}}" class="ui header">
+              <h2>{{$story->$title}}</h2>
             </a>
-            <span id="date" style="float:<?php echo ($lang!='en')?'left':'right'; ?>;text-align:right;">5 June 2017<br>Manish Bapna</span>
+            <span id="date" style="float:left;text-align:right;">{{$story->$author}}</span>
+
           </div>
       </div>
       </section>
@@ -76,11 +85,12 @@
           @foreach($stories as $value)
           <div class="card">
             <div class="content">
-              <a href="{{url('story_details/'.$value->id)}}" class="header">{{$value->title}}</a>
-              <div class="meta">{{$value->author}}</div>
+              <a href="{{url('story_details/'.$value->id)}}" class="header">{{$value->$title}}</a>
+              <div class="meta">{{$value->$author}}</div>
               <div class="description">
-                <h1 class="ui header"><i class="icon left quote"></i></h1>
-                {{$value->description}}
+                
+              <h1 style="margin-bottom: 0px;"><i class="fa fa-quote-<?php echo $dir;?>"></i></h1>
+                {{$value->$description}}
               </div>
             </div>
           </div>

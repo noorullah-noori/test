@@ -39,11 +39,21 @@ class NationalParticipantsController extends Controller
     public function store(Request $request)
     {
         $national_participants = new NationalParticipants();
-        $national_participants->name = $request->input('name');
-        $national_participants->member_since = $request->input('member_since');
-        $national_participants->email = $request->input('email');
-        $national_participants->details = $request->input('details');
+        $national_participants->name_en = $request->input('name');
+        $national_participants->member_since_en = $request->input('member_since');
+        
+        $national_participants->name_dr = $request->input('name_dr');
+        $national_participants->member_since_dr = $request->input('member_since_dr');
+        $national_participants->member_since_pa = $request->input('member_since_dr');
+        $national_participants->details_dr = $request->input('details_dr');
 
+        $national_participants->name_pa = $request->input('name_pa');
+        $national_participants->details_pa = $request->input('details_dr');
+
+        $national_participants->email = $request->input('email');
+        $national_participants->details_en = $request->input('details');
+
+        $national_participants->type = $request->input('type');
 
         $imageName = '';
         if($request->image == null){
@@ -96,11 +106,19 @@ class NationalParticipantsController extends Controller
     public function update(Request $request, $id)
     {
         $national_participants = NationalParticipants::findOrFail($id);
-        $national_participants->name = $request->input('name');
-        $national_participants->member_since = $request->input('member_since');
-        $national_participants->email = $request->input('email');
-        $national_participants->details = $request->input('details');
+        $national_participants->name_en = $request->input('name');
+        $national_participants->member_since_en = $request->input('member_since');
+        $national_participants->member_since_pa = $request->input('member_since_dr');
+        $national_participants->name_dr = $request->input('name_dr');
+        $national_participants->member_since_dr = $request->input('member_since_dr');
+        $national_participants->details_dr = $request->input('details_dr');
 
+        $national_participants->name_pa = $request->input('name_pa');
+        $national_participants->details_dr = $request->input('details_dr');
+
+        $national_participants->email = $request->input('email');
+        $national_participants->details_en = $request->input('details');
+        $national_participants->type = $request->input('type');
         $max = $national_participants->id;
         $imageName = '';
         if($request->image ==null){

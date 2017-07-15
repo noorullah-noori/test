@@ -1,4 +1,22 @@
-@include('include.header')
+ <?php $lang = Config::get('app.locale'); $header = "include.$lang"."_header";  ?>
+    @include("$header")
+  
+  <?php 
+  $dir = 'left';
+  $direction = 'right';
+
+   ?>
+  @if($lang=='en')
+  <?php
+   $dir = 'right';
+   $direction='left'; 
+   ?>
+  @endif
+  <?php
+   $title = "title_".$lang;
+   $description = "description_".$lang;
+   $responsibilities = "responsibilities_".$lang;
+  ?>
 
 
 <section id="content">
@@ -13,7 +31,7 @@
 			<div class="col-md-9" style="margin-top:2%">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<label>{{$job->title}}</label>
+						<label>{{$job->$title}}</label>
 					</div>
 					<div class="panel-body">
 						<h1 class="ui header small">
@@ -23,11 +41,11 @@
 						<h1 class="ui header small">
 							Job Summary
 						</h1>
-						<p>{{$job->description}}</p>
+						<p>{{$job->$description}}</p>
 						<h1 class="ui header small">
 							Responsibilities
 						</h1>
-						<p>{{$job->responsibilities}}</p>
+						<p>{!! nl2br($job->$responsibilities) !!}</p>
 
 					</div>
 					<div class="panel-footer">
@@ -57,4 +75,6 @@
 
 	</div>
 </section>
-@include('include.footer')
+
+<?php $footer = "include.$lang"."_footer"; ?>
+    @include("$footer")

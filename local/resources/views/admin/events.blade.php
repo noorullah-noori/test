@@ -28,8 +28,8 @@
     <tr>
       <th><?php echo $i++; ?></th>
       <td><img style="width:100px;" src="{{asset('events&seminars/'.$value->image)}}"></td>
-      <td>{{$value->title}}</td>
-      <td style="width:40%;">{{$value->description}}</td>
+      <td>{{$value->title_en}}</td>
+      <td style="width:40%;">{{$value->description_en}}</td>
       <td>{{$value->type}}</td>
       <td>
         <form action="{{route('events.destroy',$value->id)}}" method="POST">

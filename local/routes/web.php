@@ -48,7 +48,7 @@ Route::get('carriers',function(){
 })->name('carriers');
 
 Route::get('news',function(){
-	$news = News::paginate(5);
+	$news = News::paginate(4);
 	return view('news')->with('news',$news);
 })->name('news');
 
@@ -80,21 +80,29 @@ Route::get('global_participants',function(){
 })->name('global_participants');
 
 Route::get('national_participants',function(){
-	$national_participants = NationalParticipants::all();
+	$national_participants=DB::table('national_participants')->where('type','gov')->paginate(3);
 	return view('national_participants')->with('national_participants',$national_participants);
 })->name('national_participants');
+Route::get('cso',function(){
+	$cso=DB::table('national_participants')->where('type','cso')->paginate(3);
+	return view('cso')->with('cso',$cso);
+})->name('cso');
+Route::get('priv',function(){
+	$priv=DB::table('national_participants')->where('type','priv')->paginate(3);
+	return view('priv')->with('priv',$priv);
+})->name('priv');
 
 Route::get('working_groups',function(){
 	return view('working_groups');
 })->name('working_groups');
 
 Route::get('agendas',function(){
-	$agendas = Agendas::all();
+	$agendas = Agendas::paginate(2);
 	return view('agendas')->with('agendas',$agendas);
 })->name('agendas');
 
 Route::get('meetings',function(){
-	$meetings = Meetings::all();
+	$meetings = Meetings::paginate(1);
 	return view('meetings')->with('meetings',$meetings);
 })->name('meetings');
 
@@ -104,30 +112,31 @@ Route::get('view_meetings/{id?}',function($id){
 });
 
 Route::get('consultation',function(){
-	$consultation=DB::table('resources')->where('type','cp')->get();
+	$consultation=DB::table('resources')->where('type','cp')->paginate(1);
 	return view('consultation')->with('consultation',$consultation);
 })->name('consultation');
 
 Route::get('irm',function(){
-	$irm=DB::table('resources')->where('type','irm')->get();
+	$irm=DB::table('resources')->where('type','irm')->paginate(1);
 	return view('irm')->with('irm',$irm);
 })->name('irm');
 
 Route::get('action_plan',function(){
-	$action_plan=DB::table('resources')->where('type','nap')->get();
+	$action_plan=DB::table('resources')->where('type','nap')->paginate(1);
 	return view('action_plan')->with('action_plan',$action_plan);
 })->name('action_plan');
 
 
 
 Route::get('assessment',function(){
-	$assessment = DB::table('resources')->where('type','sar')->get();//Resources::where('type','=','irm');
+	$assessment = DB::table('resources')->where('type','sar')->paginate(1);//Resources::where('type','=','irm');
 	return view('assessment')->with('assessment',$assessment);
 })->name('assessment');
 
 Route::get('stories',function(){
 	$stories=Stories::all();
-	return view('stories')->with('stories',$stories);
+	$story = DB::table('stories')->orderBy('id', 'desc')->first();
+	return view('stories')->with(['stories'=>$stories,'story'=>$story]);
 })->name('stories');
 
 Route::get('story_details/{id?}',function($id){
@@ -136,17 +145,17 @@ Route::get('story_details/{id?}',function($id){
 })->name('story_details');
 
 Route::get('seminars',function(){
-	$seminars = DB::table('events')->where('type','seminar')->get();
+	$seminars = DB::table('events')->where('type','seminar')->paginate(1);
 	return view('seminars')->with('seminars',$seminars);
 })->name('seminars');
 
 Route::get('events',function(){
-	$events = DB::table('events')->where('type','event')->get();
+	$events = DB::table('events')->where('type','event')->paginate(1);
 	return view('events')->with('events',$events);
 })->name('events');
 
 Route::get('sessions',function(){
-	$sessions = DB::table('meetings')->where('type','session')->get();
+	$sessions = DB::table('meetings')->where('type','session')->paginate(1);
 	return view('sessions')->with('sessions',$sessions);
 })->name('sessions');
 
@@ -158,7 +167,30 @@ Route::get('test',function(){
 	return view('test');
 })->name('test');
 
+Route::post('/language-chooser','LanguageController@changeLanguage');
+
+
+
+Route::get('language',[
+	'before' => 'csrf',
+	'as'	 => 'language-chooser',
+	'uses'	 => 'LanguageController@changeLanguage',
+	 
+	 ]);
+
+});
+
+Route::get('get_participant/{id?}',function($id){
+    $participant = NationalParticipants::findOrFail($id);
+    return $participant;
+});
+Route::get('get_agendas/{id?}',function($id){
+    $agendas = Agendas::findOrFail($id);
+    return $agendas;
+});
+
 // Admin routes
+Route::group(['middleware' => ['chk_usr']],function(){
 
 Route::get('admin',function(){
 	return view('admin.index');
@@ -186,23 +218,24 @@ Route::resource('admin/national_participants','NationalParticipantsController');
 
 Route::resource('admin/events','EventsController');
 
-
-Route::post('/language-chooser','LanguageController@changeLanguage');
-
-Route::get('language',[
-	'before' => 'csrf',
-	'as'	 => 'language-chooser',
-	'uses'	 => 'LanguageController@changeLanguage',
-	 
-	 ]);
+Route::get('register',function(){
+	return view('admin.register');
+})->name('register');
 
 });
+//finish admin routes
 
-Route::get('get_participant/{id?}',function($id){
-    $participant = NationalParticipants::findOrFail($id);
-    return $participant;
-});
-Route::get('get_agendas/{id?}',function($id){
-    $agendas = Agendas::findOrFail($id);
-    return $agendas;
-});
+
+
+Route::get('login',function(){
+	return view('auth.login');
+})->name('login');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::get('logout','Auth\LoginController@logout')->name('logout');
+Route::get('delete_user','Auth\LoginController@delete_user')->name('delete_user');
+Route::get('edit_user/{$id}','Auth\LoginController@edit_user')->name('edit_user');
+Route::get('users','Auth\LoginController@users')->name('users');

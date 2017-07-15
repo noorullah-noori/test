@@ -26,10 +26,10 @@
     @foreach($jobs as $job)
     <tr>
       <th><?php echo $i++; ?></th>
-      <td style="width:10%;">{{$job->title}}</td>
-      <td style="width:10%;">{{$job->expiry_date}}</td>
-      <td style="width:29%;">{{$job->description}}</td>
-      <td style="width:29%;">{{$job->responsibilities}}</td>
+      <td style="width:10%;">{{$job->title_en}}</td>
+      <td style="width:10%;">{{$job->expiry_date_en}}</td>
+      <td style="width:29%;">{{$job->description_en}}</td>
+      <td style="width:29%;">{!! nl2br($job->responsibilities_en) !!}</td>
       <td>
       <form action="{{ route('jobs.destroy', $job->id) }}" method="POST">
           {{ method_field('DELETE') }}

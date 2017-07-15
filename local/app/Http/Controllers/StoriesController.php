@@ -38,10 +38,20 @@ class StoriesController extends Controller
     public function store(Request $request)
     {
         $stories = new Stories();
-        $stories->title = $request->input('title');
-        $stories->description = $request->input('description');
-        $stories->author = $request->input('author');
-        $stories->date = $request->input('date');
+        $stories->title_en = $request->input('title');
+        $stories->description_en = $request->input('description');
+        $stories->author_en = $request->input('author');
+        $stories->date_en = $request->input('date');
+
+        $stories->title_dr = $request->input('title_dr');
+        $stories->description_dr = $request->input('description_dr');
+        $stories->author_dr = $request->input('author_dr');
+        $stories->date_dr = $request->input('date_dr');
+        $stories->date_pa = $request->input('date_dr');
+        $stories->title_pa = $request->input('title_pa');
+        $stories->description_pa = $request->input('description_pa');
+        $stories->author_pa = $request->input('author_pa');
+        
         $stories->save();
 
         return Redirect()->route('stories.index');
@@ -81,10 +91,19 @@ class StoriesController extends Controller
     public function update(Request $request, $id)
     {
         $stories=Stories::findOrFail($id);
-        $stories->title = $request->input('title');
-        $stories->description = $request->input('description');
-        $stories->author = $request->input('author');
-        $stories->date = $request->input('date');
+        $stories->title_en = $request->input('title');
+        $stories->description_en = $request->input('description');
+        $stories->author_en = $request->input('author');
+        $stories->date_en = $request->input('date');
+
+        $stories->title_dr = $request->input('title_dr');
+        $stories->description_dr = $request->input('description_dr');
+        $stories->author_dr = $request->input('author_dr');
+        $stories->date_dr = $request->input('date_dr');
+        $stories->date_pa = $request->input('date_dr');
+        $stories->title_pa = $request->input('title_pa');
+        $stories->description_pa = $request->input('description_pa');
+        $stories->author_pa = $request->input('author_pa');
         $stories->save();
         return Redirect()->route('stories.index');
     }

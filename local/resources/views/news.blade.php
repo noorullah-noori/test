@@ -6,6 +6,11 @@
         <?php $direction='right'; ?>
       @endif
 	
+	<?php 
+	$title = "title_".$lang;
+	$created_date = "created_date_".$lang;
+	$short_desc = "short_desc_".$lang;
+	 ?>
 	
 	<section id="content">
 	
@@ -26,9 +31,9 @@
 						<img src="{{asset('news_img/'.$value->image)}}" class="img-thumbnail" style="width:140gpx;border:1px solid #ddd;margin-left:15px;">
 					</div>
 					<div class="content">
-						<div class="header">{{$value->title}}</div>
-						<div class="meta">{{$value->created_date}}</div>
-						<div class="description">{{$value->short_desc}}</div>
+						<div class="header">{{$value->$title}}</div>
+						<div class="meta">{{$value->$created_date}}</div>
+						<div class="description">{{$value->$short_desc}}</div>
 					</div>
 				</a>
 				@endforeach

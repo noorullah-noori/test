@@ -5,6 +5,12 @@
   @if($lang=='en')
   <?php $dir = 'left'; ?>
   @endif	
+
+<?php 
+$name = "name_".$lang;
+$member_since = "member_since_".$lang;
+?>
+
 	<section id="content">
 	
 	
@@ -38,11 +44,11 @@
               <h4 class="ui image header">
                 <img src="{{asset('n_participants/'.$value->image)}}" class="ui massive rounded image">
                 <div class="content">
-                  {{$value->name}}
+                  {{$value->$name}}
               </div>
             </h4></td>
             <td>
-              {{$value->member_since}}
+              {{$value->$member_since}}
             </td>
             <td>{{$value->email}}</td>
             <td><div class="ui tiny button primary" onclick="view({{$value->id}})">View Details</div></td>
@@ -52,21 +58,31 @@
         </tbody>
       </table>
 		</div>
-
-
 	</div>
+  
+    <!-- pagination  start-->
+
+
+    <div class="container">
+      <div class="col-md-4 col-md-offset-5">
+      {{$national_participants->links()}}
+      </div>  
+    </div>
+
+<!-- pagination end -->
+  </div>
 	</section>
 
 
     <?php $prop = "margin-right:15%;" ?>
-    <div class="ui modal" id="modal" style="overflow: hidden;<?php echo ($lang!='en')?$prop:''; ?> height:29.5%;">
+    <div class="ui modal" id="modal" style="overflow: hidden;<?php echo ($lang!='en')?$prop:''; ?> height:40%;">
       <div class="actions" style="border-bottom: 1px solid #ddd; padding-bottom: 30px;">
       <div class="ui <?php echo $dir; ?> floated header">
         <h3 class="ui header" style="">National Participant Details</h3>
       </div>
       </div>
 
-      <div class="image content">
+      <div class="image content" style="overflow-y:scroll">
         <div class="ui medium image">
           <img style="max-width: 200px;" id="image" class="img-thumbnail">
         </div>
@@ -93,8 +109,8 @@
           </table>
         </div>
       </div>
-      <div class="actions" style="float:<?php echo ($lang!='en')?'left':'right'; ?>">
-        <div class="ui black deny button">
+      <div class="actions" style="float:<?php echo ($lang!='en')?'left':'right'; ?>;width:100%;height:auto">
+        <div style="float:<?php echo $dir; ?>" class="ui black deny button">
           Cancel
         </div>
         <a href="" style="float:<?php echo $dir; ?>" id='mailto' class="ui positive right labeled icon button" >
@@ -115,9 +131,9 @@
           $("#since").empty();
           $("#email").empty();
           $("#image").empty();
-          $("#name").append(output['name']);
-          $("#details").append(output['details']);
-          $("#since").append(output['member_since']);
+          $("#name").append(output['name_'+'{{$lang}}']);
+          $("#details").append(output['details_'+'{{$lang}}']);
+          $("#since").append(output['member_since_'+'{{$lang}}']);
           $("#email").append(output['email']);
           $('#mailto').attr('href','mailto:'+output['email']);
           $('#image').attr('src','n_participants/'+output['image']);

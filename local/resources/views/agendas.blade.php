@@ -6,6 +6,11 @@
 	<?php $dir = 'left'; ?>
 	@endif
 
+<?php
+$date = "date_".$lang;
+$agenda = "agenda_".$lang;
+
+ ?>
 	
 	
 	<section id="content">
@@ -25,7 +30,7 @@
 	        </div>
 	    	
 		<div class="col-md-9" style="margin-top:2%">
-			<table class="ui very basic collapsing celled table" style="text-align: right;">
+			<table class="ui very basic collapsing celled table" style="text-align: <?php echo $dir;?>;">
 				<thead>
 					<tr>
 						<th>No.</th>
@@ -40,8 +45,8 @@
 					<tr>
 						<td><?php echo ++$i; ?></td>
 						<td>{{$value->time}}</td>
-						<td style="width:12%;">{{$value->date}}</td>
-						<td>{{$value->agenda}}</td>
+						<td style="width:12%;">{{$value->$date}}</td>
+						<td>{{$value->$agenda}}</td>
 					</tr>
 					@endforeach
 
@@ -52,6 +57,17 @@
 		</div>
 		</div>
 
+
+		<!-- pagination  start-->
+
+
+		<div class="container">
+			<div class="col-md-4 col-md-offset-5">
+			{{$agendas->links()}}
+			</div>	
+		</div>
+
+<!-- pagination end -->
 
 	</div>
 	</section>

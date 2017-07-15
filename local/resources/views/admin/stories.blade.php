@@ -27,10 +27,10 @@
     @foreach($stories as $value)
     <tr>
       <th><?php echo $i++; ?></th>
-      <td style="width:15%;">{{$value->title}}</td>
-      <td style="width:40%;">{{$value->description}}</td>
-      <td>{{$value->author}}</td>
-      <td>{{$value->date}}</td>
+      <td style="width:15%;">{{$value->title_en}}</td>
+      <td style="width:40%;">{{$value->description_en}}</td>
+      <td>{{$value->author_en}}</td>
+      <td>{{$value->date_en}}</td>
       <td>
         <form action="{{route('stories.destroy',$value->id)}}" method="POST">
             {{ method_field('DELETE') }}

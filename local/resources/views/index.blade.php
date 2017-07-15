@@ -7,6 +7,15 @@
 .ui.inverted.blue.button {
 	margin-top:5px;
 }
+.ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui) {
+	border:none;
+	border-bottom: 1px solid rgba(34,36,38,.1);
+	padding-bottom: 15px;
+}
+.ui.card>.content, .ui.cards>.card>.content {
+	border-top: none;
+}
+
 </style>
 	<section class="section-padding gray-bg">
 		<div class="ui alternate stripe vertical segment">
@@ -22,9 +31,9 @@
 		        	@if($lang=='en')
 		        	<?php $dir = 'right'; ?>
 		        	@endif
-		          <h3 class="ui header test" style="font-family:Yekan;">{{trans('home.top_segment_details')}}</h3>
+		          <h3 class="ui header test" style="";>{{trans('home.top_segment_details')}}</h3>
 		          <a class="ui large <?php echo $dir; ?> labeled primary icon button" href="{{route('ogpa')}}">
-		            <i class="<?php echo $dir ?>  chevron icon  "></i>
+		            <i class=" <?php echo $dir;?>chevron icon  "></i>
 		            {{trans('home.more')}}
 		          </a>
 		        </div>
@@ -39,8 +48,8 @@
 	<div class="container">
 	    	<div class="row">
 			<div class="col-md-12">
-				<div class="aligncenter"><h2 class="aligncenter">{{trans('home.open_gov')}}</h2>
-					<span style="font-size:18px;">{{trans('home.open_gov_short')}}</span
+				<div class="aligncenter"><h2 class="aligncenter open_gov">{{trans('home.open_gov')}}</h2>
+					<span style="font-size:18px;" class="open_gov_short">{{trans('home.open_gov_short')}}</span>
 				</div>
 				<br/>
 			</div>
@@ -86,20 +95,22 @@
 							@if($lang=='en')
 							<?php $direction='left'; ?>
 							@endif
-							<div class="col-md-8" style="float:<?php echo $direction; ?>">
+							<div class="col-md-8 col-xs-12" style="float:<?php echo $direction; ?>">
 								<div class="ui two stackable cards">
 								<div class="ui card">
 									<div class="content">
-										<div class="header">{{trans('home.jobs&opportunities')}}</div>
+										<div class="header" style="<?php echo ($lang!='en')?"font-family:'BTitr';margin-bottom:5px;":"";?>";>{{trans('home.jobs&opportunities')}}</div>
 									</div>
 									<div class="content">
 										<div class="ui feed">
-											<?php $count=0; ?>
+											<?php $count=0;
+											$lang_var = "title_".$lang;
+											 ?>
 											@foreach($job as $value)
 											<div class="event">
 												<div class="content">
 													<div class="summary" style="text-align: <?php echo $direction; ?>">
-														<a  href="{{url('job_details/'.$value->id)}}">{{$value->title}}</a>
+														<a  href="{{url('job_details/'.$value->id)}}">{{$value->$lang_var}}</a>
 													</div>
 												</div>
 											</div>
@@ -117,17 +128,18 @@
 												</div>
 												@endfor
 											@endif
-											<div class="extra content">
-												<a href="{{route('opportunities')}}" class="ui fluid button inverted blue">View All</a>
-											</div>	
+											
 										</div>
 
 									</div>
+									<div class="extra content">
+											<a href="{{route('opportunities')}}" class="ui fluid button inverted blue">View All</a>
+										</div>
 
 								</div>
 								<div class="ui card">
 									<div class="content">
-										<div class="header">{{trans('home.latest_news')}}</div>
+										<div class="header" style="<?php echo ($lang!='en')?"font-family:'BTitr';margin-bottom:5px;":"";?>";>{{trans('home.latest_news')}}</div>
 									</div>
 									<div class="content">
 										<div class="ui feed">
@@ -136,7 +148,7 @@
 											<div class="event">
 												<div class="content">
 													<div class="summary" style="text-align: <?php echo $direction; ?>">
-														<a href="{{url('news_details/'.$value->id)}}">{{$value->title}}</a>
+														<a href="{{url('news_details/'.$value->id)}}">{{$value->$lang_var}}</a>
 													</div>
 												</div>
 											</div>
@@ -153,12 +165,13 @@
 												</div>
 												@endfor
 											@endif
-											<div class="extra content">
-												<a href="{{route('news')}}" class="ui button fluid inverted blue">View All</a>
-											</div>	
+											
 										</div>
 
 									</div>
+									<div class="extra content">
+										<a href="{{route('news')}}" class="ui button fluid inverted blue">View All</a>
+									</div>	
 
 								</div>
 								</div>
@@ -172,14 +185,14 @@
 
 							<div class="col-md-4">
 								<div class="block-heading-two">
-									<h3><span>{{trans('home.secretariat_word')}}</span></h3>
+									<h3 style="<?php echo ($lang!='en')?"font-family:'BTitr';margin-bottom:5px;":"";?>"><span>{{trans('home.secretariat_word')}}</span></h3>
 								</div>	
 								     <div class="testimonials">
-										<div class="active item">
-										  <blockquote><p>Lorem ipsum dolor met consectetur adipisicing. Aorem psum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p></blockquote>
+										<div class="active item" >
+										  <blockquote><p style="<?php echo ($lang!='en')?"font-family: 'Yekan';":""; ?>">Lorem ipsum dolor met consectetur adipisicing. Aorem psum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p></blockquote>
 										  <div class="carousel-info">
-											<img alt="" src="img/team4.jpg" class="pull-left">
-											<div class="pull-left">
+											<img alt="" src="img/team4.jpg" class="pull-<?php echo $direction; ?>">
+											<div class="pull-<?php echo $direction; ?>">
 											  <span class="testimonials-name">Marc Cooper</span>
 											  <span class="testimonials-post">Technical Director</span>
 											</div>

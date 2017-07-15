@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Meetings;
+use App\Agendas;
 
 class MeetingsController extends Controller
 {
@@ -26,7 +27,8 @@ class MeetingsController extends Controller
      */
     public function create()
     {
-        return view('admin.create_meeting');
+        $agendas = Agendas::all();
+        return view('admin.create_meeting')->with('agendas',$agendas);
         //
     }
 
@@ -40,9 +42,17 @@ class MeetingsController extends Controller
     {
         $meetings= new Meetings();
         $meetings->time = $request->input('time');
-        $meetings->date = $request->input('date');
-        $meetings->meeting_title = $request->input('meeting_title');
+        $meetings->date_en = $request->input('date');
+        $meetings->meeting_title_en = $request->input('meeting_title');
+
+        $meetings->date_dr = $request->input('date_dr');
+        $meetings->date_pa = $request->input('date_dr');
+        $meetings->meeting_title_dr = $request->input('meeting_title_dr');
+
+        $meetings->meeting_title_pa = $request->input('meeting_title_pa');
+
         $meetings->agenda = $request->input('agenda');
+        
         $meetings->type = $request->input('type');
         $meetings->save();
         return Redirect()->route('meetings.index');
@@ -68,7 +78,8 @@ class MeetingsController extends Controller
     public function edit($id)
     {
         $meetings = Meetings::findorFail($id);
-        return view('admin.edit_meeting')->with('meetings',$meetings);
+        $agendas = Agendas::all();
+        return view('admin.edit_meeting')->with(['meetings'=>$meetings,'agendas'=>$agendas]);
 
     }
 
@@ -83,8 +94,15 @@ class MeetingsController extends Controller
     {
         $meetings=Meetings::findOrFail($id);
         $meetings->time = $request->input('time');
-        $meetings->date = $request->input('date');
-        $meetings->meeting_title = $request->input('meeting_title');
+        $meetings->date_en = $request->input('date');
+        $meetings->meeting_title_en = $request->input('meeting_title');
+
+        $meetings->date_dr = $request->input('date_dr');
+        $meetings->date_pa = $request->input('date_dr');
+        $meetings->meeting_title_dr = $request->input('meeting_title_dr');
+
+        $meetings->meeting_title_pa = $request->input('meeting_title_pa');
+
         $meetings->agenda = $request->input('agenda');
         $meetings->type = $request->input('type');
         $meetings->save();

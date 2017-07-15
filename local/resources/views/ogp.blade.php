@@ -11,7 +11,7 @@
 	    	@endif
 	    	@include('include.sidebar')
 			<div class="col-md-9" >
-				<div class="col-md-12" id="ogpa" style="padding-left: 5px;padding-bottom:20px;margin-top: 25px;">
+				<div class="col-md-12" id="ogp" style="padding-left: 5px;padding-bottom:20px;margin-top: 25px;">
 					<h3>About OGP</h3>
 					<div style="border-top:1px solid #f0b158;padding-top:10px;margin-top:-8px;>
 						<p style="line-height:1.5;font-size:16px">

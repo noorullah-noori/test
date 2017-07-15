@@ -6,6 +6,10 @@
         <?php $direction='right'; ?>
       @endif
 
+<?php 
+$title = "title_".$lang;
+$expiry_date = "expiry_date_".$lang;
+ ?>
 	
 	
 	<section id="content">
@@ -33,8 +37,8 @@
 					@foreach($opportunities as $value)
 					<tr>
 						<th><?php echo ++$i; ?></th>
-						<td><a href="{{url('job_details/'.$value->id)}}">{{$value->title}}</a></td>
-						<td>{{$value->expiry_date}}</td>
+						<td><a href="{{url('job_details/'.$value->id)}}">{{$value->$title}}</a></td>
+						<td>{{$value->$expiry_date}}</td>
 					</tr>
 					@endforeach
 

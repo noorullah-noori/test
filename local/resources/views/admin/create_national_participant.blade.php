@@ -26,10 +26,28 @@
                                         <input type="text" class="form-control" name="name">
                                     </div>
                                 </div>
+                                 <div class="form-group ">
+                                    <label for="name_dr" class="control-label col-lg-3">Name Dari</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="name_dr">
+                                    </div>
+                                </div>
+                                 <div class="form-group ">
+                                    <label for="name_pa" class="control-label col-lg-3">Name Pashto</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="name_pa">
+                                    </div>
+                                </div>
                                 <div class="form-group ">
                                     <label for="member_since" class="control-label col-lg-3">Member Since</label>
                                     <div class="col-lg-6">
                                         <input type="date" class="form-control"  name="member_since">
+                                    </div>
+                                </div>
+                                 <div class="form-group ">
+                                    <label for="member_since_dr" class="control-label col-lg-3">Member Since Dari</label>
+                                    <div class="col-lg-6">
+                                        <input type="date" class="form-control"  name="member_since_dr">
                                     </div>
                                 </div>
                                 <div class="form-group ">
@@ -43,6 +61,29 @@
                                     <label for="details" class="control-label col-lg-3">Details</label>
                                     <div class="col-lg-6">
                                         <textarea class="form-control" name="details"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="details_dr" class="control-label col-lg-3">Details Dari</label>
+                                    <div class="col-lg-6">
+                                        <textarea class="form-control" name="details_dr"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="details_pa" class="control-label col-lg-3">Details Pashto</label>
+                                    <div class="col-lg-6">
+                                        <textarea class="form-control" name="details_pa"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label for="type" class="control-label col-lg-3">Category</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" name="type" id="type">
+                                            <option value="gov">Government Reformers</option>
+                                            <option value="cso">CSOs</option>
+                                            <option value="priv">Private Sector Reformers</option>
+                                        </select>
                                     </div>
                                 </div>
 

@@ -27,10 +27,10 @@
     @foreach($news as $value)
     <tr>
       <th style="width:10%;"><img style="width:120px;" src="{{asset('news_img/'.$value->image)}}"></th>
-      <td style="width:10%;">{{$value->title}}</td>
-      <td style="width:10%;">{{$value->created_date}}</td>
-      <td style="width:24%;">{{$value->short_desc}}</td>
-      <td style="width:23%;">{{$value->description}}</td>
+      <td style="width:10%;">{{$value->title_en}}</td>
+      <td style="width:10%;">{{$value->created_date_en}}</td>
+      <td style="width:24%;">{{$value->short_desc_en}}</td>
+      <td style="width:23%;">{{$value->description_en}}</td>
       <td>
         <form action="{{route('news.destroy',$value->id)}}" method="POST">
             {{ method_field('DELETE') }}

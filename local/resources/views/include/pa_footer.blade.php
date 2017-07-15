@@ -1,24 +1,16 @@
 	<footer class="footer">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-sm-4">
+			<div class="col-md-3 col-sm-3">
 				<div class="widget">
-					<h5 class="widgetheading">Our Contact</h5>
-					<address>
-					<strong>Administrative Office Of President</strong><br>
-					JC Main Road, Near Silnile tower<br>
-					 Pin-21542 NewYork US.</address>
-					<p>
-						<i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
-						<i class="icon-envelope-alt"></i> info@aop.gov.af
-					</p>
+					<img src="{{asset('img/ogp.png')}}" style="height:190px" class="img-responsive">
 				</div>
 			</div>
 			<div class="col-md-5 col-sm-5">
 				<div class="widget">
 					<h5 class="widgetheading">Quick Links</h5>
 					<ul class="link-list">
-						<li><a href="{{route('home')}}">Home</a></li>
+						<li><a href="{{route('home')}}">{{trans('home.home')}}</a></li>
 						<li><a href="{{route('ogpa')}}">About OGPA</a></li>
 						<li><a href="{{route('seminars')}}">Seminars</a></li>
 						<li><a href="{{route('agendas')}}">Agendas</a></li>
@@ -30,9 +22,17 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-3">
+			<div class="col-md-4 col-sm-4">
 				<div class="widget">
-					<img src="{{asset('img/ogp.png')}}" style="height:190px" class="img-responsive">
+					<h5 class="widgetheading">Our Contact</h5>
+					<address>
+					<strong>Administrative Office Of President</strong><br>
+					JC Main Road, Near Silnile tower<br>
+					 Pin-21542 NewYork US.</address>
+					<p>
+						<i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
+						<i class="icon-envelope-alt"></i> info@aop.gov.af
+					</p>
 				</div>
 			</div>
 		</div>
@@ -73,7 +73,6 @@
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/semantic.min.js')}}"></script> 
 
-
 <script src="{{asset('js/jQuery.scrollSpeed.js')}}"></script>
 <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
 <script src="{{asset('js/jquery.fancybox.pack.js')}}"></script>
@@ -90,7 +89,6 @@
 <script src="js/fullcalendar.min.js"></script>
 <!--<script src="js/modal.js"></script>  -->
 <script type="text/javascript">jQuery.scrollSpeed(100, 800);</script>
-  
 
 
 <script>
@@ -104,11 +102,6 @@ $('.ui.dropdown').dropdown({transition: 'drop' }).dropdown({ on: 'hover' });
 $('.menu .item')
   .tab()
 ;
-function view() {
-$('.ui.modal')
-  .modal('show')
-;
-}
 
 	
 	$(document).ready(function() {

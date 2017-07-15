@@ -6,7 +6,10 @@
   <?php $dir = 'left'; ?>
   @endif
 
-
+<?php
+$date = "date_".$lang;
+$meeting_title = "meeting_title_".$lang;
+ ?>
 	
 	<section id="content">
 	
@@ -16,7 +19,7 @@
 	    	<div class="row">
 	    	
 	    	@include('include.resources_sidebar')
-	    	@include('include.filter')
+	    	<!-- included filter -->
 <div clas="row">
 	          <div class="ui large breadcrumb">
 	            <a class="section">Resources</a>
@@ -25,7 +28,7 @@
 	          </div>
 	        </div>
 	    	
-		<div class="col-md-9" style="margin-top:2%">
+		<div class="col-md-9 col-xs-9" style="margin-top:2%">
 			<table class="ui very basic collapsing celled table">
 				<thead>
 					<tr>
@@ -34,7 +37,6 @@
 						<th>Date</th>
 						<th>Meeting</th>
 						<th>Agenda</th>
-						<th>Details</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -43,9 +45,8 @@
 					<tr>
 						<td><?php echo ++$i; ?></td>
 						<td>{{$value->time}}</td>
-						<td>{{$value->date}}</td>
-						<td>{{$value->meeting_title}}</td>
-						<td>{{$value->agenda}}</td>
+						<td>{{$value->$date}}</td>
+						<td>{{$value->$meeting_title}}</td>
 						<td><div class="ui tiny button" onclick="view_details({{$value->agenda}})">View Details</div></td>
 					</tr>
 					@endforeach
@@ -56,6 +57,17 @@
 		</div>
 		</div>
 
+
+    <!-- pagination  start-->
+
+
+    <div class="container">
+      <div class="col-md-4 col-md-offset-5 col-xs-5 col-xs-offset-5">
+      {{$meetings->links()}}
+      </div>  
+    </div>
+
+<!-- pagination end -->
 
 	</div>
 	</section>
@@ -104,8 +116,8 @@
           $("#details").empty();
           $("#date").empty();
           $("#time").append(output['time']);
-          $("#details").append(output['agenda']);
-          $("#date").append(output['date']);
+          $("#details").append(output['agenda_'+'{{$lang}}']);
+          $("#date").append(output['date_'+'{{$lang}}']);
             $("#modal").modal('show');
         },
         error:function(output){

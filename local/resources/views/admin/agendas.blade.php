@@ -27,8 +27,8 @@
     <tr>
       <th><?php echo $i++; ?></th>
       <td>{{$value->time}}</td>
-      <td>{{$value->date}}</td>
-      <td style="width:45%;">{{$value->agenda}}</td>
+      <td>{{$value->date_en}}</td>
+      <td style="width:45%;">{{$value->agenda_en}}</td>
       <td>
         <form action="{{route('agendas.destroy',$value->id)}}" method="POST">
             {{ method_field('DELETE') }}

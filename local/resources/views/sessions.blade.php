@@ -6,6 +6,10 @@
   <?php $dir = 'left'; ?>
   @endif
 
+<?php 
+$date = "date_".$lang;
+$meeting_title = "meeting_title_".$lang;
+ ?>
 	
 	<section id="content">
 	
@@ -15,7 +19,7 @@
 	    	<div class="row">
 	    	
 	    	@include('include.calendar_sidebar')
-	    	@include('include.filter')
+	    	<!-- included filter -->
 <div clas="row">
 	          <div class="ui large breadcrumb">
 	            <a class="section">Calendar</a>
@@ -32,7 +36,7 @@
 						<th>Time</th>
 						<th>Date</th>
 						<th>Session Title</th>
-						<th>Details</th>
+						<!-- {{-- <th>Details</th> --}} -->
 					</tr>
 				</thead>
 				<tbody>
@@ -41,9 +45,9 @@
 					<tr>
 						<td><?php echo ++$i; ?></td>
 						<td>{{$value->time}}</td>
-						<td>{{$value->date}}</td>
-						<td>{{$value->meeting_title}}</td>
-						<td><div class="ui tiny button" onclick="view_details({{$value->id}})">View Details</div></td>
+						<td>{{$value->$date}}</td>
+						<td>{{$value->$meeting_title}}</td>
+						<!-- {{-- <td><div class="ui tiny button" onclick="view_details({{$value->id}})">View Details</div></td> --}} -->
 					</tr>
 					@endforeach
 				</tbody>
@@ -52,6 +56,17 @@
 
 		</div>
 		</div>
+
+		 <!-- pagination  start-->
+
+
+    <div class="container">
+      <div class="col-md-4 col-md-offset-5 col-xs-5 col-xs-offset-5">
+      {{$sessions->links()}}
+      </div>  
+    </div>
+
+<!-- pagination end -->
 
 
 	</div>

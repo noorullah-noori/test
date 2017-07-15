@@ -35,4 +35,18 @@ return [
     'jobs&opportunities'=>'وظایف و فرصت ها',
     'latest_news'=>'اخبار',
     'secretariat_word'=>'سخن رئیس حکومتداری باز افغانستان',
+    #footer
+    'goto'=>'برو به',
+    'walkby'=>'آدرس',
+    'seminars'=>'سیمینار ها',
+    'agendas'=>'آجندا ها',
+    'themes'=>'موضوعات',
+    'news'=>'اخبار',
+    'stories'=>'دست آوردها',
+    'contact'=>'تماس با ما',
+    'aop'=>'اداره امور ریاست جمهوری',
+    'aop_address'=>'پشتونستان وات، کابل، افغانستان',
+
+    //{{trans('home.home')}}
+
 ];

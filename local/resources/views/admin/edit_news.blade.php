@@ -18,30 +18,72 @@
                         <div class="form cmxform form-horizontal ">
                             {!! Form::model($news, ['route' => array('news.update',$news->id)]) !!}
                             <input name="_method" type="hidden" value="PATCH">
-                                <div class="form-group ">
+                               <div class="form-group ">
                                         <label for="title" class="control-label col-lg-3">News Title</label>
                                         <div class="col-lg-6">
-                                            <input class="form-control" id="title" name="title" value="{{$news->title}}" type="text">
+                                            <input class=" form-control" id="title" name="title" value="{{$news->title_en}}" type="text">
+                                        </div>
+                                    </div>
+                                     <div class="form-group ">
+                                        <label for="title_dr" class="control-label col-lg-3">News Title DAri</label>
+                                        <div class="col-lg-6">
+                                            <input class=" form-control" value="{{$news->title_dr}}" id="title_dr" name="title_dr" type="text">
+                                        </div>
+                                    </div>
+                                     <div class="form-group ">
+                                        <label for="title_pa" class="control-label col-lg-3">News Title Pashto</label>
+                                        <div class="col-lg-6">
+                                            <input class=" form-control" id="title_pa" value="{{$news->title_pa}}" name="title_pa" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="date" class="control-label col-lg-3">Date</label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" value="{{$news->created_date}}" id="date" name="date" type="date">
+                                            <input class=" form-control" id="date" name="date" value="{{$news->created_date_en}}" type="date">
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                            <label for="short_desc" class="control-label col-lg-3">Short Description</label>
-                                            <div class="col-lg-6">
-                                                <textarea class="form-control " id="short_desc" name="short_desc">{{$news->short_desc}}</textarea>
-                                            </div>
+                                        <label for="date_dr" class="control-label col-lg-3">Date Dari</label>
+                                        <div class="col-lg-6">
+                                            <input class=" form-control" id="date_dr" value="{{$news->created_date_dr}}" name="date_dr" type="date">
                                         </div>
+                                    </div>
                                     <div class="form-group ">
-                                            <label for="description" class="control-label col-lg-3">Description</label>
-                                            <div class="col-lg-6">
-                                                <textarea class="form-control " id="description" name="description">{{$news->description}}</textarea>
-                                            </div>
+                                        <label for="short_desc" class="control-label col-lg-3">Short Description</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="short_desc" name="short_desc">{{$news->short_desc_en}}</textarea>
                                         </div>
+                                    </div>
+                                      <div class="form-group ">
+                                        <label for="short_desc_dr" class="control-label col-lg-3">Short Description Dari</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="short_desc_dr" name="short_desc_dr">{{$news->short_desc_dr}}</textarea>
+                                        </div>
+                                    </div>
+                                      <div class="form-group ">
+                                        <label for="short_desc_pa" class="control-label col-lg-3">Short Description Pashto</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="short_desc_pa" name="short_desc_pa">{{$news->short_desc_pa}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="description" class="control-label col-lg-3">Description</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="description" name="description">{{$news->description_en}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="description_dr" class="control-label col-lg-3">Description Dari</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="description_dr" name="description_dr">{{$news->description_dr}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="description_pa" class="control-label col-lg-3">Description Pashto</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="description_pa" name="description_pa">{{$news->description_pa}}</textarea>
+                                        </div>
+                                    </div>
                                          <div class="form-group">
                                         <label for="image" class="control-label col-lg-3">Image</label>
 

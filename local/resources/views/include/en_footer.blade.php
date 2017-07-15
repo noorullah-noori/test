@@ -3,11 +3,10 @@
 		<div class="row">
 			<div class="col-md-4 col-sm-4">
 				<div class="widget">
-					<h5 class="widgetheading">Our Contact</h5>
+					<h5 class="widgetheading">{{trans('home.walkby')}}</h5>
 					<address>
-					<strong>Administrative Office Of President</strong><br>
-					JC Main Road, Near Silnile tower<br>
-					 Pin-21542 NewYork US.</address>
+					<strong>{{trans('home.aop')}}</strong><br>
+					{{trans('home.aop_address')}}</address>
 					<p>
 						<i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
 						<i class="icon-envelope-alt"></i> info@aop.gov.af
@@ -16,17 +15,17 @@
 			</div>
 			<div class="col-md-5 col-sm-5">
 				<div class="widget">
-					<h5 class="widgetheading">Quick Links</h5>
+					<h5 class="widgetheading">{{trans('home.goto')}}</h5>
 					<ul class="link-list">
-						<li><a href="{{route('home')}}">Home</a></li>
-						<li><a href="{{route('ogpa')}}">About OGPA</a></li>
-						<li><a href="{{route('seminars')}}">Seminars</a></li>
-						<li><a href="{{route('agendas')}}">Agendas</a></li>
-						<li><a href="{{route('themes1')}}">Themes</a></li>
-						<li><a href="{{route('news')}}">News</a></li>
-						<li><a href="{{route('stories')}}">Success Stories</a></li>
-						<li><a href="{{route('opportunities')}}">Career</a></li>
-						<li><a href="{{route('contacts')}}">Contact us</a></li>
+						<li><a href="{{route('home')}}">{{trans('home.home')}}</a></li>
+						<li><a href="{{route('ogpa')}}">{{trans('home.about')}}</a></li>
+						<li><a href="{{route('seminars')}}">{{trans('home.seminars')}}</a></li>
+						<li><a href="{{route('agendas')}}">{{trans('home.agendas')}}</a></li>
+						<li><a href="{{route('themes1')}}">{{trans('home.themes')}}</a></li>
+						<li><a href="{{route('news')}}">{{trans('home.news')}}</a></li>
+						<li><a href="{{route('stories')}}">{{trans('home.stories')}}</a></li>
+						<li><a href="{{route('opportunities')}}">{{trans('home.jobs&opportunities')}}</a></li>
+						<li><a href="{{route('contacts')}}">{{trans('home.contact')}}</a></li>
 					</ul>
 				</div>
 			</div>
@@ -68,12 +67,10 @@
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
-<!-- <script src="{{asset('js/dropdown.js')}}"	></script> -->
+
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/semantic.min.js')}}"></script> 
-
-
 <script src="{{asset('js/jQuery.scrollSpeed.js')}}"></script>
 <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
 <script src="{{asset('js/jquery.fancybox.pack.js')}}"></script>
@@ -84,7 +81,7 @@
 
 <script src="js/modernizr.custom.js"></script>
 <script src="js/jquery.isotope.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
+<script src=" js/jquery.magnific-popup.min.js"></script>
 <script src="js/animate.js"></script>
 <script src="js/moment.min.js"></script>
 <script src="js/fullcalendar.min.js"></script>

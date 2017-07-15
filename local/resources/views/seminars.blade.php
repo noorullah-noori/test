@@ -6,6 +6,12 @@
   <?php $dir = 'left'; ?>
   @endif	
 
+<?php 
+
+$title = "title_".$lang;
+$description = "description_".$lang;
+
+ ?>
 	
 	<section id="content">
 	
@@ -15,7 +21,7 @@
     	<div class="row">
     	
 	    	@include('include.calendar_sidebar')
-	    	@include('include.filter')
+	    	<!-- included filter -->
 	    	<div class="ui large breadcrumb">
 	            <a class="section">Calendar</a>
 	              <span class="divider">/</span>
@@ -37,8 +43,8 @@
 		          <tr>
 		          <td><?php echo ++$i; ?></td>
 		          <td><img style="width:100px;"src="{{asset('events&seminars/'.$value->image)}}"/></td>
-		            <td>{{$value->title}}</td>
-		            <td>{{$value->description}}</td>
+		            <td>{{$value->$title}}</td>
+		            <td>{{$value->$description}}</td>
 		          </tr>
 		          @endforeach
 		          
@@ -47,6 +53,19 @@
         			
 			</div>
         </div>
+
+            <!-- pagination  start-->
+
+
+    <div class="container">
+      <div class="col-md-4 col-md-offset-5 col-xs-5 col-xs-offset-5">
+      {{$seminars->links()}}
+      </div>  
+    </div>
+
+<!-- pagination end -->
+
+
 	</div>
 	</section>
 	

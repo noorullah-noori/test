@@ -35,6 +35,17 @@ return [
     'jobs&opportunities'=>'Jobs & Opportunities',
     'latest_news'=>'Latest News',
     'secretariat_word'=>'Secretariat Word',
+    #footer
+    'goto'=>'Quick Links',
+    'walkby'=>'Address',
+    'seminars'=>'Seminars',
+    'agendas'=>'Agendas',
+    'themes'=>'Themes',
+    'news'=>'News',
+    'stories'=>'Success Stories',
+    'contact'=>'Career',
+    'aop'=>'Administrative Office the President',
+    'aop_address'=>'Pashtunistan Wat, Kabul, Afghanistan',
 
 
 ];

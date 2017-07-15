@@ -4,7 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Request;
+use Auth;
+use DB;
+use Session;
+use Hash;
+use App\User;
 class LoginController extends Controller
 {
     /*
@@ -25,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -34,6 +39,60 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest')->except('logout');
+    }
+    public function login() {
+        $email = $_POST['email'];
+        $password =$_POST['password'];
+        // $result = DB::select("select id from users where email='".$email."' and password='".$password."' ");
+        // if (sizeof($result)>0) {
+        //     // Authentication passed...
+        //     Session::put('email',$email);
+        //     return redirect()->intended('admin');
+        // }
+        // else{
+        //     return Redirect()->route('login');
+        // }
+        // $db_password =DB::select("select password from users where email='".$email."' limit 1");
+        $rec = DB::table('users')->where('email',$email)->first();
+
+        $password_db = $rec->password;
+
+        // print_r(gettype($password_db));exit;
+        
+        if(Hash::check($password,$password_db)) {
+            // Authentication passed...
+            $username = $rec->name;
+            Session::put('username',$username);
+            Session::put('email',$email);
+            return redirect()->route('admin');
+        }
+        else {
+            return Redirect()->route('login');
+        }
+        // if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        //     // Authentication passed...
+        //     return redirect()->route('admin');
+        // }
+        // else {
+        //     echo "failed";
+        // }
+
+    }
+    public function logout() {
+        session()->flush();
+        return redirect()->route('login');      
+
+    }
+    public function users() {
+        $users = User::all();
+        return view('admin.users')->with('users',$users);      
+
+    }
+        public function edit_user($id) {
+            print_r($id);exit;
+        $users = User::all();
+        return view('admin.users')->with('users',$users);      
+
     }
 }

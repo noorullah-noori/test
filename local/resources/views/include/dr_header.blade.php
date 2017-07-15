@@ -24,105 +24,191 @@
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<style type="text/css">
+<style>
 
-		.btn-circle.btn-xl {
-		  border-radius: 50%;
-		  width: 140px;
-		  height: 140px;
-		  padding: 10px 16px;
-		  font-size: 24px;
-		  line-height: 1.33;
-		}
-		.btn-circle.btn-xl:hover {
-		  border: 4px solid #c9c9c9;
-		  box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.6)
-		}
-		.btn-text {
-			line-height: 3;
-		}
-		.social-padding {
-			padding-left:0;
-		}
-		html, body {
-		  height: 100%;
-		  margin: 0;
-		}
-		.footer{
-		  height:auto;
-          width:100%;
-		}
-		.panel a {
-			color:black;
-		}
-        .ui.menu:first-child {
-            margin-bottom:1px;
-            margin-top:5px;
-        }
-        section.section-padding.gray-bg {
-            margin-top:5px;
-        }
-        header .navbar {
-          min-height:40px;
-        }
-        .footer {
-          min-height: 55%;
-        }
+    .btn-circle.btn-xl {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      padding: 10px 16px;
+      font-size: 24px;
+      line-height: 1.33;
+    }
+    .btn-circle.btn-xl:hover {
+      border: 4px solid #c9c9c9;
+      box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.6)
+    }
+    .btn-text {
+      line-height: 3;
+    }
+    .social-padding {
+      padding-left:0;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    .footer{
+      height:auto;
+      width:100%; 
+      /*position:fixed;*/
+      bottom: 0;
+    }
+    .panel a {
+      color:black;
+    }
+    .ui.menu:first-child {
+        margin-bottom:-6px;
+        margin-top:0px;
+    }
+    section.section-padding.gray-bg {
+        margin-top:5px;
+    }
+    header .navbar {
+      min-height:40px;
+    }
+    @font-face {
+        font-family:"Yekan" ;
+        src:url("{{asset('fonts/Yekan.woff')}}") ;
+    }
+    @font-face {
+        font-family:"BTitr" ;
+        src:url("{{asset('fonts/BTitr.woff')}}") ;
+    }
+    
+    .ui.stackable.secondary.menu.large {
+      font-family: "Yekan" ;
+      font-size: 13px;
+    }
 
+    body, .open_gov_short,.ui.large.left.labeled.primary.icon.button,.ui.header.test {
+      font-family:"Yekan" ;
+    }
+    .ui.icon.header, .open_gov {
+      font-family:"BTitr" ;
+    }
+
+
+    #content{
+      min-height:47%;
+    }
+    .lang {
+        display: inline;
+        color:white;
+        font-weight:bold;
+        font-size:14px;
+        font-family: "Yekan",arial;
+        padding-right:3px;
+        padding-top: 1px;
+      }
+    @font-face {
+      font-family:"Yekan";
+      src:url('assets/fonts/Yekan.woff');
+    }
+    .my_class {
+      font-family: "Yekan";
+      font-size: 13px;
+    }
+    .nav>li>a {
+          padding-right:6px;
+          margin-top: 4px;
+          margin-bottom: -2px;
+          padding: 5px;
+    }
+    .nav-pills>li>a:hover {
+      background-color:transparent;
+      color:white;
+      text-decoration: none;
+    }
+   
         
-	</style>
+  </style>
 </head>
 <body class="body">
 <div id="wrapper" class="home-page">
 <div class="topbar">
   <div class="container">
-      <div class="col-md-12 col-xs-12"> 	
-       <div class="col-md-2 col-xs-2">
+      {{-- <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12" style="padding-left:0%;"> 	
+       <div class="col-md-2 col-xs-5 col-sm-5 col-lg-2 col-xl-2">
         <p class=""><i class="fa fa-phone"></i>Tel No. (+001) 123-456-789</p>
         </div>
-        <div class="col-md-7 col-xs-7"></div>
-         <div class="col-md-3 col-xs-3">
-    <span class="col-md-1 col-xs-1"  style="padding-left:60%"><a  style="color:white;font-weight:bold;font-size:15px" href="javascript:void(0)" class="languageSwitcher" id="pa" >پشتو</a></span>
-    <span class="col-md-1 col-xs-1"  style="padding-right:10%"><a  style="color:white;font-weight:bold;font-size:15px" href="javascript:void(0)" class="languageSwitcher" id="dr" >دری</a></span>
-     <span class="col-md-1 col-xs-1" style="padding-left:11%"><a  style="color:white;font-weight:bold;font-size:15px" href="javascript:void(0)" class="languageSwitcher" id="en" >English</a></span>
-  </div>
-      </div>
+        <div class="col-md-7 col-xs-0 col-sm-0 col-lg-7 col-xl-7"></div>
+         <div class="col-md-3 col-xs-7 col-sm-7 col-lg-3 col-xl-3" style="padding-right:0%;">
+          <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1"  style="padding-left:50%"><a  style="font-family:'Yekan'; color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="pa" >پشتو</a></span>
+          <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1"  style="padding-right:10%;padding-left:8%"><a  style="font-family:'Yekan'; color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="dr" >دری</a></span>
+           <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1" style="padding-left:11%;padding-top:1%;"><a  style="color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="en" >English</a></span>
+        </div>
+      </div> --}}
+      <nav class="header-nav-top" style="margin-top:-7px;float:right">           
+ 
+       <ul class="nav nav-pills">
+          
+           <li class="hidden-xs">
+            <a href="javascript:void(0)" class="lang languageSwitcher" style="font-family:Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;" id="en">English</a>
+          </li>
+          <li class="hidden-xs"> 
+            <a href="javascript:void(0)" class="lang languageSwitcher my_class" id="dr">دری</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="lang languageSwitcher my_class" id="pa">پشتو</a>
+          </li>
+          
+        </ul>
+      </nav>
+      <nav class="header-nav-top" style="margin-top:-7px;float:left">           
+ 
+       <ul class="nav nav-pills">
+          
+           <li class="hidden-xs">
+            <a class="lang languageSwitcher" style="font-family:'Yekan';font-size: 12px; "><i style="color:#cde;" class="fa fa-phone"></i>&nbsp;&nbsp;شماره تماس : ۱۳ ۴  ۷ ۸ ۹ ۰۰  ۲ ۰ </a>
+          </li>
+          
+        </ul>
+      </nav>
+
+
+     
     
   </div>
 </div>
 	<!-- start header -->
 	<header>
-	   <div class="container-fluid" style="background-image:url({{asset('img/header-bg.png')}});">
-      <div class="col-md-12 col-xs-12">
-        <div class="col-md-1 col-md-offset-1  col-xs-1 col-xs-offset-1">
+	   {{-- <div class="container-fluid" style="background-image:url({{asset('img/header-bg.png')}});">
+      <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+        <div class="col-md-1 col-md-offset-1  col-xs-3 col-xs-offset-1 col-sm-3 col-sm-offset-3 col-lg-1 col-lg-offset-1 col-xl-1 col-xl-offset-1">
         <img src="{{asset('img/ogp.png')}}" style="height:97px;padding-top:1px">
       </div>
 
-      <div class="col-md-3 col-md-offset-2 col-xs-3 col-xs-offset-2">
+      <div class="col-md-3 col-md-offset-2 col-xs-3 col-xs-offset-2 col-sm-3 col-sm-offset-2 col-lg-3 col-lg-offset-2 col-xl-3 col-xl-offset-2">
         <img src="{{asset('img/header-center.png')}}" style="height:98px;">
       </div>
-            <div class="col-md-3 col-md-offset-1 col-xs-3 col-xs-offset-0.5">
-        <img src="{{asset('img/logo.png')}}" style="height:98px;padding-top:3px">
+            <div class="col-md-3 col-md-offset-1 col-xs-3 col-xs-offset-0.5 col-sm-3 col-sm-offset-0.5 col-lg-3 col-lg-offset-1 col-xl-3 col-xl-offset-1">
+        <img src="{{asset('img/logo.png')}}" style="height:98px;padding-top:3px;padding-left:8%">
       </div>
       </div>
-      </div>
+      </div> --}}
+
+      <div class="container-fluid" style="background-image: url({{asset('img/header-bg.png')}});">
+        <div class="ui three column grid container" style="padding-top: 1px;padding-bottom: 1px;">
+                <div class="column "><img  style="width:100px;" class="ui medium image" src="{{asset('img/ogp.png')}}"></div>
+                <div class="column"><img  style="width:178px;" class="ui centered medium image" src="{{asset('img/header-center.png')}}"></div>
+                <div class="column"><img style="width:100px;" class="ui left floated medium image"  src="{{asset('img/logo.png')}}"></div>
+        </div>
+    </div>
+
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
-       
-
-
-
-
-
-
 </div>
+<style type="text/css">
+  
+</style>
 <div class="container pull-right">
     <!-- <div class="ui secondary menu" > -->
     <div class="col-md-10" style="margin-left:7%">
     <div class="ui stackable secondary menu large" id="hybrid">
         <a href="{{route('home')}}" class="item">{{ trans('home.home')}}</a>
           <div class="ui dropdown item">
-          {{ trans('home.about')}}<i class="icon dropdown"></i>
+          {{ trans('home.about')}}<i style="margin-right:10px;"class="icon dropdown"></i>
           <div class="menu">
               <a href="{{route('ogp')}}" class="item">OGP Introduction</a>
               <a href="{{route('ogpa')}}" class="item">OGPA Introduction</a>
@@ -135,7 +221,7 @@
           <a href="{{route('themes1')}}" class="item">{{trans('home.themes')}}</a>
           <div class="ui dropdown item">
           {{trans('home.resources')}}
-          <i class="icon dropdown"></i>
+          <i style="margin-right:10px;" class="icon dropdown"></i>
           <div class="menu">
             <a class="item" href="{{route('agendas')}}">Agendas</a>            
             <a class="item" href="{{route('meetings')}}">Meeting Minutes</a>
@@ -149,7 +235,7 @@
           <div class="field">
           <div  class="ui dropdown item">
           {{trans('home.participants')}}
-          <i class="icon dropdown"></i>
+          <i style="margin-right:10px;" class="icon dropdown"></i>
           <div class="menu">
             <a class="item" href="{{route('global_participants')}}">Global Participants</a>
             <a class="item" href="{{route('national_participants')}}">National Participants</a>
@@ -158,7 +244,7 @@
           </div>
           <div class="ui dropdown item">
               {{trans('home.calendar')}}
-              <i class="icon dropdown"></i>
+              <i style="margin-right:10px;" class="icon dropdown"></i>
               <div class="menu">
                 <a class="item" href="{{route('seminars')}}">Seminars</a>
                 <a class="item" href="{{route('events')}}">Events</a>
@@ -185,5 +271,4 @@
     .ui.large.breadcrumb {
         margin-bottom:10px;
     }
-
     </style>    

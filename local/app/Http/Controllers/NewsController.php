@@ -38,10 +38,20 @@ class NewsController extends Controller
     {
         $news = new News();
         
-        $news->title = $request->input('title');
-        $news->created_date = $request->input('date');
-        $news->short_desc = $request->input('short_desc');
-        $news->description = $request->input('description');
+        $news->title_en = $request->input('title');
+        $news->created_date_en = $request->input('date');
+        $news->short_desc_en = $request->input('short_desc');
+        $news->description_en = $request->input('description');
+
+        $news->title_dr = $request->input('title_dr');
+        $news->created_date_dr = $request->input('date_dr');
+        $news->created_date_pa = $request->input('date_dr');
+        $news->short_desc_dr = $request->input('short_desc_dr');
+        $news->description_dr = $request->input('description_dr');
+        
+        $news->title_pa = $request->input('title_pa');
+        $news->short_desc_pa = $request->input('short_desc_pa');
+        $news->description_pa = $request->input('description_pa');
 
         $imageName = '';
         if($request->image == null){
@@ -94,10 +104,19 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
        $news = News::findOrFail($id);
-        $news->title = $request->input('title');
-        $news->created_date = $request->input('date');
-        $news->short_desc = $request->input('short_desc');
-        $news->description = $request->input('description');
+        $news->title_en = $request->input('title');
+        $news->created_date_en = $request->input('date');
+        $news->short_desc_en = $request->input('short_desc');
+        $news->description_en = $request->input('description');
+
+        $news->title_dr = $request->input('title_dr');
+        $news->created_date_dr = $request->input('date_dr');
+        $news->short_desc_dr = $request->input('short_desc_dr');
+        $news->description_dr = $request->input('description_dr');
+        $news->created_date_pa = $request->input('date_dr');
+        $news->title_pa = $request->input('title_pa');
+        $news->short_desc_pa = $request->input('short_desc_pa');
+        $news->description_pa = $request->input('description_pa');
 
         $max = $news->id;
         $imageName = '';

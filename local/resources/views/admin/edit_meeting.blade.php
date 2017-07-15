@@ -18,22 +18,45 @@
                                         <input class="form-control" id="time" name="time" value="{{$meetings->time}}" type="time">
                                     </div>
                                 </div>
-                                <div class="form-group ">
-                                    <label for="time" class="control-label col-lg-3">Date</label>
+                                  <div class="form-group ">
+                                    <label for="date" class="control-label col-lg-3">Date</label>
                                     <div class="col-lg-6">
-                                        <input class="form-control" id="time" name="date" value="{{$meetings->date}}" type="date">
+                                        <input type="date" value="{{$meetings->date_en}}" class="form-control" name="date">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="date_dr" class="control-label col-lg-3">Date Dari</label>
+                                    <div class="col-lg-6">
+                                        <input type="date" value="{{$meetings->date_dr}}" class="form-control" name="date_dr">
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label for="meeting_title" class="control-label col-lg-3">Meeting Title</label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" name="meeting_title" value="{{$meetings->meeting_title}}">
+                                        <input type="text" value="{{$meetings->meeting_title_en}}" class="form-control" name="meeting_title">
                                     </div>
                                 </div>
+                                  <div class="form-group ">
+                                    <label for="meeting_title_dr" class="control-label col-lg-3">Meeting Title Dari</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" value="{{$meetings->meeting_title_dr}}" name="meeting_title_dr">
+                                    </div>
+                                </div>
+                                  <div class="form-group ">
+                                    <label for="meeting_title_pa" class="control-label col-lg-3">Meeting Title Pashto</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" value="{{$meetings->meeting_title_pa}}" name="meeting_title_pa">
+                                    </div>
+                                </div>
+
                                 <div class="form-group ">
                                     <label for="description" class="control-label col-lg-3">Agenda</label>
                                     <div class="col-lg-6">
-                                        <textarea class="form-control" name="agenda">{{$meetings->agenda}}</textarea>
+                                        <select class="form-control" id="type" name="type">
+                                              @foreach($agendas as $agenda)
+                                                <option value='{{$agenda->id}}'>{{$agenda->agenda_en}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group ">

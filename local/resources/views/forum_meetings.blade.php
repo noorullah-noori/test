@@ -15,7 +15,7 @@
 	    	<div class="row">
 	    	
 	    	@include('include.calendar_sidebar')
-	    	@include('include.filter')
+	    	<!-- included filter -->
 <div clas="row">
 	          <div class="ui large breadcrumb">
 	            <a class="section">Calendar</a>

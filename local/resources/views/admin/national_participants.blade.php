@@ -29,10 +29,10 @@
     <tr>
       <th><?php echo $i++; ?></th>
       <td style="width:13%;"><img style="width:100px;" src="{{asset('n_participants/'.$value->image)}}"></td>
-      <td>{{$value->name}}</td>
-      <td style="width:10%;">{{$value->member_since}}</td>
+      <td>{{$value->name_en}}</td>
+      <td style="width:10%;">{{$value->member_since_en}}</td>
       <td>{{$value->email}}</td>
-      <td style="width:30%;">{{$value->details}}</td>
+      <td style="width:30%;">{{$value->details_en}}</td>
       <td>
         <form action="{{route('national_participants.destroy',$value->id)}}" method="POST">
             {{ method_field('DELETE') }}

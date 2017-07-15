@@ -29,8 +29,8 @@
     <tr>
       <th><?php echo $i++; ?></th>
       <td>{{$value->time}}</td>
-      <td>{{$value->date}}</td>
-      <td>{{$value->meeting_title}}</td>
+      <td>{{$value->date_en}}</td>
+      <td>{{$value->meeting_title_en}}</td>
       <td style="width:40%;">{{$value->agenda}}</td>
       <td>{{$value->type}}</td>
       <td>
