@@ -26,7 +26,7 @@
     <?php $i=1; ?>
     @foreach($news as $value)
     <tr>
-      <th style="width:10%;"><img style="width:120px;" src="{{asset('news_img/'.$value->image)}}"></th>
+      <th style="width:10%;"><img style="width:120px;" src="{{asset('uploads/news_img/'.$value->image)}}"></th>
       <td style="width:10%;">{{$value->title_en}}</td>
       <td style="width:10%;">{{$value->created_date_en}}</td>
       <td style="width:24%;">{{$value->short_desc_en}}</td>

@@ -24,7 +24,7 @@
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<style type="text/css">
+<style>
 
     .btn-circle.btn-xl {
       border-radius: 50%;
@@ -68,30 +68,73 @@
       min-height:40px;
     }
     @font-face {
-        font-family:"Yekan";
-        src:url("fonts/Yekan.woff");
+        font-family:"Yekan" ;
+        src:url("{{asset('fonts/Yekan.woff')}}") ;
     }
     @font-face {
-        font-family:"BTitr";
-        src:url("fonts/BTitr.woff");
+        font-family:"BTitr" ;
+        src:url("{{asset('fonts/BTitr.woff')}}") ;
     }
     
     .ui.stackable.secondary.menu.large {
-      font-family: "Yekan";
-      font-size: 15px;
+      font-family: "Yekan" ;
+      font-size: 13px;
     }
 
     body, .open_gov_short,.ui.large.left.labeled.primary.icon.button,.ui.header.test {
-      font-family:"Yekan";
+      font-family:"Yekan" ;
     }
     .ui.icon.header, .open_gov {
-      font-family:"BTitr";
+      font-family:"BTitr" ;
     }
 
 
     #content{
       min-height:47%;
     }
+    .lang {
+        display: inline;
+        color:white;
+        font-weight:bold;
+        font-size:14px;
+        font-family: "Yekan",arial;
+        padding-right:3px;
+        padding-top: 1px;
+      }
+    @font-face {
+      font-family:"Yekan";
+      src:url('assets/fonts/Yekan.woff');
+    }
+    .my_class {
+      font-family: "Yekan";
+      font-size: 13px;
+    }
+    .nav>li>a {
+          padding-right:6px;
+          margin-top: 4px;
+          margin-bottom: -2px;
+          padding: 5px;
+    }
+    .nav-pills>li>a:hover {
+      background-color:transparent;
+      color:white;
+      text-decoration: none;
+    }
+
+          @media only screen and (max-width: 40em) { 
+  #ogp {
+   width:20px;
+   bottom: 0px;
+   top:1px;
+    }
+    #ogpa {
+   left:-20px;
+    }
+    #middle {
+      height: 85px;
+    }
+  }
+   
         
   </style>
 </head>
@@ -99,46 +142,60 @@
 <div id="wrapper" class="home-page">
 <div class="topbar">
   <div class="container">
-      <div class="col-md-12 col-xs-12" style="padding-left:0%;">  
-       <div class="col-md-2 col-xs-5">
+      {{-- <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12" style="padding-left:0%;">   
+       <div class="col-md-2 col-xs-5 col-sm-5 col-lg-2 col-xl-2">
         <p class=""><i class="fa fa-phone"></i>Tel No. (+001) 123-456-789</p>
         </div>
-        <div class="col-md-7 col-xs-0"></div>
-         <div class="col-md-3 col-xs-7" style="padding-right:0%;">
-          <span class="col-md-1 col-xs-1"  style="padding-left:50%"><a  style="font-family:'Yekan'; color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="pa" >پشتو</a></span>
-          <span class="col-md-1 col-xs-1"  style="padding-right:10%;padding-left:8%"><a  style="font-family:'Yekan'; color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="dr" >دری</a></span>
-           <span class="col-md-1 col-xs-1" style="padding-left:11%;padding-top:1%;"><a  style="color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="en" >English</a></span>
+        <div class="col-md-7 col-xs-0 col-sm-0 col-lg-7 col-xl-7"></div>
+         <div class="col-md-3 col-xs-7 col-sm-7 col-lg-3 col-xl-3" style="padding-right:0%;">
+          <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1"  style="padding-left:50%"><a  style="font-family:'Yekan'; color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="pa" >پشتو</a></span>
+          <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1"  style="padding-right:10%;padding-left:8%"><a  style="font-family:'Yekan'; color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="dr" >دری</a></span>
+           <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1" style="padding-left:11%;padding-top:1%;"><a  style="color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="en" >English</a></span>
         </div>
-      </div>
+      </div> --}}
+      <nav class="header-nav-top" style="margin-top:-7px;float:right">           
+ 
+       <ul class="nav nav-pills">
+          
+           <li class="">
+            <a href="javascript:void(0)" class="lang languageSwitcher" style="font-family:Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;" id="en">English</a>
+          </li>
+          <li class=""> 
+            <a href="javascript:void(0)" class="lang languageSwitcher my_class" id="dr">دری</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="lang languageSwitcher my_class" id="pa">پشتو</a>
+          </li>
+          
+        </ul>
+      </nav>
+      <nav class="header-nav-top" style="margin-top:-7px;float:left">           
+ 
+       <ul class="nav nav-pills">
+          
+           <li class="">
+            <a class="lang languageSwitcher" style="font-family:'Yekan';font-size: 12px; "><i style="color:#cde;" class="fa fa-phone"></i>&nbsp;&nbsp;شماره تماس : ۱۳ ۴  ۷ ۸ ۹ ۰۰  ۲ ۰ </a>
+          </li>
+          
+        </ul>
+      </nav>
+
+
+     
     
   </div>
 </div>
   <!-- start header -->
   <header>
-     <div class="container-fluid" style="background-image:url({{asset('assets/img/header-bg.png')}});">
-      <div class="col-md-12 col-xs-12">
-        <div class="col-md-1 col-md-offset-1  col-xs-3 col-xs-offset-1">
-        <img src="{{asset('assets/img/ogp.png')}}" style="height:97px;padding-top:1px">
-      </div>
 
-      <div class="col-md-3 col-md-offset-2 col-xs-3 col-xs-offset-2">
-        <img src="{{asset('assets/img/header-center.png')}}" style="height:98px;">
-      </div>
-            <div class="col-md-3 col-md-offset-1 col-xs-3 col-xs-offset-0.5">
-        <img src="{{asset('assets/img/logo.png')}}" style="height:98px;padding-top:3px">
-      </div>
-      </div>
-      </div>
+      <div class="container-fluid" style="background-image: url({{asset('assets/img/header-bg.png')}});">
+        <div class="ui three column grid container" style="padding-top: 1px;padding-bottom: 1px;">
+                <div class="column "><img  style="width:100px;" id="ogp" class="ui medium image" src="{{asset('assets/img/ogp.png')}}"></div>
+                <div class="column"><img  style="width:178px;" id="middle" class="ui centered medium image" src="{{asset('assets/img/header-center.png')}}"></div>
+                <div class="column"><img style="width:100px;" id="ogpa" class="ui left floated medium image"  src="{{asset('assets/img/logo.png')}}"></div>
+        </div>
+    </div>
         <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-       
-
-
-
-
-
-
-</div>
 <div class="container pull-right">
     <!-- <div class="ui secondary menu" > -->
     <div class="col-md-10" style="margin-left:7%">

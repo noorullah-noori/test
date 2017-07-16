@@ -29,7 +29,7 @@
       <th><?php echo $i++; ?></th>
       <td style="width:150px;">{{$value->title_en}}</td>
       <td style="width:450px;">{{$value->description_en}}</td>
-      <td><a href="{{asset('reports/'.$value->pdf_en)}}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+      <td><a href="{{asset('uploads/reports/'.$value->pdf_en)}}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
       <td>{{$value->type}}</td>
       <td>
         <form action="{{route('resources.destroy',$value->id)}}" method="POST">

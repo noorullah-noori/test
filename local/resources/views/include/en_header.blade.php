@@ -102,6 +102,21 @@ box-shadow: inset -1px -3px 61px -5px rgba(0,0,0,0.75);
         text-decoration: none;
 
       }
+
+        @media only screen and (max-width: 40em) { 
+  #ogp {
+   width:20px;
+   left:-20px;
+   bottom: 0px;
+   top:1px;
+    }
+    #ogpa {
+   
+    }
+    #middle {
+      height: 85px;
+    }
+  }
       
 	</style>
 </head>
@@ -109,19 +124,6 @@ box-shadow: inset -1px -3px 61px -5px rgba(0,0,0,0.75);
 <div id="wrapper" class="home-page">
 <div class="topbar">
   <div  class="container">
-    {{-- <div class="row">
-      <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12" style="padding-right:31px;"> 	
-      <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 col-xl-6 lang" style="padding-left:8%">
-    <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1" style="margin-left:-7%;padding-top:1px;"><a  style="color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="en" >English</a></span>
-    <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1"  style="margin-left:3%"><a  style="font-family:'Yekan';color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="dr" >دری</a></span>
-    <span class="col-md-1 col-xs-1 col-sm-1 col-lg-1 col-xl-1"  style="margin-left:-2%;"><a  style="font-family:'Yekan';color:white;font-weight:bold;font-size:14px" href="javascript:void(0)" class="languageSwitcher" id="pa" >پشتو</a></span>
-  </div>
-  <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 col-xl-6 tel">
-        
-        </div>
-      </div>
-    </div>
-  </div>  --}}
   <nav class="header-nav-top" style="margin-top:-7px;float:left">           
  
        <ul class="nav nav-pills">
@@ -153,24 +155,12 @@ box-shadow: inset -1px -3px 61px -5px rgba(0,0,0,0.75);
 </div>
 	<!-- start header -->
 	<header>
-		{{--
-<!--      <div class="container-fluid" style="background-image:url({{asset('img/header-bg.png')}});">
-      <div class="col-md-3 col-md-offset-1 col-xs-3 col-xs-offset-0.5 col-sm-3 col-sm-offset-0.5 col-lg-3 col-lg-offset-1 col-xl-3 col-xl-offset-1">
-        <img src="{{asset('img/logo.png')}}" style="height:98px;padding-top:3px;padding-left:8%">
-      </div>
-      <div class="col-md-3 col-md-offset-1 col-xs-3 col-xs-offset-1 col-sm-3 col-sm-offset-1 col-lg-3 col-lg-offset-1 col-xl-3 col-xl-offset-1">
-        <img src="{{asset('img/header-center.png')}}" style="height:98px;">
-      </div>
-      <div class="col-md-2 col-md-offset-2  col-xs-2 col-xs-offset-2 col-sm-2 col-sm-offset-2 col-lg-2 col-lg-offset-2 col-xl-2 col-xl-offset-2">
-        <img src="{{asset('img/ogp.png')}}" style="height:97px;padding-top:1px">
-      </div>
-      </div> -->
-       --}}
+
       <div class="container-fluid" style="background-image: url({{asset('assets/img/header-bg.png')}});">
         <div class="ui three column grid container" >
-                <div class="column "><img  style="width:100px;" class="ui medium image" src="{{asset('assets/img/ogp.png')}}"></div>
-                <div class="column"><img  style="width:178px;" class="ui centered medium image" src="{{asset('assets/img/header-center.png')}}"></div>
-                <div class="column"><img style="width:100px;" class="ui right floated medium image"  src="{{asset('assets/img/logo.png')}}"></div>
+                <div class="column "><img  style="width:100px;top:1px;" id="ogp" class="ui medium image" src="{{asset('assets/img/ogp.png')}}"></div>
+                <div class="column"><img  style="width:178px;" id="middle" class="ui centered medium image" src="{{asset('assets/img/header-center.png')}}"></div>
+                <div class="column"><img style="width:100px;" id="ogpa" class="ui right floated medium image"  src="{{asset('assets/img/logo.png')}}"></div>
         </div>
     </div>
     <div class="navbar navbar-default navbar-static-top">
