@@ -63,7 +63,7 @@ class NationalParticipantsController extends Controller
               $max = NationalParticipants::max('id');
               $max += 1;
               $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-              $request->image->move('n_participants',$imageName);
+              $request->image->move('uploads/n_participants',$imageName);
         }
 
         $national_participants->image = $imageName;
@@ -126,7 +126,7 @@ class NationalParticipantsController extends Controller
         }
         else{
              $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-             $request->image->move('n_participants',$imageName);
+             $request->image->move('uploads/n_participants',$imageName);
         }
 
         $national_participants->image = $imageName;
@@ -143,7 +143,7 @@ class NationalParticipantsController extends Controller
     public function destroy($id)
     {
         $national_participants = NationalParticipants::findOrFail($id);
-        File::delete('../n_participants/'.public_path().''.$national_participants->image);
+        File::delete('../uploads//n_participants/'.public_path().''.$national_participants->image);
         $national_participants->delete();
         return Redirect()->route('national_participants.index');
     }

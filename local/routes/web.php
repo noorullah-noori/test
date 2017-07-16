@@ -129,7 +129,7 @@ Route::get('action_plan',function(){
 
 
 Route::get('assessment',function(){
-	$assessment = DB::table('resources')->where('type','sar')->paginate(1);//Resources::where('type','=','irm');
+	$assessment = DB::table('resources')->where('type','sar')->paginate(1);
 	return view('assessment')->with('assessment',$assessment);
 })->name('assessment');
 

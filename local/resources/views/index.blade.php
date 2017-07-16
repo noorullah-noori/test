@@ -22,7 +22,7 @@
 		  <div class="ui stackable center aligned grid container">
 		    <div class="fourteen wide column">
 		      <h1 class="ui icon header">
-		      	<img class="ui icon image afg" src="img/afg.png">
+		      	<img class="ui icon image afg" src="{{asset('assets/img/afg.png')}}">
 		        {{trans('home.ogpa_full')}}
 		      </h1>
 		      <div class="ui stackable center aligned vertically padded grid">
@@ -191,7 +191,7 @@
 										<div class="active item" >
 										  <blockquote><p style="<?php echo ($lang!='en')?"font-family: 'Yekan';":""; ?>">Lorem ipsum dolor met consectetur adipisicing. Aorem psum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p></blockquote>
 										  <div class="carousel-info">
-											<img alt="" src="img/team4.jpg" class="pull-<?php echo $direction; ?>">
+											<img alt="" src="{{asset('assets/img/team4.jpg')}}" class="pull-<?php echo $direction; ?>">
 											<div class="pull-<?php echo $direction; ?>">
 											  <span class="testimonials-name">Marc Cooper</span>
 											  <span class="testimonials-post">Technical Director</span>

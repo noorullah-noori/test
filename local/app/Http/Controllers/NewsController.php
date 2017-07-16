@@ -64,7 +64,7 @@ class NewsController extends Controller
         $max = News::max('id');
         $max +=1;
         $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('news_img', $imageName);
+        $request->image->move('uploads/news_img', $imageName);
         
         }
         
@@ -128,7 +128,7 @@ class NewsController extends Controller
         }
         else{
              $imageName = $max.'.'.$request->image->getClientOriginalExtension();
-             $request->image->move('news', $imageName);
+             $request->image->move('uploads/news', $imageName);
         }
         
         $news->image = $imageName;
@@ -145,7 +145,7 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $news = News::findOrFail($id);
-        File::delete('../news/'.public_path().''.$news->image);
+        File::delete('../uploads//news/'.public_path().''.$news->image);
         $news->delete();
         return Redirect()->route('news.index');
     }

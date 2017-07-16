@@ -6,22 +6,22 @@
 <meta name="keywords" content="OGPA" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" >
-<link rel="stylesheet" href="{{asset('css/semantic.min.css')}}" >
+<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" >
+<link rel="stylesheet" href="{{asset('assets/css/semantic.min.css')}}" >
 
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<link href="{{asset('admin-asset/css/style.css')}}" rel='stylesheet' type='text/css' />
-<link href="{{asset('admin-asset/css/style-responsive.css')}}" rel="stylesheet"/>
+<link href="{{asset('assets/admin-asset/css/style.css')}}" rel='stylesheet' type='text/css' />
+<link href="{{asset('assets/admin-asset/css/style-responsive.css')}}" rel="stylesheet"/>
 <!-- font CSS -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
-<link rel="stylesheet" href="{{asset('admin-asset/css/font.css')}}" type="text/css"/>
-<link href="{{asset('admin-asset/css/font-awesome.css')}}" rel="stylesheet"> 
-<link rel="stylesheet" href="{{asset('admin-asset/css/morris.css')}}" type="text/css"/>
+<link rel="stylesheet" href="{{asset('assets/admin-asset/css/font.css')}}" type="text/css"/>
+<link href="{{asset('assets/admin-asset/css/font-awesome.css')}}" rel="stylesheet"> 
+<link rel="stylesheet" href="{{asset('assets/admin-asset/css/morris.css')}}" type="text/css"/>
 <!-- calendar -->
-<link rel="stylesheet" href="{{asset('admin-asset/css/persian-datepicker.css')}}">
-<link rel="stylesheet" href="{{asset('admin-asset/css/monthly.css')}}">
+<link rel="stylesheet" href="{{asset('assets/admin-asset/css/persian-datepicker.css')}}">
+<link rel="stylesheet" href="{{asset('assets/admin-asset/css/monthly.css')}}">
 <!-- //calendar -->
 <!-- //font-awesome icons -->
 

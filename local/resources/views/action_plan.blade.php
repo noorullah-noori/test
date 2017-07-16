@@ -46,10 +46,10 @@ $reports = "reports_".$lang;
 			@foreach($action_plan as $value)
 			<div class="row" >
 				<div class="col-md-2" style="float:<?php echo $dir; ?>">
-					<a href="{{asset($reports.'/'.$value->$pdf)}}" target="_blank"><img src="{{asset('img/pdf.png')}}" style="width:60px;"></a>
+					<a href="{{asset('uploads/'.$reports.'/'.$value->$pdf)}}" target="_blank"><img src="{{asset('assets/img/pdf.png')}}" style="width:60px;"></a>
 				</div>
 				<div class="col-md-10">
-					<a href="{{asset($reports.'/'.$value->$pdf)}}" target="_blank">
+					<a href="{{asset('uploads/'.$reports.'/'.$value->$pdf)}}" target="_blank">
 						<span style="margin-left:2%">{{$value->$title}}</span>
 					</a>
 				</div>

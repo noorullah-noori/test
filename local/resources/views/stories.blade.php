@@ -18,7 +18,7 @@ $description = "description_".$lang;
 		
 		.main-image{
 			background-size: cover;
-			background-image: url('img/story.jpg');
+			background-image: url('assets/img/story.jpg');
 			min-height:400px;
 		}
 

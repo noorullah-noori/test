@@ -7,18 +7,18 @@
 <meta name="description" content="" />
 <meta name="author" content="http://webthemez.com/" />
 <!-- css -->
-<link href="{{asset('css/style.css')}}" rel="stylesheet" />
-<link href="{{asset('css/jquery.fancybox.css')}}" rel="stylesheet"> 
-<link href="{{asset('css/flexslider.css')}}" rel="stylesheet" /> 
-<link rel="stylesheet" href="css/modal.min.css"/>
-<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/semantic.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/flag.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/modal.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/icon.min.css')}}">
-<link rel="stylesheet" href="css/fullcalendar.min.css"/>
-<link rel="stylesheet" type="text/css" href="{{asset('css/dr/dr_custom.css')}}">
+<link href="{{asset('assets/css/style.css')}}" rel="stylesheet" />
+<link href="{{asset('assets/css/jquery.fancybox.css')}}" rel="stylesheet"> 
+<link href="{{asset('assets/css/flexslider.css')}}" rel="stylesheet" /> 
+<link rel="stylesheet" href="{{asset('assets/css/modal.min.css')}}"/>
+<link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/semantic.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/flag.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/modal.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/icon.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/fullcalendar.min.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/dr/dr_custom.css')}}">
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -143,10 +143,10 @@
  
        <ul class="nav nav-pills">
           
-           <li class="hidden-xs">
+           <li class="">
             <a href="javascript:void(0)" class="lang languageSwitcher" style="font-family:Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;" id="en">English</a>
           </li>
-          <li class="hidden-xs"> 
+          <li class=""> 
             <a href="javascript:void(0)" class="lang languageSwitcher my_class" id="dr">دری</a>
           </li>
           <li>
@@ -159,7 +159,7 @@
  
        <ul class="nav nav-pills">
           
-           <li class="hidden-xs">
+           <li class="">
             <a class="lang languageSwitcher" style="font-family:'Yekan';font-size: 12px; "><i style="color:#cde;" class="fa fa-phone"></i>&nbsp;&nbsp;شماره تماس : ۱۳ ۴  ۷ ۸ ۹ ۰۰  ۲ ۰ </a>
           </li>
           
@@ -173,10 +173,11 @@
 </div>
 	<!-- start header -->
 	<header>
-	   {{-- <div class="container-fluid" style="background-image:url({{asset('img/header-bg.png')}});">
+	   {{-- 
+    <!--  <div class="container-fluid" style="background-image:url({{asset('assets/img/header-bg.png')}});">
       <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12">
         <div class="col-md-1 col-md-offset-1  col-xs-3 col-xs-offset-1 col-sm-3 col-sm-offset-3 col-lg-1 col-lg-offset-1 col-xl-1 col-xl-offset-1">
-        <img src="{{asset('img/ogp.png')}}" style="height:97px;padding-top:1px">
+        <img src="{{asset('assets/img/ogp.png')}}" style="height:97px;padding-top:1px">
       </div>
 
       <div class="col-md-3 col-md-offset-2 col-xs-3 col-xs-offset-2 col-sm-3 col-sm-offset-2 col-lg-3 col-lg-offset-2 col-xl-3 col-xl-offset-2">
@@ -186,13 +187,14 @@
         <img src="{{asset('img/logo.png')}}" style="height:98px;padding-top:3px;padding-left:8%">
       </div>
       </div>
-      </div> --}}
+      </div>  -->
+      --}}
 
-      <div class="container-fluid" style="background-image: url({{asset('img/header-bg.png')}});">
+      <div class="container-fluid" style="background-image: url({{asset('assets/img/header-bg.png')}});">
         <div class="ui three column grid container" style="padding-top: 1px;padding-bottom: 1px;">
-                <div class="column "><img  style="width:100px;" class="ui medium image" src="{{asset('img/ogp.png')}}"></div>
-                <div class="column"><img  style="width:178px;" class="ui centered medium image" src="{{asset('img/header-center.png')}}"></div>
-                <div class="column"><img style="width:100px;" class="ui left floated medium image"  src="{{asset('img/logo.png')}}"></div>
+                <div class="column "><img  style="width:100px;" class="ui medium image" src="{{asset('assets/img/ogp.png')}}"></div>
+                <div class="column"><img  style="width:178px;" class="ui centered medium image" src="{{asset('assets/img/header-center.png')}}"></div>
+                <div class="column"><img style="width:100px;" class="ui left floated medium image"  src="{{asset('assets/img/logo.png')}}"></div>
         </div>
     </div>
 

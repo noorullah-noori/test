@@ -42,7 +42,7 @@ $description = "description_".$lang;
 		          @foreach($seminars as $value)
 		          <tr>
 		          <td><?php echo ++$i; ?></td>
-		          <td><img style="width:100px;"src="{{asset('events&seminars/'.$value->image)}}"/></td>
+		          <td><img style="width:100px;"src="{{asset('uploads/events&seminars/'.$value->image)}}"/></td>
 		            <td>{{$value->$title}}</td>
 		            <td>{{$value->$description}}</td>
 		          </tr>

@@ -42,7 +42,7 @@ $member_since = "member_since_".$lang;
           <tr>
             <td>
               <h4 class="ui image header">
-                <img src="{{asset('n_participants/'.$value->image)}}" class="ui massive rounded image">
+                <img src="{{asset('uploads/n_participants/'.$value->image)}}" class="ui massive rounded image">
                 <div class="content">
                   {{$value->$name}}
               </div>

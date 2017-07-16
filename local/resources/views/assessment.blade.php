@@ -44,10 +44,10 @@ $reports = "reports_".$lang;
 
 			<div class="row" >
 				<div class="col-md-2" style="float:<?php echo $dir; ?>">
-					<a href="{{asset($reports.'/'.$value->$pdf)}}" target="_blank"><img src="{{asset('img/pdf.png')}}" style="width:60px;"></a>
+					<a href="{{asset('uploads/'.$reports.'/'.$value->$pdf)}}" target="_blank"><img src="{{asset('assets/img/pdf.png')}}" style="width:60px;"></a>
 				</div>
 				<div class="col-md-10">
-					<a href="{{asset($reports.'/'.$value->$pdf)}}" target="_blank">
+					<a href="{{asset('uploads/'.$reports.'/'.$value->$pdf)}}" target="_blank">
 						<span style="margin-left:2%">{{$value->$title}}</span>
 					</a>
 				</div>
@@ -58,24 +58,6 @@ $reports = "reports_".$lang;
 			</div>
 			<hr style="width:80%; margin-top: -15px;margin-right:130px;">
 			@endforeach
-<!-- 
-			<div class="row">
-				<a href="{{asset('pdf/test.pdf')}}" target="_blank">
-					<img src="{{asset('img/pdf.png')}}"><span style="margin-left:2%">Reports of something to be tested</span>
-				</a>
-								<div class="desc">
-					<p>OGP was launched in 2011 to provide an international platform for domestic reformers committed to making their governments more open, accountable, and responsive to citizens.</p>
-				</div>
-			</div>
-			<div class="row">
-				<a href="{{asset('pdf/test.pdf')}}" target="_blank">
-					<img src="{{asset('img/pdf.png')}}"><span style="margin-left:2%">Reports of something to be tested</span>
-				</a>
-								<div class="desc">
-					<p>OGP was launched in 2011 to provide an international platform for domestic reformers committed to making their governments more open, accountable, and responsive to citizens.</p>
-				</div>
-			</div> -->
-
 
 		</div>
 		</div>
@@ -110,5 +92,5 @@ $reports = "reports_".$lang;
 } );
 
     </script>
-<script type="text/javascript" src="{{asset('datatable/jquery.dataTables.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('datatable/dataTables.material.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/datatable/jquery.dataTables.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/datatable/dataTables.material.min.js')}}"></script>

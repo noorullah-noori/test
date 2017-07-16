@@ -61,7 +61,7 @@ class EventsController extends Controller
         $max=Events::max('id');
         $max += 1;
         $imageName=$max.'.'.$request->image->getClientOriginalExtension();
-        $request->image->move('events&seminars',$imageName);
+        $request->image->move('uploads/events&seminars',$imageName);
             
         }
         
@@ -125,9 +125,9 @@ class EventsController extends Controller
             $imageName = $events->image;
         }
         else{
-            File::delete('../events&seminars/'.public_path().''.$events->image);
+            File::delete('../uploads//events&seminars/'.public_path().''.$events->image);
             $imageName=$max.'.'.$request->image->getClientOriginalExtension();
-            $request->image->move('events&seminars',$imageName);
+            $request->image->move('uploads/events&seminars',$imageName);
         }
 
         $events->image = $imageName;
@@ -144,7 +144,7 @@ class EventsController extends Controller
     public function destroy($id)
     {
         $events = Events::findOrFail($id);
-        File::delete('../events&seminars/'.public_path().''.$events->image);
+        File::delete('../uploads//events&seminars/'.public_path().''.$events->image);
         $events->delete();
         return Redirect()->route('events.index');
     }

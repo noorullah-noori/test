@@ -28,7 +28,7 @@
     @foreach($national_participants as $value)
     <tr>
       <th><?php echo $i++; ?></th>
-      <td style="width:13%;"><img style="width:100px;" src="{{asset('n_participants/'.$value->image)}}"></td>
+      <td style="width:13%;"><img style="width:100px;" src="{{asset('uploads/n_participants/'.$value->image)}}"></td>
       <td>{{$value->name_en}}</td>
       <td style="width:10%;">{{$value->member_since_en}}</td>
       <td>{{$value->email}}</td>

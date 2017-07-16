@@ -55,13 +55,13 @@ class ResourcesController extends Controller
         $max+=1;
         $pdfName = $max.'.'.$request->file('pdf')->getClientOriginalExtension();
 
-        $request->file('pdf')->move('reports_en',$pdfName);
+        $request->file('pdf')->move('uploads/reports_en',$pdfName);
 
         $pdfName_dr = $max.'.'.$request->file('pdf_dr')->getClientOriginalExtension();
-        $request->file('pdf_dr')->move('reports_dr',$pdfName_dr);
+        $request->file('pdf_dr')->move('uploads/reports_dr',$pdfName_dr);
 
         $pdfName_pa = $max.'.'.$request->file('pdf_pa')->getClientOriginalExtension();
-        $request->file('pdf_pa')->move('reports_pa',$pdfName_pa);
+        $request->file('pdf_pa')->move('uploads/reports_pa',$pdfName_pa);
         
         
         $resources->pdf_en = $pdfName;
@@ -138,25 +138,25 @@ class ResourcesController extends Controller
             $pdfName = $resources->pdf;
         }
         else{
-            File::delete('../reports_en/'.public_path().''.$resources->pdf_en);
+            File::delete('../uploads//reports_en/'.public_path().''.$resources->pdf_en);
             $pdfName = $max.'.'.$request->file('pdf')->getClientOriginalExtension();
-            $request->file('pdf')->move('reports_en',$pdfName);
+            $request->file('pdf')->move('uploads/reports_en',$pdfName);
         }
         if($request->file('pdf_dr') ==null){
                 $pdfName_dr = $resources->pdf_dr;
         }
         else{
-            File::delete('../reports_dr/'.public_path().''.$resources->pdf_dr);
+            File::delete('../uploads//reports_dr/'.public_path().''.$resources->pdf_dr);
             $pdfName_dr = $max.'.'.$request->file('pdf_dr')->getClientOriginalExtension();
-            $request->file('pdf_dr')->move('reports_dr',$pdfName_dr);
+            $request->file('pdf_dr')->move('uploads/reports_dr',$pdfName_dr);
         }
         if($request->file('pdf_pa') ==null){
             $pdfName_pa = $resources->pdf_pa;
         }
         else{
-            File::delete('../reports_pa/'.public_path().''.$resources->pdf_pa);
+            File::delete('../uploads//reports_pa/'.public_path().''.$resources->pdf_pa);
             $pdfName_pa = $max.'.'.$request->file('pdf_pa')->getClientOriginalExtension();
-            $request->file('pdf_pa')->move('reports_pa',$pdfName_pa);
+            $request->file('pdf_pa')->move('uploads/reports_pa',$pdfName_pa);
         }
         
         $resources->pdf_en = $pdfName;
@@ -183,9 +183,9 @@ class ResourcesController extends Controller
     public function destroy($id)
     {
         $resources = Resources::findOrFail($id);
-        File::delete('../reports_en/'.public_path().''.$resources->pdf_en);
-        File::delete('../reports_dr/'.public_path().''.$resources->pdf_dr);
-        File::delete('../reports_pa/'.public_path().''.$resources->pdf_pa);
+        File::delete('../uploads/reports_en/'.public_path().''.$resources->pdf_en);
+        File::delete('../uploads/reports_dr/'.public_path().''.$resources->pdf_dr);
+        File::delete('../uploads/reports_pa/'.public_path().''.$resources->pdf_pa);
         $resources->delete();
         return Redirect()->route('resources.index');
         //

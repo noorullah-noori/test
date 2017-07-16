@@ -69,7 +69,9 @@ class ContactsController extends Controller
     public function edit($id)
     {
         $contacts = Contacts::findOrFail($id);
-        return view('admin.edit_contact')->with('contacts',$contacts);    }
+        return view('admin.edit_contact')->with('contacts',$contacts); 
+
+   }
 
     /**     * Update the specified resource in storage.
      *
@@ -79,13 +81,6 @@ class ContactsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $news = News::findOrFail($id);
-        // $news->title = $request->input('title');
-        // $news->created_date = $request->input('date');
-        // $news->short_desc = $request->input('short_desc');
-        // $news->description = $request->input('description');
-        // $news->save();
-        // return Redirect()->route('news.index');
         $contacts = Contacts::findOrFail($id);
         $contacts->address = $request->input('address');
         $contacts->fb = $request->input('fb');

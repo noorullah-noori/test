@@ -28,7 +28,7 @@
 				@foreach($news as $value)
 				<a href="{{url('news_details/'.$value->id)}}" class="item" style="padding-bottom: 15px;border-bottom: 1px solid #ddd;">
 					<div class="image">
-						<img src="{{asset('news_img/'.$value->image)}}" class="img-thumbnail" style="width:140gpx;border:1px solid #ddd;margin-left:15px;">
+						<img src="{{asset('uploads/news_img/'.$value->image)}}" class="img-thumbnail" style="width:140gpx;border:1px solid #ddd;margin-left:15px;">
 					</div>
 					<div class="content">
 						<div class="header">{{$value->$title}}</div>
