@@ -46,7 +46,7 @@
                                     <div class="form-group ">
                                         <label for="date_dr" class="control-label col-lg-3">Date Dari</label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" id="date_dr" name="date_dr" type="date">
+                                            <input class=" form-control date_dr" id="date_dr" name="date_dr" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group ">

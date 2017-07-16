@@ -44,9 +44,11 @@ class NewsController extends Controller
         $news->description_en = $request->input('description');
 
         $news->title_dr = $request->input('title_dr');
-        $news->created_date_dr = $request->input('date_dr');
-        $news->created_date_pa = $request->input('date_dr');
-        $news->short_desc_dr = $request->input('short_desc_dr');
+        $news->created_date_dr = substr($request->input('date_dr'),0,10);
+        $news->created_date_pa = substr($request->input('date_dr'),0,10);
+        $news->short_desc_dr = substr($request->input('short_desc_dr'),0,150)."...";
+        print_r($request->input('short_desc_dr'));exit;
+
         $news->description_dr = $request->input('description_dr');
         
         $news->title_pa = $request->input('title_pa');
@@ -111,12 +113,13 @@ class NewsController extends Controller
 
         $news->title_dr = $request->input('title_dr');
         $news->created_date_dr = $request->input('date_dr');
-        $news->short_desc_dr = $request->input('short_desc_dr');
+        $news->short_desc_dr = substr($request->input('short_desc_dr'),0,300);
         $news->description_dr = $request->input('description_dr');
         $news->created_date_pa = $request->input('date_dr');
         $news->title_pa = $request->input('title_pa');
-        $news->short_desc_pa = $request->input('short_desc_pa');
+        $news->short_desc_pa = substr($request->input('short_desc_pa'),0,300);
         $news->description_pa = $request->input('description_pa');
+        print_r($news->short_desc_dr);exit;
 
         $max = $news->id;
         $imageName = '';

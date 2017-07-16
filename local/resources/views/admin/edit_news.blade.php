@@ -16,7 +16,7 @@
                         </header>
                         <div class="panel-body">
                         <div class="form cmxform form-horizontal ">
-                            {!! Form::model($news, ['route' => array('news.update',$news->id)]) !!}
+                            {!! Form::model($news, ['route' => array('news.update',$news->id),'files'=>'true']) !!}
                             <input name="_method" type="hidden" value="PATCH">
                                <div class="form-group ">
                                         <label for="title" class="control-label col-lg-3">News Title</label>

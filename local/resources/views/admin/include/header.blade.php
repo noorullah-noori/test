@@ -20,12 +20,11 @@
 <link href="{{asset('admin-asset/css/font-awesome.css')}}" rel="stylesheet"> 
 <link rel="stylesheet" href="{{asset('admin-asset/css/morris.css')}}" type="text/css"/>
 <!-- calendar -->
+<link rel="stylesheet" href="{{asset('admin-asset/css/persian-datepicker.css')}}">
 <link rel="stylesheet" href="{{asset('admin-asset/css/monthly.css')}}">
 <!-- //calendar -->
 <!-- //font-awesome icons -->
-<script src="{{asset('admin-asset/js/jquery2.0.3.min.js')}}"></script>
-<script src="{{asset('admin-asset/js/raphael-min.js')}}"></script>
-<script src="{{asset('admin-asset/js/morris.js')}}"></script>
+
 </head>
 <body>
 <section id="container">
