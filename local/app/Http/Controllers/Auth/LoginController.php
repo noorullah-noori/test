@@ -44,21 +44,9 @@ class LoginController extends Controller
     public function login() {
         $email = $_POST['email'];
         $password =$_POST['password'];
-        // $result = DB::select("select id from users where email='".$email."' and password='".$password."' ");
-        // if (sizeof($result)>0) {
-        //     // Authentication passed...
-        //     Session::put('email',$email);
-        //     return redirect()->intended('admin');
-        // }
-        // else{
-        //     return Redirect()->route('login');
-        // }
-        // $db_password =DB::select("select password from users where email='".$email."' limit 1");
         $rec = DB::table('users')->where('email',$email)->first();
 
         $password_db = $rec->password;
-
-        // print_r(gettype($password_db));exit;
         
         if(Hash::check($password,$password_db)) {
             // Authentication passed...

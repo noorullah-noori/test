@@ -9,10 +9,10 @@
 
   <!-- Site Properties -->
   <title>Login Example - Semantic</title>
-  <link rel="stylesheet" type="text/css" href="{{asset('css/icon.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('css/semantic.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/icon.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/semantic.min.css')}}">
 
-  <script src="{{asset('jquery.min.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.js')}}"></script>
 
   <style type="text/css">
     body > .grid {
@@ -69,7 +69,7 @@
 <div class="ui middle aligned center aligned grid">
   <div class="column">
     
-    <form class="ui large form" action="{{route('login')}}" method="post">
+    <form class="ui large form" action="{{route('check_crediential')}}" method="post">
       <div class="ui segments">
         <div class="ui segment inverted grey">
           <h2 class="ui image header">

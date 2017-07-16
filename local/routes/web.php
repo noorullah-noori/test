@@ -218,24 +218,28 @@ Route::resource('admin/national_participants','NationalParticipantsController');
 
 Route::resource('admin/events','EventsController');
 
-Route::get('register',function(){
-	return view('admin.register');
-})->name('register');
+// Route::get('register',function(){
+// 	return view('admin.register');
+// })->name('register');
+
+Route::get('delete_user','Auth\LoginController@delete_user')->name('delete_user');
+Route::get('register','Auth\RegisterController@register')->name('register');
+
+Route::get('edit_user/{$id}','Auth\LoginController@edit_user')->name('edit_user');
+Route::get('users','Auth\LoginController@users')->name('users');
 
 });
 //finish admin routes
-
-
-
+// Auth::routes();
+// Route::auth();
+Route::post('login_user','Auth\LoginController@login')->name('check_crediential');
 Route::get('login',function(){
 	return view('auth.login');
 })->name('login');
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+
+// Route::get('/home', 'HomeController@index');
 Route::get('logout','Auth\LoginController@logout')->name('logout');
-Route::get('delete_user','Auth\LoginController@delete_user')->name('delete_user');
-Route::get('edit_user/{$id}','Auth\LoginController@edit_user')->name('edit_user');
-Route::get('users','Auth\LoginController@users')->name('users');
+
