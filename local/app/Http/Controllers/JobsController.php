@@ -37,18 +37,20 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $job = new JOB();
-        $job->title = $request->input('title');
+
+        $job->title_en = substr($request->input('title'),0,100)."...";
         $job->expiry_date = $request->input('expiry_date');
         $job->description = $request->input('description');
         $job->responsibilities = $request->input('responsibilities');
         
-        $job->title_dr = $request->input('title_da');
+        $job->title_dr = substr($request->input('title_da'),0,100)."...";
+        print_r($job->title_dr);
         $job->expiry_date_dr = $request->input('expiry_date_da');
         $job->expiry_date_pa = $request->input('expiry_date_da');
         $job->description_dr = $request->input('description_da');
         $job->responsibilities_dr = $request->input('responsibilities_da');
         
-        $job->title_pa = $request->input('title_pa');
+        $job->title_pa = substr($request->input('title_pa'),0,100)."...";
         $job->description_pa = $request->input('description_pa');
         $job->responsibilities_pa = $request->input('responsibilities_pa');
         $job->save();
@@ -88,17 +90,18 @@ class JobsController extends Controller
     public function update(Request $request, $id)
     {
         $job = JOB::findOrFail($id);
-        $job->title_en = $request->input('title');
+        $job->title_en = substr($request->input('title'),0,100)." ...";
         $job->expiry_date_en = $request->input('expiry_date');
         $job->description_en = $request->input('description');
         $job->responsibilities_en = $request->input('responsibilities');
-         $job->title_dr = $request->input('title_da');
+         $job->title_dr = substr($request->input('title_da'),0,100)." ...";
         $job->expiry_date_dr = $request->input('expiry_date_da');
         $job->expiry_date_pa = $request->input('expiry_date_da');
         $job->description_dr = $request->input('description_da');
         $job->responsibilities_dr = $request->input('responsibilities_da');
         
-        $job->title_pa = $request->input('title_pa');
+        $job->title_pa = substr($request->input('title_pa'),0,100)." ...";
+        // print_r($job->title_pa);exit;
         $job->description_pa = $request->input('description_pa');
         $job->responsibilities_pa = $request->input('responsibilities_pa');
         $job->save();

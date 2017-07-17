@@ -38,20 +38,20 @@ class NewsController extends Controller
     {
         $news = new News();
         
-        $news->title_en = $request->input('title');
+        $news->title_en = substr($request->input('title'),0,100);
         $news->created_date_en = $request->input('date');
         $news->short_desc_en = $request->input('short_desc');
         $news->description_en = $request->input('description');
 
-        $news->title_dr = $request->input('title_dr');
+        $news->title_dr = substr($request->input('title_dr'),0,100);
         $news->created_date_dr = substr($request->input('date_dr'),0,10);
         $news->created_date_pa = substr($request->input('date_dr'),0,10);
         $news->short_desc_dr = substr($request->input('short_desc_dr'),0,150)."...";
-        print_r($request->input('short_desc_dr'));exit;
+        // print_r($request->input('short_desc_dr'));exit;
 
         $news->description_dr = $request->input('description_dr');
         
-        $news->title_pa = $request->input('title_pa');
+        $news->title_pa = substr($request->input('title_pa'),0,100);
         $news->short_desc_pa = $request->input('short_desc_pa');
         $news->description_pa = $request->input('description_pa');
 
@@ -106,20 +106,20 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
        $news = News::findOrFail($id);
-        $news->title_en = $request->input('title');
+        $news->title_en = substr($request->input('title'),0,100);
         $news->created_date_en = $request->input('date');
-        $news->short_desc_en = $request->input('short_desc');
+        $news->short_desc_en = substr($request->input('short_desc'),0,300);
         $news->description_en = $request->input('description');
+        print_r("hello");exit;
 
-        $news->title_dr = $request->input('title_dr');
+        $news->title_dr = substr($request->input('title_dr'),0,100);
         $news->created_date_dr = $request->input('date_dr');
         $news->short_desc_dr = substr($request->input('short_desc_dr'),0,300);
         $news->description_dr = $request->input('description_dr');
         $news->created_date_pa = $request->input('date_dr');
-        $news->title_pa = $request->input('title_pa');
+        $news->title_pa = substr($request->input('title_pa'),0,100);
         $news->short_desc_pa = substr($request->input('short_desc_pa'),0,300);
         $news->description_pa = $request->input('description_pa');
-        print_r($news->short_desc_dr);exit;
 
         $max = $news->id;
         $imageName = '';
