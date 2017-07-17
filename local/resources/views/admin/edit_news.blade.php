@@ -18,6 +18,7 @@
                         <div class="form cmxform form-horizontal ">
                             {!! Form::model($news, ['route' => array('news.update',$news->id),'files'=>'true']) !!}
                             <input name="_method" type="hidden" value="PATCH">
+                            {{csrf_field()}}
                                <div class="form-group ">
                                         <label for="title" class="control-label col-lg-3">News Title</label>
                                         <div class="col-lg-6">
