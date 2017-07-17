@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Site Properties -->
-  <title>Login Example - Semantic</title>
+  <title>Open Government Partnership Afghanistan</title>
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/icon.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/semantic.min.css')}}">
 
