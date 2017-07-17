@@ -21,8 +21,8 @@ use App\Stories;
 Route::group(['middleware' => ['change_lang']],function(){
 
 Route::get('/', function () {
-	$job = JOB::take(5)->get();
-    $news = News::take(5)->get();
+	$job = JOB::take(5)->orderBy('id','desc')->get();
+    $news = News::take(5)->orderBy('id','desc')->get();
     return view('index')->with(array('news'=>$news,'job'=>$job));
 })->name('home');
 
@@ -48,7 +48,7 @@ Route::get('carriers',function(){
 })->name('carriers');
 
 Route::get('news',function(){
-	$news = News::paginate(4);
+	$news = DB::table('news')->orderBy('id', 'desc')->paginate(4);
 	return view('news')->with('news',$news);
 })->name('news');
 

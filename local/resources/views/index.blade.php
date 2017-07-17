@@ -110,7 +110,7 @@
 											<div class="event">
 												<div class="content">
 													<div class="summary" style="text-align: <?php echo $direction; ?>">
-														<a  href="{{url('job_details/'.$value->id)}}">{{$value->$lang_var}}</a>
+														<a  href="{{url('job_details/'.$value->id)}}" style="font-size:14px"><?php echo (strlen($value->$lang_var)>35)?substr($value->$lang_var,0,35).'...':$value->$lang_var;?></a>
 													</div>
 												</div>
 											</div>
@@ -148,7 +148,7 @@
 											<div class="event">
 												<div class="content">
 													<div class="summary" style="text-align: <?php echo $direction; ?>">
-														<a href="{{url('news_details/'.$value->id)}}">{{$value->$lang_var}}</a>
+														<a style="font-size:14px;" href="{{url('news_details/'.$value->id)}}"><?php echo (strlen($value->$lang_var)>35)?substr($value->$lang_var,0,35).'...':$value->$lang_var;?></a>
 													</div>
 												</div>
 											</div>
